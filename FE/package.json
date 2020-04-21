@@ -1,0 +1,13 @@
+{
+    "name": "sidedish_fe",
+    "version": "1.0.0",
+    "scripts": {
+        "client": "cd client && npm start",
+        "server": "cd server && nodemon server.js",
+        "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    },
+    "devDependencies": {
+        "concurrently": "^5.1.0",
+        "http-proxy-middleware": "^1.0.3"
+    }
+}
