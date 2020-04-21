@@ -18,7 +18,6 @@ const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'space-between',
         '& li': {
-            cursor: 'pointer',
             listStyle: 'none',
         }
     },
