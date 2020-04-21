@@ -1,4 +1,10 @@
+DROP TABLE IF EXISTS category;
 DROP TABLE IF EXISTS item;
+
+CREATE TABLE category (
+    id int primary key auto_increment,
+    name varchar (32)
+);
 
 CREATE TABLE item (
   id int primary key auto_increment,
@@ -8,5 +14,7 @@ CREATE TABLE item (
   title varchar (128),
   description varchar (256),
   n_price varchar (32),
-  p_price varchar (32)
+  p_price varchar (32),
+  category int references category(id),
+  category_key int
 );
