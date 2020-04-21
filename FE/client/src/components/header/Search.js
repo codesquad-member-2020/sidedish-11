@@ -41,9 +41,9 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: `calc(1em + ${theme.spacing(3)}px)`,
         transition: theme.transitions.create('width'),
         [theme.breakpoints.up('sm')]: {
-            width: '16ch',
+            width: '20ch',
             '&:focus': {
-                width: '24ch',
+                width: '28ch',
                 border: '1px solid #18C2BD',
             },
         },
