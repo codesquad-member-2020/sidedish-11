@@ -6,11 +6,11 @@ import { menuData } from '../../mock/menuData';
 const useStyles = makeStyles({
     menuNavWrap: {
         width: '100%',
-        lineHeight: '50px',
+        height: '60px',
+        lineHeight: '55px',
         backgroundColor: '#483F35',
         color: '#fff',
         fontSize: '15px',
-        zIndex: '5',
     },
     menuNavInner: {
         width: '65%',
@@ -22,9 +22,6 @@ const useStyles = makeStyles({
             listStyle: 'none',
         },
     },
-    menuList: {
-        zIndex: '1',
-    }
 });
 
 function MenuNav() {
@@ -33,7 +30,7 @@ function MenuNav() {
     return (
         <div className={classes.menuNavWrap}>
             <ul className={classes.menuNavInner}>
-                <MenuList className={classes.menuList} menuData={menuData} />
+                <MenuList menuData={menuData} />
             </ul>
         </div>
     );

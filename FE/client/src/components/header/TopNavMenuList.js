@@ -6,7 +6,7 @@ const useStyles = makeStyles({
         position: 'absolute',
         top: '23px',
         left: '-10px',
-        zIndex: '1',
+        zIndex: '2',
         backgroundColor: '#fff',
         border: '1px solid #b3b3b3',
         padding: '7px 0',
@@ -21,6 +21,7 @@ const useStyles = makeStyles({
         height: '23px',
         '&:hover': {
             color: '#18C2BD',
+            textDecoration: 'underline',
         }
     }
 });

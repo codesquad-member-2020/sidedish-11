@@ -4,22 +4,40 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
     menu: {
         position: 'relative',
-        '& span': {
-            cursor: 'pointer',
+        top: '5px',
+        width: '100px',
+        height: '55px',
+        textAlign: 'center',
+        cursor: 'pointer',
+        '&:hover': {
+            backgroundColor: '#fff',
+            color: '#18C2BD',
+            textDecoration: 'underline',
         },
     },
+    title: {
+        display: 'inline-block',
+        fontSize: '16px',
+    },
     contents: {
-        padding: '10px 0 20px 20px',
+        padding: '10px 0 10px 20px',
         position: 'absolute',
         color: '#5a5a5a',
-        top: '40px',
+        backgroundColor: '#fff',
+        textAlign: 'start',
+        top: '55px',
         width: '150px',
-        left: '-20px',
         border: '1px solid #b3b3b3',
-        zIndex: '-1',
+        borderTop: 'none',
+        zIndex: '1',
         '& li': {
-            height: '30px',
+            lineHeight: '35px',
             cursor: 'pointer',
+            '&:hover': {
+                backgroundColor: '#fff',
+                color: '#18C2BD',
+                textDecoration: 'underline',
+            }
         },
     },
 });
@@ -29,7 +47,7 @@ function MenuList({ menuData }) {
     const menuList = menuData.map(menu => {
         return (
             <li className={classes.menu} key={menu.id}>
-                <span>{menu.title}</span>
+                <span className={classes.title}>{menu.title}</span>
                 <ul className={classes.contents}>
                     {
                         menu.contents.map((content, idx) => {

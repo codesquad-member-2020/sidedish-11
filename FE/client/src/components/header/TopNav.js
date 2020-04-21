@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import TopNavMenuList from './TopNavMenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
@@ -60,26 +60,26 @@ const useStyles = makeStyles({
 
 function TopNav() {
     const classes = useStyles();
-    const [downMenuOpen, setDownMenuOpen] = useState(false);
-    const [myPageMenuOpen, setMyPageMenuOpen] = useState(false);
-    const [centerMenuOpen, setCenterMenuOpen] = useState(false);
+    const [isOpenDownMenu, setDownMenu] = useState(false);
+    const [isOpenMyPageMenu, setMyPageMenu] = useState(false);
+    const [isOpenCenterMenu, setCenterMenu] = useState(false);
 
     const menuReset = () => {
-        setDownMenuOpen(false);
-        setMyPageMenuOpen(false);
-        setCenterMenuOpen(false);
+        setDownMenu(false);
+        setMyPageMenu(false);
+        setCenterMenu(false);
     }
     const downMenuHandle = () => {
         menuReset();
-        setDownMenuOpen(!downMenuOpen);
+        setDownMenu(!isOpenDownMenu);
     };
     const myPageMenuHandle = () => {
         menuReset();
-        setMyPageMenuOpen(!myPageMenuOpen);
+        setMyPageMenu(!isOpenMyPageMenu);
     };
     const centerMenuHandle = () => {
         menuReset();
-        setCenterMenuOpen(!centerMenuOpen);
+        setCenterMenu(!isOpenCenterMenu);
     };
 
     return (
@@ -89,7 +89,7 @@ function TopNav() {
                     <div className={classes.menuText} onClick={downMenuHandle}>
                         배민찬 앱 다운로드<ArrowDropDownIcon className={classes.arrowIcon} />
                     </div>
-                    {downMenuOpen && <TopNavMenuList menuList={['앱스토어', '구글플레이스토어']} />}
+                    {isOpenDownMenu && <TopNavMenuList menuList={['앱스토어', '구글플레이스토어']} />}
                 </div>
                 <ul className={classes.topNavMenu}>
                     <li className={classes.singleList}>로그인</li>
@@ -99,7 +99,7 @@ function TopNav() {
                             <div className={classes.menuText} onClick={myPageMenuHandle}>
                                 마이페이지<ArrowDropDownIcon className={classes.arrowIcon} />
                             </div>
-                            {myPageMenuOpen && <TopNavMenuList menuList={['주문현황', '1:1문의', '교환/반품', '등급별혜택·쿠폰함', '포인트']} />}
+                            {isOpenMyPageMenu && <TopNavMenuList menuList={['주문현황', '1:1문의', '교환/반품', '등급별혜택·쿠폰함', '포인트']} />}
                         </div>
                     </li>
                     <li>
@@ -107,7 +107,7 @@ function TopNav() {
                             <div className={classes.menuText} onClick={centerMenuHandle}>
                                 고객센터<ArrowDropDownIcon className={classes.arrowIcon} />
                             </div>
-                            {centerMenuOpen && <TopNavMenuList menuList={['공지사항', '자주묻는 질문', '새벽배송안내', '정기배송안내']} />}
+                            {isOpenCenterMenu && <TopNavMenuList menuList={['공지사항', '자주묻는 질문', '새벽배송안내', '정기배송안내']} />}
                         </div>
                     </li>
                     <li className={classes.singleList}>새벽배송 지역검색</li>
