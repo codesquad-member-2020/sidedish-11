@@ -1,13 +1,13 @@
-DROP TABLE IF EXISTS category;
-DROP TABLE IF EXISTS item;
-DROP TABLE IF EXISTS badge;
+-- DROP TABLE IF EXISTS category;
+-- DROP TABLE IF EXISTS item;
+-- DROP TABLE IF EXISTS badge;
 
-CREATE TABLE category (
+CREATE TABLE IF NOT EXISTS category (
     id int primary key auto_increment,
     name varchar (32)
 );
 
-CREATE TABLE item (
+CREATE TABLE IF NOT EXISTS item (
     id int primary key auto_increment,
     detail_hash varchar (32),
     image varchar (256),
@@ -19,7 +19,7 @@ CREATE TABLE item (
     category int references category(id)
 );
 
-CREATE TABLE badge (
+CREATE TABLE IF NOT EXISTS badge (
     id int auto_increment,
     name varchar (32),
     item int references item(id)
