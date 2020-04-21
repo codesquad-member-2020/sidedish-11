@@ -1,7 +1,7 @@
 import React from 'react';
 import TopNav from './TopNav';
 
-function Header() {
+function SidedishHeader() {
     return (
         <>
             <TopNav />
@@ -9,4 +9,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default SidedishHeader;

@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from './components/headers/Header';
+import SidedishHeader from './components/header/SidedishHeader';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 function App() {
   return (
     <>
       <CssBaseline>
-        <Header />
+        <SidedishHeader />
       </CssBaseline>
     </>
   );
