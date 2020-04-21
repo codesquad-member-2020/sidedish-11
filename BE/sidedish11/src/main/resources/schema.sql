@@ -1,7 +1,12 @@
-DROP TABLE IF EXISTS category;
+DROP TABLE IF EXISTS item;
 
-CREATE TABLE category  (
+CREATE TABLE item (
   id int primary key auto_increment,
-  name varchar(64),
-  deleted boolean
+  detail_hash varchar (64),
+  image varchar (64),
+  alt varchar (64),
+  title varchar (64),
+  description varchar (64),
+  n_price varchar (64),
+  p_price varchar (64)
 );
