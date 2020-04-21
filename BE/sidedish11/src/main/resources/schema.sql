@@ -16,5 +16,5 @@ CREATE TABLE item (
   n_price varchar (32),
   s_price varchar (32),
   category int references category(id),
-  category_key int
+  category_key varchar (32)
 );
