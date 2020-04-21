@@ -4,16 +4,16 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const useStyles = makeStyles({
     topNavWrap: {
+        width: '100%',
         fontSize: '12px',
         borderBottom: '1px solid #e2e2e2',
         color: '#5a5a5a',
-        width: '100%',
     },
     topNavInner: {
+        width: '65%',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        width: '80%',
         margin: '0 auto',
     },
     downloadAppText: {
