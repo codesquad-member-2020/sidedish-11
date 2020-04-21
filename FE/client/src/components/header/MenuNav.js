@@ -7,7 +7,7 @@ const useStyles = makeStyles({
     menuNavWrap: {
         width: '100%',
         lineHeight: '50px',
-        backgroundColor: '#584e43',
+        backgroundColor: '#483F35',
         color: '#fff',
         fontSize: '15px',
     },
