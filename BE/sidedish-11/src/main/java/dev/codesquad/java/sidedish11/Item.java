@@ -10,14 +10,14 @@ import java.util.List;
 public class Item {
     @Id
     private Long id;
-    private String detail_hash;
+//    private String detail_hash;
     private String image;
     private String alt;
 //    private List<String> delivery_type;
     private String title;
     private String description;
-    private String n_price;
-    private String s_price;
+//    private String n_price;
+//    private String s_price;
 //    private List<String> badge;
 
     public Item() {
