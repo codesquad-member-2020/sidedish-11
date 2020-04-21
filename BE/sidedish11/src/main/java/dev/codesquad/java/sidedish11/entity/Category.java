@@ -1,4 +1,4 @@
-package dev.codesquad.java.sidedish11;
+package dev.codesquad.java.sidedish11.entity;
 
 import lombok.Getter;
 import lombok.Setter;
