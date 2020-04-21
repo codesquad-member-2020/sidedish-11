@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import TopNavMenuList from './TopNavMenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
@@ -16,14 +17,6 @@ const useStyles = makeStyles({
         alignItems: 'center',
         margin: '0 auto',
     },
-    downloadAppText: {
-        display: 'flex',
-        alignItems: 'center',
-        cursor: 'pointer',
-        '&:hover': {
-            color: '#18C2BD',
-        }
-    },
     topNavMenu: {
         cursor: 'pointer',
         display: 'flex',
@@ -35,9 +28,6 @@ const useStyles = makeStyles({
             borderRight: '1px solid #e2e2e2',
             paddingRight: '10px',
             height: '12px',
-            '&:hover': {
-                color: '#18C2BD',
-            },
             '&:last-child': {
                 marginRight: '0',
                 borderRight: '0',
@@ -45,29 +35,84 @@ const useStyles = makeStyles({
             },
         }
     },
+    singleList: {
+        '&:hover': {
+            color: '#18C2BD',
+        },
+    },
     arrowIcon: {
         width: '20px',
         height: '20px',
         marginLeft: '-2px',
     },
+    menuWrap: {
+        position: 'relative',
+    },
+    menuText: {
+        display: 'flex',
+        alignItems: 'center',
+        cursor: 'pointer',
+        '&:hover': {
+            color: '#18C2BD',
+        }
+    },
 });
 
 function TopNav() {
     const classes = useStyles();
+    const [downMenuOpen, setDownMenuOpen] = useState(false);
+    const [myPageMenuOpen, setMyPageMenuOpen] = useState(false);
+    const [centerMenuOpen, setCenterMenuOpen] = useState(false);
+
+    const menuReset = () => {
+        setDownMenuOpen(false);
+        setMyPageMenuOpen(false);
+        setCenterMenuOpen(false);
+    }
+    const downMenuHandle = () => {
+        menuReset();
+        setDownMenuOpen(!downMenuOpen);
+    };
+    const myPageMenuHandle = () => {
+        menuReset();
+        setMyPageMenuOpen(!myPageMenuOpen);
+    };
+    const centerMenuHandle = () => {
+        menuReset();
+        setCenterMenuOpen(!centerMenuOpen);
+    };
+
     return (
         <div className={classes.topNavWrap}>
             <div className={classes.topNavInner}>
-                <div className={classes.downloadAppText}>
-                    배민찬 앱 다운로드<ArrowDropDownIcon className={classes.arrowIcon} />
+                <div className={classes.menuWrap}>
+                    <div className={classes.menuText} onClick={downMenuHandle}>
+                        배민찬 앱 다운로드<ArrowDropDownIcon className={classes.arrowIcon} />
+                    </div>
+                    {downMenuOpen && <TopNavMenuList menuList={['앱스토어', '구글플레이스토어']} />}
                 </div>
                 <ul className={classes.topNavMenu}>
-                    <li>로그인</li>
-                    <li>회원가입</li>
-                    <li>마이페이지<ArrowDropDownIcon className={classes.arrowIcon} /></li>
-                    <li>고객센터<ArrowDropDownIcon className={classes.arrowIcon} /></li>
-                    <li>새벽배송 지역검색</li>
-                    <li>이벤트 게시판</li>
-                    <li><strong>장바구니</strong></li>
+                    <li className={classes.singleList}>로그인</li>
+                    <li className={classes.singleList}>회원가입</li>
+                    <li>
+                        <div className={classes.menuWrap}>
+                            <div className={classes.menuText} onClick={myPageMenuHandle}>
+                                마이페이지<ArrowDropDownIcon className={classes.arrowIcon} />
+                            </div>
+                            {myPageMenuOpen && <TopNavMenuList menuList={['주문현황', '1:1문의', '교환/반품', '등급별혜택·쿠폰함', '포인트']} />}
+                        </div>
+                    </li>
+                    <li>
+                        <div className={classes.menuWrap}>
+                            <div className={classes.menuText} onClick={centerMenuHandle}>
+                                고객센터<ArrowDropDownIcon className={classes.arrowIcon} />
+                            </div>
+                            {centerMenuOpen && <TopNavMenuList menuList={['공지사항', '자주묻는 질문', '새벽배송안내', '정기배송안내']} />}
+                        </div>
+                    </li>
+                    <li className={classes.singleList}>새벽배송 지역검색</li>
+                    <li className={classes.singleList}>이벤트 게시판</li>
+                    <li className={classes.singleList}><strong>장바구니</strong></li>
                 </ul>
             </div>
         </div>

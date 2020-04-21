@@ -80,6 +80,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Search() {
     const classes = useStyles();
+
     return (
         <div className={classes.searchWrap}>
             <div className={classes.searchInner}>

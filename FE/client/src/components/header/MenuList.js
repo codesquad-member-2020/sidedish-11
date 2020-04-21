@@ -16,6 +16,7 @@ const useStyles = makeStyles({
         width: '150px',
         left: '-20px',
         border: '1px solid #b3b3b3',
+        zIndex: '-1',
         '& li': {
             height: '30px',
             cursor: 'pointer',
@@ -23,7 +24,7 @@ const useStyles = makeStyles({
     },
 });
 
-function Menu({ menuData }) {
+function MenuList({ menuData }) {
     const classes = useStyles();
     const menuList = menuData.map(menu => {
         return (
@@ -39,7 +40,8 @@ function Menu({ menuData }) {
             </li>
         )
     })
+
     return menuList;
 }
 
-export default Menu;
+export default MenuList;

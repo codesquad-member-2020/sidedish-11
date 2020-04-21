@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Menu from './Menu';
+import MenuList from './MenuList';
 import { menuData } from '../../mock/menuData';
 
 const useStyles = makeStyles({
@@ -10,6 +10,7 @@ const useStyles = makeStyles({
         backgroundColor: '#483F35',
         color: '#fff',
         fontSize: '15px',
+        zIndex: '5',
     },
     menuNavInner: {
         width: '65%',
@@ -19,16 +20,20 @@ const useStyles = makeStyles({
         justifyContent: 'space-between',
         '& li': {
             listStyle: 'none',
-        }
+        },
     },
+    menuList: {
+        zIndex: '1',
+    }
 });
 
 function MenuNav() {
     const classes = useStyles();
+
     return (
         <div className={classes.menuNavWrap}>
             <ul className={classes.menuNavInner}>
-                <Menu menuData={menuData} />
+                <MenuList className={classes.menuList} menuData={menuData} />
             </ul>
         </div>
     );
