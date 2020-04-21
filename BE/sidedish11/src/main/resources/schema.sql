@@ -14,7 +14,7 @@ CREATE TABLE item (
   title varchar (128),
   description varchar (256),
   n_price varchar (32),
-  p_price varchar (32),
+  s_price varchar (32),
   category int references category(id),
   category_key int
 );
