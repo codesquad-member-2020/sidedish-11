@@ -33,28 +33,28 @@ const useStyles = makeStyles({
                 borderRight: '0',
                 paddingRight: '0',
             },
-        }
-    },
-    singleList: {
-        '&:hover': {
-            color: '#18C2BD',
         },
-    },
-    arrowIcon: {
-        width: '20px',
-        height: '20px',
-        marginLeft: '-2px',
+        '& .singleList': {
+            '&:hover': {
+                color: '#18C2BD',
+            },
+        }
     },
     menuWrap: {
         position: 'relative',
-    },
-    menuText: {
-        display: 'flex',
-        alignItems: 'center',
-        cursor: 'pointer',
-        '&:hover': {
-            color: '#18C2BD',
-        }
+        '& .menuText': {
+            display: 'flex',
+            alignItems: 'center',
+            cursor: 'pointer',
+            '&:hover': {
+                color: '#18C2BD',
+            }
+        },
+        '& .arrowIcon': {
+            width: '20px',
+            height: '20px',
+            marginLeft: '-2px',
+        },
     },
 });
 
@@ -86,33 +86,34 @@ function TopNav() {
         <div className={classes.topNavWrap}>
             <div className={classes.topNavInner}>
                 <div className={classes.menuWrap}>
-                    <div className={classes.menuText} onClick={downMenuHandle}>
-                        배민찬 앱 다운로드<ArrowDropDownIcon className={classes.arrowIcon} />
+                    <div className='menuText' onClick={downMenuHandle}>
+                        배민찬 앱 다운로드<ArrowDropDownIcon className='arrowIcon' />
                     </div>
-                    {isOpenDownMenu && <TopNavMenuList menuList={['앱스토어', '구글플레이스토어']} />}
+                    {isOpenDownMenu && <TopNavMenuList contents={['앱스토어', '구글플레이스토어']} />}
                 </div>
+
                 <ul className={classes.topNavMenu}>
-                    <li className={classes.singleList}>로그인</li>
-                    <li className={classes.singleList}>회원가입</li>
+                    <li className='singleList'>로그인</li>
+                    <li className='singleList'>회원가입</li>
                     <li>
                         <div className={classes.menuWrap}>
-                            <div className={classes.menuText} onClick={myPageMenuHandle}>
-                                마이페이지<ArrowDropDownIcon className={classes.arrowIcon} />
+                            <div className='menuText' onClick={myPageMenuHandle}>
+                                마이페이지<ArrowDropDownIcon className='arrowIcon' />
                             </div>
-                            {isOpenMyPageMenu && <TopNavMenuList menuList={['주문현황', '1:1문의', '교환/반품', '등급별혜택·쿠폰함', '포인트']} />}
+                            {isOpenMyPageMenu && <TopNavMenuList contents={['주문현황', '1:1문의', '교환/반품', '등급별혜택·쿠폰함', '포인트']} />}
                         </div>
                     </li>
                     <li>
                         <div className={classes.menuWrap}>
-                            <div className={classes.menuText} onClick={centerMenuHandle}>
-                                고객센터<ArrowDropDownIcon className={classes.arrowIcon} />
+                            <div className='menuText' onClick={centerMenuHandle}>
+                                고객센터<ArrowDropDownIcon className='arrowIcon' />
                             </div>
-                            {isOpenCenterMenu && <TopNavMenuList menuList={['공지사항', '자주묻는 질문', '새벽배송안내', '정기배송안내']} />}
+                            {isOpenCenterMenu && <TopNavMenuList contents={['공지사항', '자주묻는 질문', '새벽배송안내', '정기배송안내']} />}
                         </div>
                     </li>
-                    <li className={classes.singleList}>새벽배송 지역검색</li>
-                    <li className={classes.singleList}>이벤트 게시판</li>
-                    <li className={classes.singleList}><strong>장바구니</strong></li>
+                    <li className='singleList'>새벽배송 지역검색</li>
+                    <li className='singleList'>이벤트 게시판</li>
+                    <li className='singleList'><strong>장바구니</strong></li>
                 </ul>
             </div>
         </div>

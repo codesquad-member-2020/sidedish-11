@@ -6,8 +6,7 @@ import { menuData } from '../../mock/menuData';
 const useStyles = makeStyles({
     menuNavWrap: {
         width: '100%',
-        height: '60px',
-        lineHeight: '55px',
+        lineHeight: '50px',
         backgroundColor: '#483F35',
         color: '#fff',
         fontSize: '15px',
@@ -22,15 +21,40 @@ const useStyles = makeStyles({
             listStyle: 'none',
         },
     },
+    menu: {
+        position: 'relative',
+        top: '5px',
+        width: '100px',
+        height: '60px',
+        textAlign: 'center',
+        cursor: 'pointer',
+        '&:hover': {
+            backgroundColor: '#fff',
+            color: '#18C2BD',
+            textDecoration: 'underline',
+        },
+        '& .title': {
+            display: 'inline-block',
+            fontSize: '16px',
+        },
+    },
 });
 
 function MenuNav() {
     const classes = useStyles();
+    const menuList = menuData.map(menu => {
+        return (
+            <li className={classes.menu} key={menu.id}>
+                <span className='title'>{menu.title}</span>
+                <MenuList contents={menu.contents} />
+            </li>
+        )
+    });
 
     return (
         <div className={classes.menuNavWrap}>
             <ul className={classes.menuNavInner}>
-                <MenuList menuData={menuData} />
+                {menuList}
             </ul>
         </div>
     );

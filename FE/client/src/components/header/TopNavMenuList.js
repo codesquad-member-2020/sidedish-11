@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
-    menu: {
+    contentsWrap: {
         position: 'absolute',
         top: '23px',
         left: '-10px',
@@ -12,7 +12,7 @@ const useStyles = makeStyles({
         padding: '7px 0',
         width: '150px',
     },
-    menuList: {
+    contents: {
         listStyle: 'none',
         padding: '5px 20px',
         margin: '0',
@@ -26,14 +26,14 @@ const useStyles = makeStyles({
     }
 });
 
-function TopNavMenuList({ menuList }) {
+function TopNavMenuList({ contents }) {
     const classes = useStyles();
 
     return (
-        <div className={classes.menu}>
+        <div className={classes.contentsWrap}>
             {
-                menuList.map((menu, idx) => {
-                    return <div key={idx} className={classes.menuList}>{menu}</div>
+                contents.map((content, idx) => {
+                    return <div key={idx} className={classes.contents}>{content}</div>
                 })
             }
         </div>

@@ -2,23 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
-    menu: {
-        position: 'relative',
-        top: '5px',
-        width: '100px',
-        height: '55px',
-        textAlign: 'center',
-        cursor: 'pointer',
-        '&:hover': {
-            backgroundColor: '#fff',
-            color: '#18C2BD',
-            textDecoration: 'underline',
-        },
-    },
-    title: {
-        display: 'inline-block',
-        fontSize: '16px',
-    },
     contents: {
         padding: '10px 0 10px 20px',
         position: 'absolute',
@@ -37,29 +20,23 @@ const useStyles = makeStyles({
                 backgroundColor: '#fff',
                 color: '#18C2BD',
                 textDecoration: 'underline',
-            }
+            },
         },
     },
 });
 
-function MenuList({ menuData }) {
+function MenuList({ contents }) {
     const classes = useStyles();
-    const menuList = menuData.map(menu => {
-        return (
-            <li className={classes.menu} key={menu.id}>
-                <span className={classes.title}>{menu.title}</span>
-                <ul className={classes.contents}>
-                    {
-                        menu.contents.map((content, idx) => {
-                            return <li key={idx}>{content}</li>
-                        })
-                    }
-                </ul>
-            </li>
-        )
-    })
 
-    return menuList;
+    return (
+        <ul className={classes.contents}>
+            {
+                contents.map((content, idx) => {
+                    return <li key={idx}>{content}</li>
+                })
+            }
+        </ul>
+    );
 }
 
 export default MenuList;

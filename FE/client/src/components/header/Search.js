@@ -15,23 +15,46 @@ const useStyles = makeStyles((theme) => ({
     },
     toolbar: {
         padding: '0',
-    },
-    titleImg: {
-        cursor: 'pointer',
-    },
-    searchBar: {
-        position: 'relative',
-        marginLeft: '30px',
-    },
-    searchBarIcon: {
-        padding: theme.spacing(0, 1),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: '#b3b3b3',
+        '& .logoImg': {
+            cursor: 'pointer',
+        },
+        '& .searchBar': {
+            position: 'relative',
+            marginLeft: '30px',
+        },
+        '& .searchBarIcon': {
+            padding: theme.spacing(0, 1),
+            height: '100%',
+            position: 'absolute',
+            pointerEvents: 'none',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#b3b3b3',
+        },
+        '& .eventItem': {
+            position: 'absolute',
+            display: 'flex',
+            right: '0',
+            '& .item': {
+                cursor: 'pointer',
+                marginRight: '40px',
+                '&:last-child': {
+                    marginRight: '0',
+                },
+                '& .topText': {
+                    color: '#18C2BD',
+                    fontWeight: '600',
+                    fontSize: '13px',
+                    marginBottom: '-6px',
+                },
+                '& .bottomText': {
+                    color: '#584e43',
+                    fontWeight: '600',
+                    fontSize: '26px',
+                }
+            },
+        },
     },
     inputRoot: {
         color: '#5a5a5a',
@@ -53,29 +76,6 @@ const useStyles = makeStyles((theme) => ({
             border: '1px solid #18C2BD',
         },
     },
-    eventItem: {
-        position: 'absolute',
-        display: 'flex',
-        right: '0',
-    },
-    item: {
-        cursor: 'pointer',
-        marginRight: '40px',
-        '&:last-child': {
-            marginRight: '0',
-        },
-    },
-    topText: {
-        color: '#18C2BD',
-        fontWeight: '600',
-        fontSize: '13px',
-        marginBottom: '-6px',
-    },
-    bottomText: {
-        color: '#584e43',
-        fontWeight: '600',
-        fontSize: '26px',
-    }
 }));
 
 function Search() {
@@ -85,9 +85,9 @@ function Search() {
         <div className={classes.searchWrap}>
             <div className={classes.searchInner}>
                 <Toolbar className={classes.toolbar}>
-                    <img className={classes.titleImg} src="https://web.archive.org/web/20190122062652im_/https://cdn.bmf.kr/web/common/bmc-logo.png" alt="배민찬 타이틀 이미지"></img>
-                    <div className={classes.searchBar}>
-                        <div className={classes.searchBarIcon}>
+                    <img className='logoImg' src="https://web.archive.org/web/20190122062652im_/https://cdn.bmf.kr/web/common/bmc-logo.png" alt="배민찬 타이틀 이미지"></img>
+                    <div className='searchBar'>
+                        <div className='searchBarIcon'>
                             <SearchIcon />
                         </div>
                         <InputBase
@@ -97,14 +97,14 @@ function Search() {
                             }}
                         />
                     </div>
-                    <div className={classes.eventItem}>
-                        <div className={classes.item}>
-                            <div className={classes.topText}>제일 잘 팔리는</div>
-                            <div className={classes.bottomText}>베스트</div>
+                    <div className='eventItem'>
+                        <div className='item'>
+                            <div className='topText'>제일 잘 팔리는</div>
+                            <div className='bottomText'>베스트</div>
                         </div>
-                        <div className={classes.item}>
-                            <div className={classes.topText}>놓치면 후회</div>
-                            <div className={classes.bottomText}>이벤트</div>
+                        <div className='item'>
+                            <div className='topText'>놓치면 후회</div>
+                            <div className='bottomText'>이벤트</div>
                         </div>
                     </div>
                 </Toolbar>
