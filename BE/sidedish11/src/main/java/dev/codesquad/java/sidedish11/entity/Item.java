@@ -4,7 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter @Setter
 public class Item {
@@ -18,7 +19,7 @@ public class Item {
     private String description;
     private String n_price;
     private String s_price;
-//    private List<String> badge;
+    private Set<Badge> badge = new HashSet<>();
 
     public Item() {
     }

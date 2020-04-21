@@ -13,3 +13,8 @@ VALUES ('SD003', 'http://image.url', '치아버터 빵 100g', '치아버터 빵 
 
 INSERT INTO item(detail_hash, image, alt, title, description, n_price, s_price, category)
 VALUES ('SD001', 'http://image.url', '고추바사삭 300g', '고추바사삭 300g', '배달시켜 먹으면 꿀맛', '12,000원', null, 1);
+
+INSERT INTO badge(name, item) VALUES ('이벤트특가', 1);
+INSERT INTO badge(name, item) VALUES ('론칭특가', 1);
+INSERT INTO badge(name, item) VALUES ('론칭특가', 2);
+INSERT INTO badge(name, item) VALUES ('이벤트특가', 3);
