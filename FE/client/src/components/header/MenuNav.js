@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuList from './MenuList';
 import { menuData } from '../../mock/menuData';
@@ -17,9 +17,6 @@ const useStyles = makeStyles({
         margin: '0 auto',
         display: 'flex',
         justifyContent: 'space-between',
-        '& li': {
-            listStyle: 'none',
-        },
     },
     menu: {
         position: 'relative',
@@ -37,22 +34,47 @@ const useStyles = makeStyles({
             display: 'inline-block',
             fontSize: '16px',
         },
+        '&:last-child': {
+            '& ul': {
+                right: '0',
+                padding: '10px 20px 10px 0',
+                textAlign: 'end'
+            }
+        },
     },
 });
 
 function MenuNav() {
     const classes = useStyles();
+    const defaultState = {
+        sidedish: false,
+        soups: false,
+        maindish: false,
+        forkids: false,
+        mealplan: false,
+        foreign: false,
+        snack: false,
+        brands: false,
+    }
+    const [isOpen, setOpen] = useState(defaultState);
+    const handleMouseEnter = (key) => {
+        setOpen({ ...defaultState, [key]: true });
+    }
+    const handleMouseLeave = () => {
+        setOpen({ ...defaultState });
+    }
+
     const menuList = menuData.map(menu => {
         return (
-            <li className={classes.menu} key={menu.id}>
+            <li onMouseEnter={() => { handleMouseEnter(menu.keyword) }} onMouseLeave={handleMouseLeave} className={classes.menu} key={menu.id}>
                 <span className='title'>{menu.title}</span>
-                <MenuList contents={menu.contents} />
+                {isOpen[menu.keyword] && <MenuList contents={menu.contents} />}
             </li>
         )
     });
 
     return (
-        <div className={classes.menuNavWrap}>
+        <div className={classes.menuNavWrap} onMouseLeave={handleMouseLeave} >
             <ul className={classes.menuNavInner}>
                 {menuList}
             </ul>
