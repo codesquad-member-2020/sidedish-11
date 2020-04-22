@@ -54,8 +54,8 @@ function TopNav() {
         customerCenter: false
     }
     const [isOpen, setOpen] = useState(defaultState);
-    const handleClick = (key) => {
-        setOpen({ ...defaultState, [key]: !isOpen[key] });
+    const handleClick = (keyword) => {
+        setOpen({ ...defaultState, [keyword]: !isOpen[keyword] });
     }
 
     return (

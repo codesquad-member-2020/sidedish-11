@@ -57,8 +57,8 @@ function MenuNav() {
         brands: false,
     }
     const [isOpen, setOpen] = useState(defaultState);
-    const handleMouseEnter = (key) => {
-        setOpen({ ...defaultState, [key]: true });
+    const handleMouseEnter = (keyword) => {
+        setOpen({ ...defaultState, [keyword]: true });
     }
     const handleMouseLeave = () => {
         setOpen({ ...defaultState });
