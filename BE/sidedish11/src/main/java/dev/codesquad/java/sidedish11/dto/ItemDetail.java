@@ -2,6 +2,7 @@ package dev.codesquad.java.sidedish11.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.codesquad.java.sidedish11.entity.Badge;
+import dev.codesquad.java.sidedish11.entity.DetailSection;
 import dev.codesquad.java.sidedish11.entity.Item;
 import dev.codesquad.java.sidedish11.entity.ThumbImage;
 import lombok.Getter;
@@ -38,6 +39,9 @@ public class ItemDetail {
 
         for (ThumbImage thumbImage : item.getThumbImages()) {
             thumbImagesStrings.add(thumbImage.getName());
+        }
+        for (DetailSection detailSection : item.getDetailSections()) {
+            detailSectionStrings.add(detailSection.getName());
         }
     }
 }

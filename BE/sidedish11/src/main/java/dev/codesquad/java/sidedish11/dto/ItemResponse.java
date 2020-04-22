@@ -39,7 +39,6 @@ public class ItemResponse {
         for (Badge badge : item.getBadges()) {
             badgeStrings.add(badge.getName());
         }
-
         for (DeliveryType deliveryType : item.getDeliveryTypes()) {
             deliveryTypeStrings.add(deliveryType.getName());
         }
