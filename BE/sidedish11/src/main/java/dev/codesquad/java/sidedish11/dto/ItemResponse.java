@@ -1,17 +1,15 @@
 package dev.codesquad.java.sidedish11.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.codesquad.java.sidedish11.entity.Badge;
 import dev.codesquad.java.sidedish11.entity.Item;
 import lombok.Getter;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
-@Getter @Setter
+@Getter
 public class ItemResponse {
-    @Id
     private Long id;
     private String detail_hash;
     private String image;
@@ -21,7 +19,8 @@ public class ItemResponse {
     private String n_price;
     private String s_price;
 //    private List<String> delivery_type;
-//    private Set<Badge> badge = new HashSet<>();
+    @JsonProperty("badge")
+    private List<String> badgeStrings = new ArrayList<>();
 
     public ItemResponse(Item item) {
         this.id = item.getId();
@@ -32,5 +31,10 @@ public class ItemResponse {
         this.description = item.getDescription();
         this.n_price = item.getNormalPrice();
         this.s_price = item.getSalePrice();
+
+        for (Badge badge : item.getBadges()) {
+            badgeStrings.add(badge.getName());
+        }
+
     }
 }
