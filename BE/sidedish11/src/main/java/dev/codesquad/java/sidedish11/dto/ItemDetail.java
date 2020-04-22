@@ -30,5 +30,9 @@ public class ItemDetail {
         this.point = item.getPoint();
         this.delivery_info = item.getDeliveryInfo();
         this.delivery_fee = item.getDeliveryFee();
+
+        this.pricesStrings.add(item.getNormalPrice());
+        this.pricesStrings.add(item.getSalePrice());
+
     }
 }
