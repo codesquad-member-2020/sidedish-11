@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TopNavPopupList from './TopNavPopupList';
+import TopNavPopupSubList from './TopNavPopupSubList';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -33,7 +33,7 @@ function TopNavPopup({ title, contents }) {
                 <div className='menuText' onClick={handleClick}>
                     {title}<ArrowDropDownIcon className='arrowIcon' />
                 </div>
-                {isOpen && <TopNavPopupList contents={contents} />}
+                {isOpen && <TopNavPopupSubList contents={contents} />}
             </div>
         </>
     );

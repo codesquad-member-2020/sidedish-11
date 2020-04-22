@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MenuList from './MenuList';
+import MenusSubList from './MenusSubList';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -41,7 +41,7 @@ function Menus({ id, title, contents }) {
             className={classes.menu}
             key={id}>
             <span className='title'>{title}</span>
-            {isOpen && <MenuList contents={contents} />}
+            {isOpen && <MenusSubList contents={contents} />}
         </li>
     );
 }

@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     },
 });
 
-function MenuList({ contents }) {
+function MenusSubList({ contents }) {
     const classes = useStyles();
 
     return (
@@ -39,4 +39,4 @@ function MenuList({ contents }) {
     );
 }
 
-export default MenuList;
+export default MenusSubList;

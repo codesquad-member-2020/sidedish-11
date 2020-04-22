@@ -26,7 +26,7 @@ const useStyles = makeStyles({
     }
 });
 
-function TopNavPopupList({ contents }) {
+function TopNavPopupSubList({ contents }) {
     const classes = useStyles();
 
     return (
@@ -40,4 +40,4 @@ function TopNavPopupList({ contents }) {
     );
 }
 
-export default TopNavPopupList;
+export default TopNavPopupSubList;
