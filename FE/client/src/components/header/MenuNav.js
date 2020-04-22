@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Menus from './Menus';
 import { makeStyles } from '@material-ui/core/styles';
-import MenuList from './MenuList';
 import { menuData } from '../../mock/menuData';
 
 const useStyles = makeStyles({
@@ -18,67 +18,16 @@ const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'space-between',
     },
-    menu: {
-        position: 'relative',
-        top: '5px',
-        width: '100px',
-        height: '60px',
-        textAlign: 'center',
-        cursor: 'pointer',
-        '&:hover': {
-            backgroundColor: '#fff',
-            color: '#18C2BD',
-            textDecoration: 'underline',
-        },
-        '& .title': {
-            display: 'inline-block',
-            fontSize: '16px',
-        },
-        '&:last-child': {
-            '& ul': {
-                right: '0',
-                padding: '10px 20px 10px 0',
-                textAlign: 'end'
-            }
-        },
-    },
 });
 
 function MenuNav() {
     const classes = useStyles();
-    const defaultState = {
-        sidedish: false,
-        soups: false,
-        maindish: false,
-        forkids: false,
-        mealplan: false,
-        foreign: false,
-        snack: false,
-        brands: false,
-    }
-    const [isOpen, setOpen] = useState(defaultState);
-    const handleMouseEnter = (keyword) => {
-        setOpen({ ...defaultState, [keyword]: true });
-    }
-    const handleMouseLeave = () => {
-        setOpen({ ...defaultState });
-    }
-
-    const menuList = menuData.map(menu => {
-        return (
-            <li onMouseEnter={() => { handleMouseEnter(menu.keyword) }}
-                onMouseLeave={handleMouseLeave}
-                className={classes.menu} key={menu.id}>
-                <span className='title'>{menu.title}</span>
-                {isOpen[menu.keyword] && <MenuList contents={menu.contents} />}
-            </li>
-        )
-    });
+    const menus = menuData.map(menu => <Menus id={menu.id} title={menu.title} contents={menu.contents} />);
 
     return (
-        <div className={classes.menuNavWrap} onMouseLeave={handleMouseLeave}>
+        <div className={classes.menuNavWrap}>
             <ul className={classes.menuNavInner}>
-                {menuList}
+                {menus}
             </ul>
         </div>
     );
