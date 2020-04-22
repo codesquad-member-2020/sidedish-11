@@ -1,5 +1,7 @@
 package dev.codesquad.java.sidedish11.controller;
 
+import dev.codesquad.java.sidedish11.dto.ItemResponse;
+import dev.codesquad.java.sidedish11.entity.Item;
 import dev.codesquad.java.sidedish11.service.CategoryService;
 import dev.codesquad.java.sidedish11.service.ItemService;
 import org.slf4j.Logger;
@@ -28,5 +30,12 @@ public class ApiHomeController {
     @GetMapping("/item")
     public ResponseEntity viewAllItems() {
         return new ResponseEntity(itemService.viewAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/test")
+    public ResponseEntity test() {
+        Item item = itemService.view(1L);
+        ItemResponse itemResponse = new ItemResponse(item);
+        return new ResponseEntity(itemResponse, HttpStatus.OK);
     }
 }

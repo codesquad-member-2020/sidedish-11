@@ -21,4 +21,43 @@ public class Item {
     public Item() {
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getNormalPrice() {
+        return normalPrice;
+    }
+
+    public String getSalePrice() {
+        return salePrice;
+    }
+
+    public String getPoint() {
+        return point;
+    }
+
+    public String getDeliveryInfo() {
+        return deliveryInfo;
+    }
+
+    public String getDeliveryFee() {
+        return deliveryFee;
+    }
 }
