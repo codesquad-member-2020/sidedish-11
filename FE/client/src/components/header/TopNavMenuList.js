@@ -13,12 +13,12 @@ const useStyles = makeStyles({
         width: '150px',
     },
     contents: {
-        listStyle: 'none',
         padding: '5px 20px',
         margin: '0',
         cursor: 'pointer',
         border: 'none',
         height: '23px',
+        lineHeight: '23px',
         '&:hover': {
             color: '#18C2BD',
             textDecoration: 'underline',

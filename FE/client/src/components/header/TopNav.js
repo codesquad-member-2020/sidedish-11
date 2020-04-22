@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import TopNavMenuList from './TopNavMenuList';
+import TopNavMenu from './TopNavMenu';
 import { makeStyles } from '@material-ui/core/styles';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import { topNavData } from '../../mock/topNavData';
 
 const useStyles = makeStyles({
     topNavWrap: {
@@ -12,6 +12,7 @@ const useStyles = makeStyles({
     },
     topNavInner: {
         width: '65%',
+        height: '37px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -20,7 +21,6 @@ const useStyles = makeStyles({
     topNavMenu: {
         cursor: 'pointer',
         display: 'flex',
-        listStyle: 'none',
         '& li': {
             display: 'flex',
             alignItems: 'center',
@@ -38,78 +38,38 @@ const useStyles = makeStyles({
             '&:hover': {
                 color: '#18C2BD',
             },
+        },
+        '& strong': {
+            fontWeight: '600',
         }
-    },
-    menuWrap: {
-        position: 'relative',
-        '& .menuText': {
-            display: 'flex',
-            alignItems: 'center',
-            cursor: 'pointer',
-            '&:hover': {
-                color: '#18C2BD',
-            }
-        },
-        '& .arrowIcon': {
-            width: '20px',
-            height: '20px',
-            marginLeft: '-2px',
-        },
     },
 });
 
 function TopNav() {
     const classes = useStyles();
-    const [isOpenDownMenu, setDownMenu] = useState(false);
-    const [isOpenMyPageMenu, setMyPageMenu] = useState(false);
-    const [isOpenCenterMenu, setCenterMenu] = useState(false);
-
-    const menuReset = () => {
-        setDownMenu(false);
-        setMyPageMenu(false);
-        setCenterMenu(false);
+    const { downloadApp, myPage, customerCenter } = topNavData;
+    const defaultState = {
+        downloadApp: false,
+        myPage: false,
+        customerCenter: false
     }
-    const downMenuHandle = () => {
-        menuReset();
-        setDownMenu(!isOpenDownMenu);
-    };
-    const myPageMenuHandle = () => {
-        menuReset();
-        setMyPageMenu(!isOpenMyPageMenu);
-    };
-    const centerMenuHandle = () => {
-        menuReset();
-        setCenterMenu(!isOpenCenterMenu);
-    };
+    const [isOpen, setOpen] = useState(defaultState);
+    const handleClick = (key) => {
+        setOpen({ ...defaultState, [key]: !isOpen[key] });
+    }
 
     return (
         <div className={classes.topNavWrap}>
             <div className={classes.topNavInner}>
-                <div className={classes.menuWrap}>
-                    <div className='menuText' onClick={downMenuHandle}>
-                        배민찬 앱 다운로드<ArrowDropDownIcon className='arrowIcon' />
-                    </div>
-                    {isOpenDownMenu && <TopNavMenuList contents={['앱스토어', '구글플레이스토어']} />}
-                </div>
-
+                <TopNavMenu title={downloadApp.title} contents={downloadApp.contents} handleClick={() => handleClick(downloadApp.keyword)} trigger={isOpen.downloadApp} />
                 <ul className={classes.topNavMenu}>
                     <li className='singleList'>로그인</li>
                     <li className='singleList'>회원가입</li>
                     <li>
-                        <div className={classes.menuWrap}>
-                            <div className='menuText' onClick={myPageMenuHandle}>
-                                마이페이지<ArrowDropDownIcon className='arrowIcon' />
-                            </div>
-                            {isOpenMyPageMenu && <TopNavMenuList contents={['주문현황', '1:1문의', '교환/반품', '등급별혜택·쿠폰함', '포인트']} />}
-                        </div>
+                        <TopNavMenu title={myPage.title} contents={myPage.contents} handleClick={() => handleClick(myPage.keyword)} trigger={isOpen.myPage} />
                     </li>
                     <li>
-                        <div className={classes.menuWrap}>
-                            <div className='menuText' onClick={centerMenuHandle}>
-                                고객센터<ArrowDropDownIcon className='arrowIcon' />
-                            </div>
-                            {isOpenCenterMenu && <TopNavMenuList contents={['공지사항', '자주묻는 질문', '새벽배송안내', '정기배송안내']} />}
-                        </div>
+                        <TopNavMenu title={customerCenter.title} contents={customerCenter.contents} handleClick={() => handleClick(customerCenter.keyword)} trigger={isOpen.customerCenter} />
                     </li>
                     <li className='singleList'>새벽배송 지역검색</li>
                     <li className='singleList'>이벤트 게시판</li>
