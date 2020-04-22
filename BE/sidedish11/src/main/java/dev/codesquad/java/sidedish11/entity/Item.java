@@ -26,6 +26,7 @@ public class Item {
     private Set<Badge> badges = new HashSet<>();
     private Set<DeliveryType> deliveryTypes = new HashSet<>();
     private List<ThumbImage> thumbImages = new ArrayList<>();
+    private List<DetailSection> detailSections = new ArrayList<>();
 
     public Item() {
     }
@@ -80,5 +81,9 @@ public class Item {
 
     public List<ThumbImage> getThumbImages() {
         return thumbImages;
+    }
+
+    public List<DetailSection> getDetailSections() {
+        return detailSections;
     }
 }

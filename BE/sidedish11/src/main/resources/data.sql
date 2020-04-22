@@ -28,3 +28,8 @@ INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage1.url', 
 INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage2.url', 1, 1);
 INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage3.url', 2, 0);
 INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage4.url', 3, 0);
+
+INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection1.url', 1, 0);
+INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection2.url', 1, 1);
+INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection3.url', 2, 0);
+INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection4.url', 3, 0);
