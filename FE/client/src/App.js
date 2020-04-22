@@ -1,6 +1,7 @@
 import React from 'react';
 import SidedishHeader from './components/header/SidedishHeader';
-import './App.css';
+import './style/reset.css';
+import './style/App.css';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 
