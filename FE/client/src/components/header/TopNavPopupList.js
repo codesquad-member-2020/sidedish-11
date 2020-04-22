@@ -26,7 +26,7 @@ const useStyles = makeStyles({
     }
 });
 
-function TopNavMenuList({ contents }) {
+function TopNavPopupList({ contents }) {
     const classes = useStyles();
 
     return (
@@ -40,4 +40,4 @@ function TopNavMenuList({ contents }) {
     );
 }
 
-export default TopNavMenuList;
+export default TopNavPopupList;

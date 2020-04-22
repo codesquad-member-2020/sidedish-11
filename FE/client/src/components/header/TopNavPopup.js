@@ -1,5 +1,5 @@
 import React from 'react';
-import TopNavMenuList from './TopNavMenuList';
+import TopNavPopupList from './TopNavPopupList';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
     },
 });
 
-function TopNavMenu({ title, contents, handleClick, trigger }) {
+function TopNavPopup({ title, contents, handleClick, trigger }) {
     const classes = useStyles();
 
     return (
@@ -31,10 +31,10 @@ function TopNavMenu({ title, contents, handleClick, trigger }) {
                 <div className='menuText' onClick={handleClick}>
                     {title}<ArrowDropDownIcon className='arrowIcon' />
                 </div>
-                {trigger && <TopNavMenuList contents={contents} />}
+                {trigger && <TopNavPopupList contents={contents} />}
             </div>
         </>
     );
 }
 
-export default TopNavMenu;
+export default TopNavPopup;
