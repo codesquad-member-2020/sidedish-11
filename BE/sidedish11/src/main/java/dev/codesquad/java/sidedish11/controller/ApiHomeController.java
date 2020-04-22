@@ -1,5 +1,6 @@
 package dev.codesquad.java.sidedish11.controller;
 
+import dev.codesquad.java.sidedish11.dto.ItemDetail;
 import dev.codesquad.java.sidedish11.dto.ItemResponse;
 import dev.codesquad.java.sidedish11.entity.Item;
 import dev.codesquad.java.sidedish11.service.CategoryService;
@@ -37,5 +38,12 @@ public class ApiHomeController {
         Item item = itemService.view(1L);
         ItemResponse itemResponse = new ItemResponse(item);
         return new ResponseEntity(itemResponse, HttpStatus.OK);
+    }
+
+    @GetMapping("/detail")
+    public ResponseEntity detail() {
+        Item item = itemService.view(1L);
+        ItemDetail itemDetail = new ItemDetail(item);
+        return new ResponseEntity(itemDetail, HttpStatus.OK);
     }
 }
