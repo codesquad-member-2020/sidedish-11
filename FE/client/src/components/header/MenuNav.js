@@ -66,7 +66,9 @@ function MenuNav() {
 
     const menuList = menuData.map(menu => {
         return (
-            <li onMouseEnter={() => { handleMouseEnter(menu.keyword) }} onMouseLeave={handleMouseLeave} className={classes.menu} key={menu.id}>
+            <li onMouseEnter={() => { handleMouseEnter(menu.keyword) }}
+                onMouseLeave={handleMouseLeave}
+                className={classes.menu} key={menu.id}>
                 <span className='title'>{menu.title}</span>
                 {isOpen[menu.keyword] && <MenuList contents={menu.contents} />}
             </li>
@@ -74,7 +76,7 @@ function MenuNav() {
     });
 
     return (
-        <div className={classes.menuNavWrap} onMouseLeave={handleMouseLeave} >
+        <div className={classes.menuNavWrap} onMouseLeave={handleMouseLeave}>
             <ul className={classes.menuNavInner}>
                 {menuList}
             </ul>

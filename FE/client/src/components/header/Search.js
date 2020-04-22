@@ -85,7 +85,9 @@ function Search() {
         <div className={classes.searchWrap}>
             <div className={classes.searchInner}>
                 <Toolbar className={classes.toolbar}>
-                    <img className='logoImg' src="https://web.archive.org/web/20190122062652im_/https://cdn.bmf.kr/web/common/bmc-logo.png" alt="배민찬 타이틀 로고"></img>
+                    <img className='logoImg'
+                        src="https://web.archive.org/web/20190122062652im_/https://cdn.bmf.kr/web/common/bmc-logo.png"
+                        alt="배민찬 타이틀 로고"></img>
                     <div className='searchBar'>
                         <div className='searchBarIcon'>
                             <SearchIcon />

@@ -61,15 +61,27 @@ function TopNav() {
     return (
         <div className={classes.topNavWrap}>
             <div className={classes.topNavInner}>
-                <TopNavPopup title={downloadApp.title} contents={downloadApp.contents} handleClick={() => handleClick(downloadApp.keyword)} trigger={isOpen.downloadApp} />
+                <TopNavPopup
+                    title={downloadApp.title}
+                    contents={downloadApp.contents}
+                    handleClick={() => handleClick(downloadApp.keyword)}
+                    trigger={isOpen.downloadApp} />
                 <ul className={classes.topNavList}>
                     <li className='singleList'>로그인</li>
                     <li className='singleList'>회원가입</li>
                     <li>
-                        <TopNavPopup title={myPage.title} contents={myPage.contents} handleClick={() => handleClick(myPage.keyword)} trigger={isOpen.myPage} />
+                        <TopNavPopup
+                            title={myPage.title}
+                            contents={myPage.contents}
+                            handleClick={() => handleClick(myPage.keyword)}
+                            trigger={isOpen.myPage} />
                     </li>
                     <li>
-                        <TopNavPopup title={customerCenter.title} contents={customerCenter.contents} handleClick={() => handleClick(customerCenter.keyword)} trigger={isOpen.customerCenter} />
+                        <TopNavPopup
+                            title={customerCenter.title}
+                            contents={customerCenter.contents}
+                            handleClick={() => handleClick(customerCenter.keyword)}
+                            trigger={isOpen.customerCenter} />
                     </li>
                     <li className='singleList'>새벽배송 지역검색</li>
                     <li className='singleList'>이벤트 게시판</li>
