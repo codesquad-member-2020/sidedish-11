@@ -1,7 +1,9 @@
 package dev.codesquad.java.sidedish11.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import dev.codesquad.java.sidedish11.entity.Badge;
 import dev.codesquad.java.sidedish11.entity.Item;
+import dev.codesquad.java.sidedish11.entity.ThumbImage;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -34,5 +36,8 @@ public class ItemDetail {
         this.pricesStrings.add(item.getNormalPrice());
         this.pricesStrings.add(item.getSalePrice());
 
+        for (ThumbImage thumbImage : item.getThumbImages()) {
+            thumbImagesStrings.add(thumbImage.getName());
+        }
     }
 }

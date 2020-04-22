@@ -36,5 +36,6 @@ CREATE TABLE IF NOT EXISTS delivery_type (
 CREATE TABLE IF NOT EXISTS thumb_image (
     id int auto_increment,
     name varchar (32),
-    item int references item(id)
+    item int references item(id),
+    item_key int
 );

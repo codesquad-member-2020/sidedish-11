@@ -24,7 +24,7 @@ INSERT INTO delivery_type(name, item) VALUES ('전국택배', 1);
 INSERT INTO delivery_type(name, item) VALUES ('새벽배송', 2);
 INSERT INTO delivery_type(name, item) VALUES ('전국택배', 3);
 
-INSERT INTO thumb_image(name, item) VALUES ('http://thumbImage1.url', 1);
-INSERT INTO thumb_image(name, item) VALUES ('http://thumbImage2.url', 1);
-INSERT INTO thumb_image(name, item) VALUES ('http://thumbImage3.url', 2);
-INSERT INTO thumb_image(name, item) VALUES ('http://thumbImage4.url', 3);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage1.url', 1, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage2.url', 1, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage3.url', 2, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage4.url', 3, 0);
