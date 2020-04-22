@@ -1,5 +1,6 @@
 package dev.codesquad.java.sidedish11.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.codesquad.java.sidedish11.entity.Badge;
 import dev.codesquad.java.sidedish11.entity.DetailSection;
@@ -12,6 +13,8 @@ import java.util.List;
 
 @Getter
 public class ItemDetail {
+    @JsonIgnore
+    private String hash;
     private String top_image;
     private String product_description;
     private String point;
@@ -28,6 +31,7 @@ public class ItemDetail {
     private List<String> detailSectionStrings = new ArrayList<>();
 
     public ItemDetail(Item item) {
+        this.hash = item.getHash();
         this.top_image = item.getImage();
         this.product_description = item.getDescription();
         this.point = item.getPoint();
@@ -43,5 +47,9 @@ public class ItemDetail {
         for (DetailSection detailSection : item.getDetailSections()) {
             detailSectionStrings.add(detailSection.getName());
         }
+    }
+
+    public String getHash() {
+        return hash;
     }
 }

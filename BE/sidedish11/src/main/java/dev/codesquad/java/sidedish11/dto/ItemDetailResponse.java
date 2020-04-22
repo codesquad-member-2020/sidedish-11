@@ -7,8 +7,8 @@ public class ItemDetailResponse {
     private String hash;
     private ItemDetail data;
 
-    public ItemDetailResponse(String hash, ItemDetail data) {
-        this.hash = hash;
+    public ItemDetailResponse(ItemDetail data) {
+        this.hash = data.getHash();
         this.data = data;
     }
 }
