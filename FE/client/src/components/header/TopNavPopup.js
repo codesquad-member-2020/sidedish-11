@@ -25,17 +25,16 @@ const useStyles = makeStyles({
 function TopNavPopup({ title, contents }) {
     const classes = useStyles();
     const [isOpen, setOpen] = useState(false);
-    const handleClick = () => setOpen(!isOpen);
+    const handleClick = () => setOpen(true);
+    const handleMouseLeave = () => setOpen(false);
 
     return (
-        <>
-            <div className={classes.menuWrap}>
-                <div className='menuText' onClick={handleClick}>
-                    {title}<ArrowDropDownIcon className='arrowIcon' />
-                </div>
-                {isOpen && <TopNavPopupSubList contents={contents} />}
+        <div className={classes.menuWrap} onClick={handleClick} onMouseLeave={handleMouseLeave}>
+            <div className='menuText'>
+                {title}<ArrowDropDownIcon className='arrowIcon' />
             </div>
-        </>
+            {isOpen && <TopNavPopupSubList contents={contents} />}
+        </div>
     );
 }
 

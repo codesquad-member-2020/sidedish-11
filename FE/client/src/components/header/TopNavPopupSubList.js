@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
     contentsWrap: {
         position: 'absolute',
-        top: '23px',
+        top: '21px',
         left: '-10px',
         zIndex: '2',
         backgroundColor: '#fff',
