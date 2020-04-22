@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TopNavPopupList from './TopNavPopupList';
-import { makeStyles } from '@material-ui/core/styles';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     menuWrap: {
@@ -22,8 +22,10 @@ const useStyles = makeStyles({
     },
 });
 
-function TopNavPopup({ title, contents, handleClick, trigger }) {
+function TopNavPopup({ title, contents }) {
     const classes = useStyles();
+    const [isOpen, setOpen] = useState(false);
+    const handleClick = () => setOpen(!isOpen);
 
     return (
         <>
@@ -31,7 +33,7 @@ function TopNavPopup({ title, contents, handleClick, trigger }) {
                 <div className='menuText' onClick={handleClick}>
                     {title}<ArrowDropDownIcon className='arrowIcon' />
                 </div>
-                {trigger && <TopNavPopupList contents={contents} />}
+                {isOpen && <TopNavPopupList contents={contents} />}
             </div>
         </>
     );

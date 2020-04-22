@@ -38,7 +38,8 @@ function Menus({ id, title, contents }) {
     return (
         <li onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className={classes.menu} key={id}>
+            className={classes.menu}
+            key={id}>
             <span className='title'>{title}</span>
             {isOpen && <MenuList contents={contents} />}
         </li>

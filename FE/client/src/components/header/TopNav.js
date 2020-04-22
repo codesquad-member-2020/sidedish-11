@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TopNavPopup from './TopNavPopup';
 import { makeStyles } from '@material-ui/core/styles';
 import { topNavData } from '../../mock/topNavData';
@@ -48,40 +48,19 @@ const useStyles = makeStyles({
 function TopNav() {
     const classes = useStyles();
     const { downloadApp, myPage, customerCenter } = topNavData;
-    const defaultState = {
-        downloadApp: false,
-        myPage: false,
-        customerCenter: false,
-    }
-    const [isOpen, setOpen] = useState(defaultState);
-    const handleClick = (keyword) => {
-        setOpen({ ...defaultState, [keyword]: !isOpen[keyword] });
-    }
 
     return (
         <div className={classes.topNavWrap}>
             <div className={classes.topNavInner}>
-                <TopNavPopup
-                    title={downloadApp.title}
-                    contents={downloadApp.contents}
-                    handleClick={() => handleClick(downloadApp.keyword)}
-                    trigger={isOpen.downloadApp} />
+                <TopNavPopup title={downloadApp.title} contents={downloadApp.contents} />
                 <ul className={classes.topNavList}>
                     <li className='singleList'>로그인</li>
                     <li className='singleList'>회원가입</li>
                     <li>
-                        <TopNavPopup
-                            title={myPage.title}
-                            contents={myPage.contents}
-                            handleClick={() => handleClick(myPage.keyword)}
-                            trigger={isOpen.myPage} />
+                        <TopNavPopup title={myPage.title} contents={myPage.contents} />
                     </li>
                     <li>
-                        <TopNavPopup
-                            title={customerCenter.title}
-                            contents={customerCenter.contents}
-                            handleClick={() => handleClick(customerCenter.keyword)}
-                            trigger={isOpen.customerCenter} />
+                        <TopNavPopup title={customerCenter.title} contents={customerCenter.contents} />
                     </li>
                     <li className='singleList'>새벽배송 지역검색</li>
                     <li className='singleList'>이벤트 게시판</li>
