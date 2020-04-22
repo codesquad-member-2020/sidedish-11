@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 
 function MenuNav() {
     const classes = useStyles();
-    const menus = menuData.map(menu => <Menus id={menu.id} title={menu.title} contents={menu.contents} />);
+    const menus = menuData.map(menu => <Menus id={menu.id} key={menu.id} title={menu.title} contents={menu.contents} />);
 
     return (
         <div className={classes.menuNavWrap}>
