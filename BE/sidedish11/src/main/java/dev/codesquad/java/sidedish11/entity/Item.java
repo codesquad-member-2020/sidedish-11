@@ -4,7 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter @Setter
@@ -23,6 +25,7 @@ public class Item {
 
     private Set<Badge> badges = new HashSet<>();
     private Set<DeliveryType> deliveryTypes = new HashSet<>();
+    private List<ThumbImage> thumbImages = new ArrayList<>();
 
     public Item() {
     }
@@ -73,5 +76,9 @@ public class Item {
 
     public Set<DeliveryType> getDeliveryTypes() {
         return deliveryTypes;
+    }
+
+    public List<ThumbImage> getThumbImages() {
+        return thumbImages;
     }
 }
