@@ -26,3 +26,9 @@ CREATE TABLE IF NOT EXISTS badge (
     name varchar (32),
     item int references item(id)
 );
+
+CREATE TABLE IF NOT EXISTS delivery_type (
+    id int auto_increment,
+    name varchar (32),
+    item int references item(id)
+);

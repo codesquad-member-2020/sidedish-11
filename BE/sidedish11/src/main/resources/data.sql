@@ -18,3 +18,9 @@ INSERT INTO badge(name, item) VALUES ('이벤트특가', 1);
 INSERT INTO badge(name, item) VALUES ('론칭특가', 1);
 INSERT INTO badge(name, item) VALUES ('론칭특가', 2);
 INSERT INTO badge(name, item) VALUES ('이벤트특가', 3);
+
+INSERT INTO delivery_type(name, item) VALUES ('새벽배송', 1);
+INSERT INTO delivery_type(name, item) VALUES ('전국택배', 1);
+INSERT INTO delivery_type(name, item) VALUES ('새벽배송', 2);
+INSERT INTO delivery_type(name, item) VALUES ('전국택배', 3);
+
