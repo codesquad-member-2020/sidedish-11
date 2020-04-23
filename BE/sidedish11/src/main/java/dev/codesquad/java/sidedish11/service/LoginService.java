@@ -1,15 +1,19 @@
 package dev.codesquad.java.sidedish11.service;
 
 import dev.codesquad.java.sidedish11.oauth.Github;
+import dev.codesquad.java.sidedish11.oauth.GithubUser;
 import dev.codesquad.java.sidedish11.oauth.RequestBody;
 import dev.codesquad.java.sidedish11.oauth.RequestHeader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import static dev.codesquad.java.sidedish11.common.CommonUtils.*;
@@ -31,6 +35,15 @@ public class LoginService {
         RequestHeader requestHeader = new RequestHeader();
         HttpEntity httpEntity = new HttpEntity(requestBody, requestHeader.getHeaders());
         ResponseEntity<Github> responseEntity = new RestTemplate().postForEntity(GITHUB_ACCESS_TOKEN_URL, httpEntity, Github.class);
+        return responseEntity.getBody();
+    }
+
+    @Transactional
+    public GithubUser requestUserId(String authorization) {
+        MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+        headers.set(AUTHORIZATION, authorization);
+        HttpEntity httpEntity = new HttpEntity(headers);
+        ResponseEntity<GithubUser> responseEntity = new RestTemplate().exchange(GITHUB_USER_INFO_URL, HttpMethod.GET, httpEntity, GithubUser.class);
         return responseEntity.getBody();
     }
 }
