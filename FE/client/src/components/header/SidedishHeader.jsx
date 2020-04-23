@@ -5,11 +5,11 @@ import MenuNav from './Menu/MenuNav';
 
 function SidedishHeader() {
     return (
-        <>
+        <div>
             <TopNav />
             <Search />
             <MenuNav />
-        </>
+        </div>
     );
 }
 
