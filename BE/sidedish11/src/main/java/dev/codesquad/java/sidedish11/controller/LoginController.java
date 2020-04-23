@@ -19,7 +19,6 @@ public class LoginController {
 
     @GetMapping("/callback")
     public ResponseEntity oauth(@PathParam("code") String code) {
-        logger.info(">>> code : {}", code);
         String result = loginService.requestAccessToken(code);
         return ResponseEntity.ok(result);
     }
