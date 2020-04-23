@@ -25,7 +25,7 @@ const useStyles = makeStyles({
 function TopNavPopup({ title, contents }) {
     const classes = useStyles();
     const [isOpen, setOpen] = useState(false);
-    const handleClick = () => setOpen(true);
+    const handleClick = () => setOpen(!isOpen);
     const handleMouseLeave = () => setOpen(false);
 
     return (
