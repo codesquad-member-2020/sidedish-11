@@ -26,7 +26,7 @@ public class ApiHomeController {
     @Autowired
     private ItemService itemService;
 
-    @GetMapping("/")
+    @GetMapping("/category")
     public ResponseEntity viewAll() {
         return new ResponseEntity(categoryService.viewAll(), HttpStatus.OK);
     }
