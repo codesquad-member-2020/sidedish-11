@@ -1,5 +1,6 @@
 package dev.codesquad.java.sidedish11.service;
 
+import dev.codesquad.java.sidedish11.oauth.Github;
 import dev.codesquad.java.sidedish11.oauth.RequestBody;
 import dev.codesquad.java.sidedish11.oauth.RequestHeader;
 import org.slf4j.Logger;
@@ -24,12 +25,12 @@ public class LoginService {
     private String GITHUB_CLIENT_SECRET;
 
     @Transactional
-    public String requestAccessToken(String code) {
+    public Github requestAccessToken(String code) {
         logger.debug(">>> authorization code : {}, id : {} , secret : {}", code, GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET);
         RequestBody requestBody = new RequestBody(GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, code);
         RequestHeader requestHeader = new RequestHeader();
         HttpEntity httpEntity = new HttpEntity(requestBody, requestHeader.getHeaders());
-        ResponseEntity<String> responseEntity = new RestTemplate().postForEntity(GITHUB_ACCESS_TOKEN_URL, httpEntity, String.class);
+        ResponseEntity<Github> responseEntity = new RestTemplate().postForEntity(GITHUB_ACCESS_TOKEN_URL, httpEntity, Github.class);
         return responseEntity.getBody();
     }
 }

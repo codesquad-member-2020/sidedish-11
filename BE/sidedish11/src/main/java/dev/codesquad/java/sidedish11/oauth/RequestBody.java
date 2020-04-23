@@ -2,7 +2,6 @@ package dev.codesquad.java.sidedish11.oauth;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 public class RequestBody {

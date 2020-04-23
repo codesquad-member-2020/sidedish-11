@@ -1,5 +1,6 @@
 package dev.codesquad.java.sidedish11.controller;
 
+import dev.codesquad.java.sidedish11.oauth.Github;
 import dev.codesquad.java.sidedish11.service.LoginService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,9 +18,9 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @GetMapping("/callback")
+    @GetMapping("/login")
     public ResponseEntity oauth(@PathParam("code") String code) {
-        String result = loginService.requestAccessToken(code);
-        return ResponseEntity.ok(result);
+        Github github = loginService.requestAccessToken(code);
+        return ResponseEntity.ok(github);
     }
 }
