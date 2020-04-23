@@ -1,7 +1,7 @@
 import React from 'react';
-import TopNav from './TopNav';
-import Search from './Search';
-import MenuNav from './MenuNav';
+import TopNav from './Top/TopNav';
+import Search from './Search/Search';
+import MenuNav from './Menu/MenuNav';
 
 function SidedishHeader() {
     return (

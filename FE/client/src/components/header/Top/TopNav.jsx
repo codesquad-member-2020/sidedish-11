@@ -1,7 +1,7 @@
 import React from 'react';
 import TopNavPopup from './TopNavPopup';
 import { makeStyles } from '@material-ui/core/styles';
-import { topNavData } from '../../mock/topNavData';
+import { topNavData } from '../../../mock/topNavData';
 
 const useStyles = makeStyles({
     topNavWrap: {
