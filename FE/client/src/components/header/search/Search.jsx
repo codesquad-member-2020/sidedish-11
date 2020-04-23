@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
     },
     searchInner: {
-        width: '65%',
+        width: '1080px',
         padding: '15px 0',
         margin: '0 auto',
     },
@@ -64,9 +64,9 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: `calc(1em + ${theme.spacing(3)}px)`,
         transition: theme.transitions.create('width'),
         [theme.breakpoints.up('sm')]: {
-            width: '20ch',
+            width: '25ch',
             '&:focus': {
-                width: '28ch',
+                width: '35ch',
                 border: '1px solid #18C2BD',
             },
         },

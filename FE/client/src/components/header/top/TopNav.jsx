@@ -11,7 +11,7 @@ const useStyles = makeStyles({
         color: '#5a5a5a',
     },
     topNavInner: {
-        width: '65%',
+        width: '1080px',
         height: '37px',
         display: 'flex',
         justifyContent: 'space-between',

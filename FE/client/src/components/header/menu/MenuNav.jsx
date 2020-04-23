@@ -12,7 +12,7 @@ const useStyles = makeStyles({
         fontSize: '15px',
     },
     menuNavInner: {
-        width: '65%',
+        width: '1080px',
         padding: '0',
         margin: '0 auto',
         display: 'flex',
