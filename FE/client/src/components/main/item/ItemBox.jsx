@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
             color: '#5a5a5a',
             fontSize: '32px',
             fontWeight: '300',
-            marginBottom: '30px'
+            marginBottom: '45px'
         },
     },
     progress: {

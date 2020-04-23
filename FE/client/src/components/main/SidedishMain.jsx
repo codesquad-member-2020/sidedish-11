@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     mainWrap: {
-        width: '65%',
+        width: '70%',
         margin: '0 auto',
         textAlign: 'center',
     },
