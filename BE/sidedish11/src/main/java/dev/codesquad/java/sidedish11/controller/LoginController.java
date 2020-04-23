@@ -23,6 +23,6 @@ public class LoginController {
     public ResponseEntity oauth(@PathParam("code") String code) {
         Github github = loginService.requestAccessToken(code);
         GithubUser githubUser = loginService.requestUserId(github.getAuthorization());
-        return ResponseEntity.ok(github);
+        return ResponseEntity.ok(githubUser);
     }
 }

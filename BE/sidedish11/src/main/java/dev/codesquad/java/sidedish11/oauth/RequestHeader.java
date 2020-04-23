@@ -3,13 +3,11 @@ package dev.codesquad.java.sidedish11.oauth;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-import static dev.codesquad.java.sidedish11.common.CommonUtils.*;
-
 public class RequestHeader {
     private MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
 
-    public RequestHeader() {
-        headers.set(HEADER_ACCEPT, HEADER_ACCEPT_VALUE);
+    public RequestHeader(String key, String value) {
+        headers.set(key, value);
     }
 
     public MultiValueMap<String, String> getHeaders() {

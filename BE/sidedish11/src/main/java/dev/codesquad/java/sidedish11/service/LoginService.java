@@ -32,7 +32,7 @@ public class LoginService {
     public Github requestAccessToken(String code) {
         logger.debug(">>> authorization code : {}, id : {} , secret : {}", code, GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET);
         RequestBody requestBody = new RequestBody(GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, code);
-        RequestHeader requestHeader = new RequestHeader();
+        RequestHeader requestHeader = new RequestHeader(HEADER_ACCEPT, HEADER_ACCEPT_VALUE);
         HttpEntity httpEntity = new HttpEntity(requestBody, requestHeader.getHeaders());
         ResponseEntity<Github> responseEntity = new RestTemplate().postForEntity(GITHUB_ACCESS_TOKEN_URL, httpEntity, Github.class);
         return responseEntity.getBody();
@@ -40,9 +40,8 @@ public class LoginService {
 
     @Transactional
     public GithubUser requestUserId(String authorization) {
-        MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
-        headers.set(AUTHORIZATION, authorization);
-        HttpEntity httpEntity = new HttpEntity(headers);
+        RequestHeader requestHeader = new RequestHeader(AUTHORIZATION, authorization);
+        HttpEntity httpEntity = new HttpEntity(requestHeader.getHeaders());
         ResponseEntity<GithubUser> responseEntity = new RestTemplate().exchange(GITHUB_USER_INFO_URL, HttpMethod.GET, httpEntity, GithubUser.class);
         return responseEntity.getBody();
     }
