@@ -6,13 +6,13 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 @Getter @Setter
-public class Badge {
+public class ThumbImage {
     @Id
     @JsonIgnore
     private Long id;
     private String name;
 
-    public Badge() {
+    public ThumbImage() {
     }
 
     public String getName() {

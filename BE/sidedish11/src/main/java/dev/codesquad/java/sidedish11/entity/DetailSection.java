@@ -6,13 +6,13 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 @Getter @Setter
-public class Badge {
+public class DetailSection {
     @Id
     @JsonIgnore
     private Long id;
     private String name;
 
-    public Badge() {
+    public DetailSection() {
     }
 
     public String getName() {

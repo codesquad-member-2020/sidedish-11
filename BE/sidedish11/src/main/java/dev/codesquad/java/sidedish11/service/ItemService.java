@@ -19,4 +19,9 @@ public class ItemService {
     public Iterable<Item> viewAll() {
         return itemRepository.findAll();
     }
+
+    @Transactional
+    public Item view(Long id) {
+        return itemRepository.findById(id).orElseThrow(null);
+    }
 }
