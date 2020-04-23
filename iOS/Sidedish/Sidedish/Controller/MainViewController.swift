@@ -24,7 +24,7 @@ class MainViewController: UIViewController {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: NetworkManager.NetworkManagerNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: SidedishUseCase.SidedishUseCaseNotification, object: nil)
     }
     
     private func setupTableView(){
@@ -39,7 +39,7 @@ class MainViewController: UIViewController {
     
     private func setupNotification() {
         let notiCenter = NotificationCenter.default
-        notiCenter.addObserver(forName: NetworkManager.NetworkManagerNotification, object: nil, queue: .main) { noti in
+        notiCenter.addObserver(forName: SidedishUseCase.SidedishUseCaseNotification, object: nil, queue: .main) { noti in
             guard let allMenu = noti.userInfo?["AllMenu"] as? [Int:[Sidedish]] else { return }
             self.dataSource.allSidedishes = allMenu
             self.mainSidedishTableView.reloadData()
