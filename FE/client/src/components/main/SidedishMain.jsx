@@ -16,7 +16,7 @@ const SidedishMain = () => {
 
     return (
         <div className={classes.mainWrap}>
-            {itemData.map(data => <ItemBox key={data.id} itemData={data} />)}
+            {itemData.map(itemBoxData => <ItemBox key={itemBoxData.id} itemBoxData={itemBoxData} />)}
         </div>
     )
 }

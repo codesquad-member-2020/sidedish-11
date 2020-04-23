@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 
 function useFetch(callback, url) {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const fetchInitialData = async () => {
-        setLoading(true);
         const response = await fetch(url);
         const initialData = await response.json();
         callback(initialData);
