@@ -17,17 +17,15 @@ public class LoginService {
     private Logger logger = LoggerFactory.getLogger(LoginService.class);
 
     @Transactional
-    public String requestAccessToken() {
-        String code = "";
+    public String requestAccessToken(String code) {
+        logger.info(">>> code in service : {}", code);
         RequestBody requestBody = new RequestBody(GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, code);
         RequestHeader requestHeader = new RequestHeader();
 
         HttpEntity httpEntity = new HttpEntity(requestBody, requestHeader.getHeaders());
-        //ResponseEntity responseEntity = new RestTemplate().postForEntity();
-        return "";
+        ResponseEntity<String> responseEntity = new RestTemplate().postForEntity(GITHUB_ACCESS_URL, httpEntity, String.class);
+
+        logger.info(">>> result : {}", responseEntity);
+        return responseEntity.getBody();
     }
-
-
-
-
 }
