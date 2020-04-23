@@ -21,4 +21,8 @@ class SidedishDataSource: NSObject, UITableViewDataSource {
         cell.viewModel = allSidedishes?[indexPath.section]?[indexPath.row]
         return cell
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return allSidedishes?.count ?? 0
+    }
 }
