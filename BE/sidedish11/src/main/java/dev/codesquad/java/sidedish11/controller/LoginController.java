@@ -8,13 +8,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.websocket.server.PathParam;
+
 @RestController
 public class LoginController {
     private Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @GetMapping("/callback")
-    public ResponseEntity oauth(@RequestParam String code) {
+    public ResponseEntity oauth(@PathParam("code") String code) {
         logger.info(">>> code : {}", code);
-        return new ResponseEntity(code, HttpStatus.OK);
+        return ResponseEntity.ok(code);
     }
 }
