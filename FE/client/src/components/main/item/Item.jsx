@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './style/Item.css';
 
 const Item = ({ data }) => {
     const [isOpen, setOpen] = useState(false);
@@ -7,13 +8,7 @@ const Item = ({ data }) => {
 
     return (
         <>
-            <div>
-                <div>
-                    <span>새벽배송</span>
-                    <span>전국택배</span>
-                </div>
-                <img className='item-image' src={data.image} alt={data.alt}></img>
-            </div>
+            <img className='item-image' src={data.image} alt={data.alt}></img>
             <h3 className='item-title'>{data.title}</h3>
             <p className='item-description'>{data.description}</p>
             <div className='price-wrap'>

@@ -1,0 +1,66 @@
+.item-image {
+    width: 215px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.item-title {
+    min-height: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.07em;
+    color: #000;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.item-description {
+    width: 100%;
+    font-size: 13px;
+    color: #666;
+    min-height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 15px;
+}
+
+.price-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.s-price {
+    margin-right: 2px;
+    font-size: 26px;
+    color: #2ac1bc;
+    font-weight: bold;
+    vertical-align: middle;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.price-unit {
+    font-weight: 600;
+    font-size: 14px;
+    color: #2ac1bc;
+    padding-left: 2px;
+}
+
+.n-price {
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font-weight: normal;
+    text-decoration: line-through;
+    vertical-align: baseline;
+    background: transparent;
+    color: #888;
+}
