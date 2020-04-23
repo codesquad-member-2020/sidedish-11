@@ -1,6 +1,10 @@
 .item-slider .slick-arrow {
-    border: 1px #000 solid;
+    border: 1px #ccc solid;
     width: 60px;
     height: 80px;
     margin: 0 -40px;
+}
+
+.item-slider .slick-dots {
+    bottom: -40px;
 }
