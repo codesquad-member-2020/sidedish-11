@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemList from './item/ItemList';
+import ItemBox from './item/ItemBox';
 import { itemData } from '../../data/itemData';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -16,7 +16,7 @@ const SidedishMain = () => {
 
     return (
         <div className={classes.mainWrap}>
-            {itemData.map(data => <ItemList key={data.id} itemData={data} />)}
+            {itemData.map(data => <ItemBox key={data.id} itemData={data} />)}
         </div>
     )
 }
