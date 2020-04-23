@@ -25,26 +25,26 @@ CREATE TABLE IF NOT EXISTS item (
 );
 
 CREATE TABLE IF NOT EXISTS badge (
-    id int auto_increment,
+    id int primary key auto_increment,
     name varchar (32),
     item int references item(id)
 );
 
 CREATE TABLE IF NOT EXISTS delivery_type (
-    id int auto_increment,
+    id int primary key auto_increment,
     name varchar (32),
     item int references item(id)
 );
 
 CREATE TABLE IF NOT EXISTS thumb_image (
-    id int auto_increment,
+    id int primary key auto_increment,
     name varchar (32),
     item int references item(id),
     item_key int
 );
 
 CREATE TABLE IF NOT EXISTS detail_section (
-    id int auto_increment,
+    id int primary key auto_increment,
     name varchar (32),
     item int references item(id),
     item_key int
