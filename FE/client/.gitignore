@@ -3,6 +3,12 @@
 # package-lock
 package-lock.json
 
+# yarn-lock
+yarn.lock
+
+#mock
+src/mock
+
 # dependencies
 /node_modules
 /.pnp

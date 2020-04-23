@@ -11,13 +11,7 @@ app.get('/api/', (req, res) => {
         {
             id: '1'
         },
-        {
-            id: '2',
-        },
-        {
-            id: '3',
-        }
     ]);
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(port);
