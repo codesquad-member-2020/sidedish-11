@@ -15,10 +15,12 @@ class SideDishTableViewCell: UITableViewCell {
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var eventLabelStackView: UIStackView!
     @IBOutlet weak var priceStackView: UIStackView!
-    var dishImage: UIImage! {
+    private let useCase = SidedishUseCase()
+    private let networkManager = NetworkManager()
+    var sidedishImage: UIImage! {
         didSet {
             DispatchQueue.main.async {
-                self.sidedishImageView.image = self.dishImage
+                self.sidedishImageView.image = self.sidedishImage
             }
         }
     }
@@ -42,6 +44,7 @@ class SideDishTableViewCell: UITableViewCell {
         self.detailLabel.text = viewModel?.description
         self.setupPrice()
         self.setupEventBedge()
+        self.setupImageView()
     }
     
     override func prepareForReuse() {
@@ -52,6 +55,14 @@ class SideDishTableViewCell: UITableViewCell {
         }
         for subView in priceStackView.subviews {
             subView.removeFromSuperview()
+        }
+    }
+    
+    private func setupImageView(){
+        self.sidedishImageView.layer.cornerRadius = self.sidedishImageView.frame.size.width / 2
+        guard let imageURL = self.viewModel?.image else {return }
+        useCase.bringsidedishImage(with: networkManager, imageURL: imageURL ){ imageData in
+            self.sidedishImage = UIImage(data: imageData )
         }
     }
     
