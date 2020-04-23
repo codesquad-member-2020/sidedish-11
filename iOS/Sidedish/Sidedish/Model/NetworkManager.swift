@@ -20,8 +20,6 @@ enum NetworkErrorCase : Error {
 
 struct NetworkManager: NetworkManagable {
     
-    static let NetworkManagerNotification = NSNotification.Name("NetworkManagerNotification")
-
     func getSidedishResource(from: String, handler: @escaping (Data?, Error?) -> ()) throws {
         guard let url = URL(string: from) else {
             throw NetworkErrorCase.InvalidURL
@@ -32,13 +30,6 @@ struct NetworkManager: NetworkManagable {
                 debugPrint(response.data)
             }
         }
-    }
-
-    enum EndPoints {
-        static let main = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan/main"
-        static let side = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan/side"
-        static let soup = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan/soup"
-        static let detail = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan/detail/"
     }
 }
 
