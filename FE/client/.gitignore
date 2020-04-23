@@ -6,8 +6,8 @@ package-lock.json
 # yarn-lock
 yarn.lock
 
-#mock
-src/mock
+#data
+src/data
 
 # dependencies
 /node_modules

@@ -1,7 +1,7 @@
 import React from 'react';
 import Menus from './Menus';
 import { makeStyles } from '@material-ui/core/styles';
-import { menuData } from '../../../mock/menuData';
+import { menuData } from '../../../data/menuData';
 
 const useStyles = makeStyles({
     menuNavWrap: {
