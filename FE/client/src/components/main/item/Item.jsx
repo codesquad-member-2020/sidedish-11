@@ -5,7 +5,6 @@ const Item = ({ data }) => {
     const [isHover, setHover] = useState(false);
     const handleMouseEnter = () => setHover(true);
     const handleMouseLeave = () => setHover(false);
-    console.log(data.badge);
 
     return (
         <>
