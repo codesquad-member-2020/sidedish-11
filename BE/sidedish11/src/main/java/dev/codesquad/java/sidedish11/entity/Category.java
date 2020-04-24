@@ -11,7 +11,9 @@ import java.util.Set;
 public class Category {
     @Id
     private Long id;
+    private String title;
     private String name;
+    private String description;
     private Set<Item> items = new HashSet<>();
 
     public Category() {

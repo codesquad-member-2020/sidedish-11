@@ -7,7 +7,9 @@ DROP TABLE IF EXISTS detail_section;
 
 CREATE TABLE IF NOT EXISTS category (
     id int primary key auto_increment,
-    name varchar (32)
+    title varchar (32),
+    name varchar (32),
+    description varchar (64)
 );
 
 CREATE TABLE IF NOT EXISTS item (

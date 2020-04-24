@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -33,12 +32,5 @@ public class ApiHomeController {
     @GetMapping("/item")
     public ResponseEntity viewAllItems() {
         return new ResponseEntity(itemService.viewAll(), HttpStatus.OK);
-    }
-
-    @GetMapping("/test")
-    public ResponseEntity test() {
-        Item item = itemService.view(1L);
-        ItemResponse itemResponse = new ItemResponse(item);
-        return new ResponseEntity(itemResponse, HttpStatus.OK);
     }
 }

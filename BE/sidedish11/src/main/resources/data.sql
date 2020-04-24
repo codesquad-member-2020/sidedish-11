@@ -1,9 +1,9 @@
 --------------------------------------
 ---- CATEGORY : MAIN, SOUP, SIDE -----
 
-INSERT INTO category(name) VALUES ('main');
-INSERT INTO category(name) VALUES ('soup');
-INSERT INTO category(name) VALUES ('side');
+INSERT INTO category(title, name, description) VALUES ('main', '든든한 반찬', '담기만 하면 완성되는 메인반찬');
+INSERT INTO category(title, name, description) VALUES ('soup', '국, 찌개', '김이 모락모락 국, 찌개');
+INSERT INTO category(title, name, description) VALUES ('side', '밑반찬', '언제 먹어도 든든한 반찬');
 
 ---------------------------------
 ---- CATEGORY : MAIN <ITEM> -----

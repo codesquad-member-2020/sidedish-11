@@ -25,11 +25,6 @@ public class ItemService {
     }
 
     @Transactional
-    public Item view(Long id) {
-        return itemRepository.findById(id).orElseThrow(null);
-    }
-
-    @Transactional
     public ItemResponse getItem(Long id, String hash) {
         Item item = findItem(id, hash);
         ItemResponse itemResponse = new ItemResponse(item);
