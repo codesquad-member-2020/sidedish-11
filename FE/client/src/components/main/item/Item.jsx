@@ -2,13 +2,22 @@ import React, { useState } from 'react';
 import './style/Item.css';
 
 const Item = ({ data }) => {
-    const [isOpen, setOpen] = useState(false);
-    const handleMouseEnter = () => setOpen(true);
-    const handleMouseLeave = () => setOpen(false);
+    const [isHover, setHover] = useState(false);
+    const handleMouseEnter = () => setHover(true);
+    const handleMouseLeave = () => setHover(false);
 
     return (
         <>
-            <img className='item-image' src={data.image} alt={data.alt}></img>
+            <div className='image-wrap' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                <img className='item-image' src={data.image} alt={data.alt}></img>
+                {isHover && <div className='hover-image'>
+                    <div>
+                        <span>새벽배송</span>
+                        <span>전국택배</span>
+
+                    </div>
+                </div>}
+            </div>
             <h3 className='item-title'>{data.title}</h3>
             <p className='item-description'>{data.description}</p>
             <div className='price-wrap'>

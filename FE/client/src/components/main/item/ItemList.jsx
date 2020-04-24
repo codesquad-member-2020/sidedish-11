@@ -3,14 +3,18 @@ import Slider from 'react-slick';
 import Item from './Item';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './style/ItemList.css';
+import { PrevArrow, NextArrow } from './SliderArrow';
 import { makeStyles } from '@material-ui/core/styles';
-
 
 const useStyles = makeStyles({
     itemList: {
         cursor: 'pointer',
     },
+    slider: {
+        '& .slick-dots': {
+            bottom: '-40px',
+        }
+    }
 });
 
 const ItemList = ({ itemListData }) => {
@@ -30,17 +34,16 @@ const ItemList = ({ itemListData }) => {
         slidesToScroll: 4,
         slidesToShow: 4,
         draggable: false,
-        className: 'item-slider',
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
     };
 
     return (
-        <Slider {...settings}>
+        <Slider className={classes.slider} {...settings}>
             {itemList}
         </Slider>
     )
 }
-
-
 
 export default ItemList
 

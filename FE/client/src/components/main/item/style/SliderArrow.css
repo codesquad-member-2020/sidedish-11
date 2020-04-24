@@ -1,0 +1,18 @@
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: scale(6);
+    cursor: pointer;
+}
+
+.prevArrow {
+    left: -90px;
+}
+
+.nextArrow {
+    right: -90px;
+}
+
+.nextArrow svg:hover, .prevArrow svg:hover {
+    color: #5a5a5a;
+}
