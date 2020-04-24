@@ -10,8 +10,8 @@ import UIKit
 
 class SidedishTableViewDelegate: NSObject, UITableViewDelegate {
     
-    private let height = CGFloat(50)
-    var categoryId: Int?
+    private let height = CGFloat(70)
+    var headerModel = [Int: SidedishInfo]()
     
     func tableView(_ tableView: UITableView,
                    heightForHeaderInSection section: Int) -> CGFloat{
@@ -19,27 +19,10 @@ class SidedishTableViewDelegate: NSObject, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let indexPath = IndexPath(row: 0, section: section)
-        let header = tableView.dequeueReusableCell(withIdentifier: SidedishTableViewHeader.identifier, for: indexPath) as! SidedishTableViewHeader
-        setCategorySectionHeader(header: header)
-        // 이 부분은 추후 백엔드와 상의할 예정입니다
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SidedishTableViewHeader.identifier) as! SidedishTableViewHeader
+        header.section = section
+        header.headerModel = headerModel
         return header
-    }
-    
-    private func setCategorySectionHeader(header: SidedishTableViewHeader) {
-        switch self.categoryId {
-        case 1:
-            header.smallCategoryButton.setTitle("메인반찬", for: .normal)
-            header.bigCategoryLabel.text = "한그릇 뚝딱 메인 요리"
-        case 2:
-            header.smallCategoryButton.setTitle("국.찌개", for: .normal)
-            header.bigCategoryLabel.text = "김이 모락모락 국.찌개"
-        case 3:
-            header.smallCategoryButton.setTitle("메인반찬", for: .normal)
-            header.bigCategoryLabel.text = "언제 먹어도 든든한 밑반찬"
-        default:
-            return
-        }
     }
 }
 
