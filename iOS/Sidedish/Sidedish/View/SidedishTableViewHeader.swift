@@ -8,23 +8,31 @@
 
 import UIKit
 
-class SidedishTableViewHeader: UITableViewCell {
+class SidedishTableViewHeader: UITableViewHeaderFooterView {
     
     static let identifier = "sidedishTableViewHeader"
     @IBOutlet weak var smallCategoryButton: UIButton!
     @IBOutlet weak var bigCategoryLabel: UILabel!
+    var section = 0
+    var headerModel : [Int: SidedishInfo]? {
+        didSet {
+            setupView()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
     private func setupView(){
+        
+        self.backgroundView?.backgroundColor = .white
+        smallCategoryButton.setTitle(headerModel?[section]? .name, for: .normal )
+        smallCategoryButton.layer.cornerRadius = 0.2
         smallCategoryButton.layer.borderWidth = 1
-        smallCategoryButton.layer.borderColor = UIColor.gray.cgColor
-    }    
+        smallCategoryButton.layer.borderColor = UIColor.systemGray.cgColor
+        bigCategoryLabel.text = headerModel?[section]?.description
+    }
 }
+
