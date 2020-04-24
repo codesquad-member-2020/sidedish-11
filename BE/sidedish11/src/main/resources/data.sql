@@ -1,39 +1,9 @@
+--------------------------------------
+---- CATEGORY : MAIN, SOUP, SIDE -----
+
 INSERT INTO category(name) VALUES ('main');
 INSERT INTO category(name) VALUES ('soup');
 INSERT INTO category(name) VALUES ('side');
-
--- INSERT INTO item(hash, image, title, description, normal_price, sale_price, point, delivery_info, delivery_fee, category)
--- VALUES ('SD001', 'http://image.url', '페퍼로니피자 300g', '혼자 먹으면 꿀맛', '9000', null, '300', '서울 경기 새벽배송 수령 가능한 상품', '2500', 1);
---
--- INSERT INTO item(hash, image, title, description, normal_price, sale_price, point, delivery_info, delivery_fee, category)
--- VALUES ('SD002', 'http://image.url', '크림스프 100g', '그냥 먹으면 꿀맛', '4000', null, '200', '서울 경기 새벽배송 수령 가능한 상품', '2000', 2);
---
--- INSERT INTO item(hash, image, title, description, normal_price, sale_price, point, delivery_info, delivery_fee, category)
--- VALUES ('SD003', 'http://image.url', '치아버터 빵 100g', '커피랑 먹으면 꿀맛', '3000', null, '500', '서울 경기 새벽배송 수령 가능한 상품', '2500', 3);
---
--- INSERT INTO item(hash, image, title, description, normal_price, sale_price, point, delivery_info, delivery_fee, category)
--- VALUES ('SD001', 'http://image.url', '고추바사삭 300g', '배달시켜 먹으면 꿀맛', '12000', null, '150', '서울 경기 새벽배송 수령 가능한 상품', '3000', 1);
-
--- INSERT INTO badge(name, item) VALUES ('이벤트특가', 1);
--- INSERT INTO badge(name, item) VALUES ('론칭특가', 1);
--- INSERT INTO badge(name, item) VALUES ('론칭특가', 2);
--- INSERT INTO badge(name, item) VALUES ('이벤트특가', 3);
---
--- INSERT INTO delivery_type(name, item) VALUES ('새벽배송', 1);
--- INSERT INTO delivery_type(name, item) VALUES ('전국택배', 1);
--- INSERT INTO delivery_type(name, item) VALUES ('새벽배송', 2);
--- INSERT INTO delivery_type(name, item) VALUES ('전국택배', 3);
---
--- INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage1.url', 1, 0);
--- INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage2.url', 1, 1);
--- INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage3.url', 2, 0);
--- INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage4.url', 3, 0);
---
--- INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection1.url', 1, 0);
--- INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection2.url', 1, 1);
--- INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection3.url', 2, 0);
--- INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection4.url', 3, 0);
-
 
 ---------------------------------
 ---- CATEGORY : MAIN <ITEM> -----
@@ -231,3 +201,17 @@ INSERT INTO delivery_type(name, item) VALUES ('새벽배송', 23);
 INSERT INTO delivery_type(name, item) VALUES ('전국택배', 23);
 INSERT INTO delivery_type(name, item) VALUES ('새벽배송', 24);
 INSERT INTO delivery_type(name, item) VALUES ('전국택배', 24);
+
+---------------------------------
+--------- THUMB IMAGE & DETAIL SECTION-----------
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/4cce011a4a352c22cd399a60271b4921.jpg', 1, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/6ef14155afc5b47e8c9efd762f7a6096.jpg', 1, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/8744504ff3bc315f901dca1f26fe63a1.jpg', 1, 2);
+
+INSERT INTO detail_section(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/9c2c53b40a11b79c90549a058c2da4b7.jpg', 1, 0);
+INSERT INTO detail_section(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/70b0c77d3ef5cdd6269588685bbefe43.jpg', 1, 1);
+INSERT INTO detail_section(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/72f1049b047f65f42a267d5bbd1e6204.jpg', 1, 2);
+INSERT INTO detail_section(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/768afd17faa8bf3461b8160ba0aa26bf.jpg', 1, 3);
+INSERT INTO detail_section(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/95816f09d3294641f2e0feacaa739991.jpg', 1, 4);
+

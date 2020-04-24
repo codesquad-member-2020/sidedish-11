@@ -38,14 +38,14 @@ CREATE TABLE IF NOT EXISTS delivery_type (
 
 CREATE TABLE IF NOT EXISTS thumb_image (
     id int primary key auto_increment,
-    name varchar (32),
+    name varchar (256),
     item int references item(id),
     item_key int
 );
 
 CREATE TABLE IF NOT EXISTS detail_section (
     id int primary key auto_increment,
-    name varchar (32),
+    name varchar (256),
     item int references item(id),
     item_key int
 );
