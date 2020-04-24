@@ -9,8 +9,11 @@
 import Foundation
 
 struct SidedishInfo: Codable {
-    let statusCode: Int
-    let body: [Sidedish]
+    let id: Int
+    let name: String
+    let description: String
+    let url: String?
+    let items: [Sidedish]
 }
 
 struct Sidedish: Codable {
