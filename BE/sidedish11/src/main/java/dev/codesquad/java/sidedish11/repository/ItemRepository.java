@@ -8,5 +8,8 @@ import java.util.Optional;
 
 public interface ItemRepository extends CrudRepository<Item, Long> {
     @Query("Select * from item where id = :id and hash = :hash")
-    Optional<Item> findByHash(Long id, String hash);
+    Optional<Item> findByIdAndHash(Long id, String hash);
+
+    @Query("Select * from item where hash = :hash")
+    Optional<Item> findByHash(String hash);
 }

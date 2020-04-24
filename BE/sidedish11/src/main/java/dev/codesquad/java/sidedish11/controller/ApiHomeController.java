@@ -41,18 +41,4 @@ public class ApiHomeController {
         ItemResponse itemResponse = new ItemResponse(item);
         return new ResponseEntity(itemResponse, HttpStatus.OK);
     }
-
-//    @GetMapping("/detail")
-//    public ResponseEntity viewAlldetail() {
-//
-//        return new ResponseEntity(, HttpStatus.OK);
-//    }
-
-    @GetMapping("/detail/{id}")
-    public ResponseEntity viewDetail(@PathVariable Long id) {
-        Item item = itemService.view(id);
-        ItemDetail itemDetail = new ItemDetail(item);
-        ItemDetailResponse itemDetailResponse = new ItemDetailResponse(itemDetail);
-        return new ResponseEntity(itemDetailResponse, HttpStatus.OK);
-    }
 }

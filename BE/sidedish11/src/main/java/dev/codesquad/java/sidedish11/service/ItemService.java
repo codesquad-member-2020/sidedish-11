@@ -1,5 +1,6 @@
 package dev.codesquad.java.sidedish11.service;
 
+import dev.codesquad.java.sidedish11.dto.ItemDetail;
 import dev.codesquad.java.sidedish11.dto.ItemDetailResponse;
 import dev.codesquad.java.sidedish11.dto.ItemResponse;
 import dev.codesquad.java.sidedish11.entity.Item;
@@ -35,12 +36,19 @@ public class ItemService {
         return itemResponse;
     }
 
-//    @Transactional
-//    public ItemDetailResponse getItemDetail(Long id, String hash) {
-//
-//    }
+    @Transactional
+    public ItemDetailResponse getItemDetail(String hash) {
+        Item item = findItem(hash);
+        ItemDetail itemDetail = new ItemDetail(item);
+        ItemDetailResponse itemDetailResponse = new ItemDetailResponse(itemDetail);
+        return itemDetailResponse;
+    }
 
     private Item findItem(Long id, String hash) {
-        return itemRepository.findByHash(id, hash).orElseThrow(() -> new DataNotFoundException("NO DATA"));
+        return itemRepository.findByIdAndHash(id, hash).orElseThrow(() -> new DataNotFoundException("NO DATA"));
+    }
+
+    private Item findItem(String hash) {
+        return itemRepository.findByHash(hash).orElseThrow(() -> new DataNotFoundException("NO DATA"));
     }
 }
