@@ -7,4 +7,7 @@ public class CommonUtils {
     public static final String AUTHORIZATION = "Authorization";
     public static final String HEADER_ACCEPT = "Accept";
     public static final String HEADER_ACCEPT_VALUE = "application/json";
+
+    //dto
+    public static final String LOCAL_HOST_URL = "http://localhost:8080/";
 }
