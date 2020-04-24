@@ -1,6 +1,7 @@
 package dev.codesquad.java.sidedish11.service;
 
 import dev.codesquad.java.sidedish11.entity.Item;
+import dev.codesquad.java.sidedish11.exception.DataNotFoundException;
 import dev.codesquad.java.sidedish11.repository.ItemRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,5 +24,10 @@ public class ItemService {
     @Transactional
     public Item view(Long id) {
         return itemRepository.findById(id).orElseThrow(null);
+    }
+
+    @Transactional
+    public Item getItem(Long id, String hash) {
+        return itemRepository.findByHash(id, hash).orElseThrow(() -> new DataNotFoundException("NO DATA"));
     }
 }
