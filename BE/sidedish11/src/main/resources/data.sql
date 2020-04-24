@@ -2,37 +2,37 @@ INSERT INTO category(name) VALUES ('main');
 INSERT INTO category(name) VALUES ('soup');
 INSERT INTO category(name) VALUES ('side');
 
-INSERT INTO item(hash, image, title, description, normal_price, sale_price, point, delivery_info, delivery_fee, category)
-VALUES ('SD001', 'http://image.url', '페퍼로니피자 300g', '혼자 먹으면 꿀맛', '9000', null, '300', '서울 경기 새벽배송 수령 가능한 상품', '2500', 1);
+-- INSERT INTO item(hash, image, title, description, normal_price, sale_price, point, delivery_info, delivery_fee, category)
+-- VALUES ('SD001', 'http://image.url', '페퍼로니피자 300g', '혼자 먹으면 꿀맛', '9000', null, '300', '서울 경기 새벽배송 수령 가능한 상품', '2500', 1);
+--
+-- INSERT INTO item(hash, image, title, description, normal_price, sale_price, point, delivery_info, delivery_fee, category)
+-- VALUES ('SD002', 'http://image.url', '크림스프 100g', '그냥 먹으면 꿀맛', '4000', null, '200', '서울 경기 새벽배송 수령 가능한 상품', '2000', 2);
+--
+-- INSERT INTO item(hash, image, title, description, normal_price, sale_price, point, delivery_info, delivery_fee, category)
+-- VALUES ('SD003', 'http://image.url', '치아버터 빵 100g', '커피랑 먹으면 꿀맛', '3000', null, '500', '서울 경기 새벽배송 수령 가능한 상품', '2500', 3);
+--
+-- INSERT INTO item(hash, image, title, description, normal_price, sale_price, point, delivery_info, delivery_fee, category)
+-- VALUES ('SD001', 'http://image.url', '고추바사삭 300g', '배달시켜 먹으면 꿀맛', '12000', null, '150', '서울 경기 새벽배송 수령 가능한 상품', '3000', 1);
 
-INSERT INTO item(hash, image, title, description, normal_price, sale_price, point, delivery_info, delivery_fee, category)
-VALUES ('SD002', 'http://image.url', '크림스프 100g', '그냥 먹으면 꿀맛', '4000', null, '200', '서울 경기 새벽배송 수령 가능한 상품', '2000', 2);
-
-INSERT INTO item(hash, image, title, description, normal_price, sale_price, point, delivery_info, delivery_fee, category)
-VALUES ('SD003', 'http://image.url', '치아버터 빵 100g', '커피랑 먹으면 꿀맛', '3000', null, '500', '서울 경기 새벽배송 수령 가능한 상품', '2500', 3);
-
-INSERT INTO item(hash, image, title, description, normal_price, sale_price, point, delivery_info, delivery_fee, category)
-VALUES ('SD001', 'http://image.url', '고추바사삭 300g', '배달시켜 먹으면 꿀맛', '12000', null, '150', '서울 경기 새벽배송 수령 가능한 상품', '3000', 1);
-
-INSERT INTO badge(name, item) VALUES ('이벤트특가', 1);
-INSERT INTO badge(name, item) VALUES ('론칭특가', 1);
-INSERT INTO badge(name, item) VALUES ('론칭특가', 2);
-INSERT INTO badge(name, item) VALUES ('이벤트특가', 3);
-
-INSERT INTO delivery_type(name, item) VALUES ('새벽배송', 1);
-INSERT INTO delivery_type(name, item) VALUES ('전국택배', 1);
-INSERT INTO delivery_type(name, item) VALUES ('새벽배송', 2);
-INSERT INTO delivery_type(name, item) VALUES ('전국택배', 3);
-
-INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage1.url', 1, 0);
-INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage2.url', 1, 1);
-INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage3.url', 2, 0);
-INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage4.url', 3, 0);
-
-INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection1.url', 1, 0);
-INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection2.url', 1, 1);
-INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection3.url', 2, 0);
-INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection4.url', 3, 0);
+-- INSERT INTO badge(name, item) VALUES ('이벤트특가', 1);
+-- INSERT INTO badge(name, item) VALUES ('론칭특가', 1);
+-- INSERT INTO badge(name, item) VALUES ('론칭특가', 2);
+-- INSERT INTO badge(name, item) VALUES ('이벤트특가', 3);
+--
+-- INSERT INTO delivery_type(name, item) VALUES ('새벽배송', 1);
+-- INSERT INTO delivery_type(name, item) VALUES ('전국택배', 1);
+-- INSERT INTO delivery_type(name, item) VALUES ('새벽배송', 2);
+-- INSERT INTO delivery_type(name, item) VALUES ('전국택배', 3);
+--
+-- INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage1.url', 1, 0);
+-- INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage2.url', 1, 1);
+-- INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage3.url', 2, 0);
+-- INSERT INTO thumb_image(name, item, item_key) VALUES ('http://thumbImage4.url', 3, 0);
+--
+-- INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection1.url', 1, 0);
+-- INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection2.url', 1, 1);
+-- INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection3.url', 2, 0);
+-- INSERT INTO detail_section(name, item, item_key) VALUES ('http://detailSection4.url', 3, 0);
 
 
 ---------------------------------
@@ -163,3 +163,21 @@ INSERT INTO item(hash, image, title, description, normal_price, sale_price, poin
 VALUES ('HB9C1', 'http://public.codesquad.kr/jk/storeapp/data/043cf496f07899e7515f761e29d1ffa9.jpg',
 '[너의반찬] 미소된장 고추무침 200g', '고소한 양념 때문에 손이 자꾸 가요', '4500', null, '45',
 '서울 경기 새벽배송 / 전국택배 (제주 및 도서산간 불가) [월 · 화 · 수 · 목 · 금] 수령 가능한 상품입니다.', '2,500원 (40,000원 이상 구매 시 무료)', 3);
+
+---------------------------------
+------------ BADGE --------------
+
+INSERT INTO badge(name, item) VALUES ('이벤트특가', 1);
+INSERT INTO badge(name, item) VALUES ('이벤트특가', 3);
+INSERT INTO badge(name, item) VALUES ('론칭특가', 5);
+INSERT INTO badge(name, item) VALUES ('론칭특가', 7);
+INSERT INTO badge(name, item) VALUES ('이벤트특가', 9);
+INSERT INTO badge(name, item) VALUES ('이벤트특가', 12);
+INSERT INTO badge(name, item) VALUES ('이벤트특가', 13);
+INSERT INTO badge(name, item) VALUES ('이벤트특가', 14);
+INSERT INTO badge(name, item) VALUES ('론칭특가', 14);
+INSERT INTO badge(name, item) VALUES ('론칭특가', 15);
+INSERT INTO badge(name, item) VALUES ('론칭특가', 16);
+INSERT INTO badge(name, item) VALUES ('이벤트특가', 22);
+
+
