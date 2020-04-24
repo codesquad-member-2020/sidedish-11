@@ -19,45 +19,8 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sidedishTableViewHeader" rowHeight="75" id="MjY-7V-Yza" customClass="SidedishTableViewHeader" customModule="Sidedish" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="75"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MjY-7V-Yza" id="tm8-Jo-nj9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리 이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Si9-BH-cTB">
-                                                    <rect key="frame" x="20" y="43.5" width="374" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Akd-tF-v7u">
-                                                    <rect key="frame" x="182.5" y="10" width="49" height="28.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <inset key="contentEdgeInsets" minX="3" minY="0.0" maxX="5" maxY="0.0"/>
-                                                    <state key="normal" title="Button">
-                                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Si9-BH-cTB" firstAttribute="centerX" secondItem="tm8-Jo-nj9" secondAttribute="centerX" id="CZh-St-Ltf"/>
-                                                <constraint firstItem="Si9-BH-cTB" firstAttribute="top" secondItem="Akd-tF-v7u" secondAttribute="bottom" constant="5" id="JTI-yq-n97"/>
-                                                <constraint firstItem="Akd-tF-v7u" firstAttribute="top" secondItem="tm8-Jo-nj9" secondAttribute="top" constant="10" id="ci2-CX-Yq4"/>
-                                                <constraint firstItem="Si9-BH-cTB" firstAttribute="leading" secondItem="tm8-Jo-nj9" secondAttribute="leadingMargin" id="cst-Y6-x8H"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Si9-BH-cTB" secondAttribute="bottom" id="daY-mI-XgA"/>
-                                                <constraint firstItem="Akd-tF-v7u" firstAttribute="centerX" secondItem="tm8-Jo-nj9" secondAttribute="centerX" id="jTt-c3-mtI"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Si9-BH-cTB" secondAttribute="trailing" id="zSp-yO-u4d"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="bigCategoryLabel" destination="Si9-BH-cTB" id="p64-6M-aRr"/>
-                                            <outlet property="smallCategoryButton" destination="Akd-tF-v7u" id="Mn8-33-9DD"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideDishTableViewCell" id="J5c-F5-4tu" customClass="SideDishTableViewCell" customModule="Sidedish" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="103" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J5c-F5-4tu" id="j64-a9-oGg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>

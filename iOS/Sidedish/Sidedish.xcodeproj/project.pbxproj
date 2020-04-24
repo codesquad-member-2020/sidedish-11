@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		19C7FD98D8ECD07A606BC673 /* Pods_Sidedish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818A59DDA1EC3860565DEDA7 /* Pods_Sidedish.framework */; };
 		49554D21FBA3C04F7AF28B23 /* Pods_SidedishTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF49656D8D0851B397F5833 /* Pods_SidedishTests.framework */; };
+		6A5190CB2452DAFE00728C15 /* SidedishTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5190CA2452DAFE00728C15 /* SidedishTableViewHeader.xib */; };
 		6A87AA37244F14C80064D29A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A87AA36244F14C80064D29A /* NetworkManager.swift */; };
 		6A87AA39244F1E820064D29A /* SidedishUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A87AA38244F1E820064D29A /* SidedishUseCase.swift */; };
 		6A87AA3B24501BF40064D29A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A87AA3A24501BF40064D29A /* Utility.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		0E7DB2080C8A5FCCCA353435 /* Pods-SidedishTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SidedishTests.debug.xcconfig"; path = "Target Support Files/Pods-SidedishTests/Pods-SidedishTests.debug.xcconfig"; sourceTree = "<group>"; };
 		20F40D5EA5D2086B44806BA5 /* Pods-Sidedish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sidedish.debug.xcconfig"; path = "Target Support Files/Pods-Sidedish/Pods-Sidedish.debug.xcconfig"; sourceTree = "<group>"; };
+		6A5190CA2452DAFE00728C15 /* SidedishTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SidedishTableViewHeader.xib; sourceTree = "<group>"; };
 		6A87AA36244F14C80064D29A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6A87AA38244F1E820064D29A /* SidedishUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidedishUseCase.swift; sourceTree = "<group>"; };
 		6A87AA3A24501BF40064D29A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				6ABBEEB9244EDEFC0030A2A9 /* SideDishTableViewCell.swift */,
 				6ABBEEBA244EDEFC0030A2A9 /* SideDishTableViewCell.xib */,
 				6A87AA3C245029D70064D29A /* SidedishTableViewHeader.swift */,
+				6A5190CA2452DAFE00728C15 /* SidedishTableViewHeader.xib */,
 				6A87AA4024502BF40064D29A /* SidedishTableViewDelegate.swift */,
 			);
 			path = View;
@@ -269,6 +272,7 @@
 				6ABBEEA1244D7FC30030A2A9 /* LaunchScreen.storyboard in Resources */,
 				6ABBEE9E244D7FC30030A2A9 /* Assets.xcassets in Resources */,
 				6ABBEEBC244EDEFC0030A2A9 /* SideDishTableViewCell.xib in Resources */,
+				6A5190CB2452DAFE00728C15 /* SidedishTableViewHeader.xib in Resources */,
 				6ABBEE9C244D7FC20030A2A9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
