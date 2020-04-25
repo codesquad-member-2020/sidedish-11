@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
+import java.util.Objects;
+
 @Getter @Setter
 public class Badge {
     @Id
@@ -12,10 +14,24 @@ public class Badge {
     private Long id;
     private String name;
 
-    public Badge() {
+    public Badge(String name) {
+        this.name = name;
     }
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Badge badge = (Badge) o;
+        return name.equals(badge.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

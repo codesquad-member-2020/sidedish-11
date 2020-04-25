@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Getter @Setter
 public class Item {
@@ -101,5 +98,12 @@ public class Item {
             return true;
         }
         return false;
+    }
+
+    public void addBadge(Badge badge) {
+        if (badges.contains(badge)) {
+            return;
+        }
+        badges.add(badge);
     }
 }

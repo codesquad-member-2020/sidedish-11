@@ -20,5 +20,5 @@ public class CommonUtils {
     public static final String OUT_OF_STOCK_MESSAGE = "아쉽지만 재고가 없네요.";
     public static final String ON_STOCK = "OK";
     public static final String ON_STOCK_MESSAGE = "정상 주문 됐어요.";
-
+    public static final String SOLD_OUT = "품절";
 }
