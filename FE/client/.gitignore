@@ -9,6 +9,9 @@ yarn.lock
 #data
 src/data
 
+#slick
+src/globalStyle/slick-carousel
+
 # dependencies
 /node_modules
 /.pnp

@@ -7,10 +7,10 @@ const Badge = ({ badgeData }) => {
     }
 
     let badges = null;
-    if (badgeData) badges = badgeData.map(badge => {
+    if (badgeData) badges = badgeData.map((badge, idx) => {
         const badgeType = badgeClassName[badge];
         return (
-            <div className={`badge ${badgeType}`}>
+            <div key={idx} className={`badge ${badgeType}`}>
                 <span>{badge}</span>
             </div>
         )
