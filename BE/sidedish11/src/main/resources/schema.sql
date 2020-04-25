@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS category (
 
 CREATE TABLE IF NOT EXISTS item (
     id int primary key auto_increment,
-    hash varchar (32),
+    hash varchar (32) unique,
     image varchar (256),
     title varchar (128),
     description varchar (256),
