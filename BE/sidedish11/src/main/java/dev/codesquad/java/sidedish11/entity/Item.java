@@ -91,4 +91,8 @@ public class Item {
     public int getStock() {
         return stock;
     }
+
+    public void decreaseStock() {
+        this.stock --;
+    }
 }

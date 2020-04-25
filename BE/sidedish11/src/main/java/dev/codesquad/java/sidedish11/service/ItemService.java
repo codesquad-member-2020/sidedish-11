@@ -36,6 +36,14 @@ public class ItemService {
         return itemDetailResponse;
     }
 
+    @Transactional
+    public String createOrder(String hash) {
+        Item item = findItem(hash);
+        item.decreaseStock();
+        itemRepository.save(item);
+        return "";
+    }
+
     private Item findItem(Long categoryId, String hash) {
         return itemRepository.findByCategoryAndHash(categoryId, hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
     }
