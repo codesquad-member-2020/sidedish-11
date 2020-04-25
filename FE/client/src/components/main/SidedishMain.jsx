@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ItemBox from './item/ItemBox';
-import { itemData } from '../../data/itemData';
+import useFetch from '../util/useFetch';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import URL from '../../constants/url';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -13,10 +15,15 @@ const useStyles = makeStyles({
 
 const SidedishMain = () => {
     const classes = useStyles();
+    const [categoryData, setCategoryData] = useState(null);
+    const loading = useFetch(setCategoryData, URL.DEV.CATEGORY);
+
+    let sidedishMain = <CircularProgress color="secondary" className={classes.progress} />
+    if (!loading) sidedishMain = categoryData.map(categoryData => <ItemBox key={categoryData.id} itemBoxData={categoryData} />);
 
     return (
         <div className={classes.mainWrap}>
-            {itemData.map(itemBoxData => <ItemBox key={itemBoxData.id} itemBoxData={itemBoxData} />)}
+            {sidedishMain}
         </div>
     )
 }

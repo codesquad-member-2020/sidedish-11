@@ -2,19 +2,19 @@ import React, { useState } from 'react'
 import useFetch from '../../util/useFetch';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import ItemList from './ItemList';
-import { makeStyles } from '@material-ui/core/styles';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     itemBox: {
         padding: '40px',
         marginBottom: '40px',
-        '& .category': {
+        '& .category-name': {
             color: '#999',
             fontSize: '18px',
             marginBottom: '10px',
         },
-        '& .title': {
+        '& .category-desc': {
             color: '#5a5a5a',
             fontSize: '32px',
             fontWeight: '300',
@@ -46,19 +46,19 @@ const useStyles = makeStyles((theme) => ({
 const ItemBox = ({ itemBoxData }) => {
     const classes = useStyles();
     const [itemListData, setitemListData] = useState(null);
-    const { category, title, url } = itemBoxData;
+    const { name, description, url } = itemBoxData;
     const loading = useFetch(setitemListData, url);
 
     let itemList = <CircularProgress color="secondary" className={classes.progress} />
-    if (!loading) itemList = <ItemList itemListData={itemListData.body} />
+    if (!loading) itemList = <ItemList itemListData={itemListData.items} />
 
     return (
         <div className={classes.itemBox}>
-            <h2 className='category'>{category}</h2>
-            <div className='title'>{title}</div>
+            <h2 className='category-name'>{name}</h2>
+            <div className='category-desc'>{description}</div>
             {itemList}
             <div className='more-item'>
-                <span>{category} 전체보기</span>
+                <span>{name} 전체보기</span>
                 <span><KeyboardArrowRightIcon /></span>
             </div>
         </div>

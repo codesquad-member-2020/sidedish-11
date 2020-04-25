@@ -21,9 +21,9 @@ const Item = ({ data }) => {
             <h3 className='item-title'>{data.title}</h3>
             <p className='item-description'>{data.description}</p>
             <div className='price-wrap'>
-                <span className='s-price'>{data.s_price.substr(0, data.s_price.length - 1)}</span>
-                <span className='price-unit'>원</span>
                 <span className='n-price'>{data.n_price}</span>
+                <span className='price-unit'>원</span>
+                <span className='s-price'>{data.s_price}</span>
             </div>
             <div className='item-badge'>
                 <Badge badgeData={data.badge} />
