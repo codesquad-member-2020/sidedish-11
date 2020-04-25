@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS badge;
 DROP TABLE IF EXISTS delivery_type;
 DROP TABLE IF EXISTS thumb_image;
 DROP TABLE IF EXISTS detail_section;
+DROP TABLE IF EXISTS color;
 
 CREATE TABLE IF NOT EXISTS category (
     id int primary key auto_increment,
@@ -51,4 +52,10 @@ CREATE TABLE IF NOT EXISTS detail_section (
     name varchar (256) not null,
     item int references item(id),
     item_key int
+);
+
+CREATE TABLE IF NOT EXISTS color (
+    id int primary key auto_increment,
+    name varchar (32) not null,
+    item int references item(id)
 );

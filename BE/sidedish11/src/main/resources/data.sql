@@ -151,6 +151,22 @@ INSERT INTO badge(name, item) VALUES ('론칭특가', 16);
 INSERT INTO badge(name, item) VALUES ('이벤트특가', 22);
 
 ---------------------------------
+------------ COLOR --------------
+
+INSERT INTO color(name, item) VALUES ('PointMint', 1);
+INSERT INTO color(name, item) VALUES ('PointMint', 3);
+INSERT INTO color(name, item) VALUES ('RedOrange', 5);
+INSERT INTO color(name, item) VALUES ('RedOrange', 7);
+INSERT INTO color(name, item) VALUES ('PointMint', 9);
+INSERT INTO color(name, item) VALUES ('PointMint', 12);
+INSERT INTO color(name, item) VALUES ('PointMint', 13);
+INSERT INTO color(name, item) VALUES ('PointMint', 14);
+INSERT INTO color(name, item) VALUES ('RedOrange', 14);
+INSERT INTO color(name, item) VALUES ('RedOrange', 15);
+INSERT INTO color(name, item) VALUES ('RedOrange', 16);
+INSERT INTO color(name, item) VALUES ('PointMint', 22);
+
+---------------------------------
 -------- DELIVERY TYPE ----------
 
 INSERT INTO delivery_type(name, item) VALUES ('새벽배송', 1);
