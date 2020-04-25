@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS item (
     point varchar (32),
     delivery_info varchar (128),
     delivery_fee varchar (128),
+    stock int not null,
     category int references category(id)
 );
 
