@@ -5,6 +5,7 @@ import dev.codesquad.java.sidedish11.dto.ItemDetailResponse;
 import dev.codesquad.java.sidedish11.dto.ItemResponse;
 import dev.codesquad.java.sidedish11.dto.OrderResponse;
 import dev.codesquad.java.sidedish11.entity.Badge;
+import dev.codesquad.java.sidedish11.entity.Color;
 import dev.codesquad.java.sidedish11.entity.Item;
 import dev.codesquad.java.sidedish11.exception.DataNotFoundException;
 import dev.codesquad.java.sidedish11.repository.ItemRepository;
@@ -43,6 +44,7 @@ public class ItemService {
         Item item = findItem(hash);
         if (!item.isValidStock()) {
             item.addBadge(new Badge(SOLD_OUT));
+            item.addColor(new Color(ORANGE_YELLOW));
             itemRepository.save(item);
             return new OrderResponse(OUT_OF_STOCK, OUT_OF_STOCK_MESSAGE);
         }

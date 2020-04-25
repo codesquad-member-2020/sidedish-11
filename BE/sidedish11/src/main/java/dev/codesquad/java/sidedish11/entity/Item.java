@@ -111,4 +111,11 @@ public class Item {
         }
         badges.add(badge);
     }
+
+    public void addColor(Color color) {
+        if (colors.contains(color)) {
+            return;
+        }
+        colors.add(color);
+    }
 }
