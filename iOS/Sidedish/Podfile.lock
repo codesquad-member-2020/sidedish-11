@@ -1,16 +1,29 @@
 PODS:
   - Alamofire (5.1.0)
+  - Toaster (2.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.1)
+  - Toaster (from `https://github.com/devxoul/Toaster.git`, branch `master`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
 
+EXTERNAL SOURCES:
+  Toaster:
+    :branch: master
+    :git: https://github.com/devxoul/Toaster.git
+
+CHECKOUT OPTIONS:
+  Toaster:
+    :commit: aec54fc48d3d36279424103de0784c23862d19df
+    :git: https://github.com/devxoul/Toaster.git
+
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Toaster: 33d27524fb6829cdb6b247c924beab0cfa001b3e
 
-PODFILE CHECKSUM: fb3ccd41a137dcc3945ba40aa859a10d84be285b
+PODFILE CHECKSUM: a510b744cd6e574e99b9cbf5c563a85f2c31dace
 
 COCOAPODS: 1.9.1
