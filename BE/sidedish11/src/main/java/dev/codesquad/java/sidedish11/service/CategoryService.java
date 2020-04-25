@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import static dev.codesquad.java.sidedish11.common.CommonUtils.*;
+
 @Service
 public class CategoryService {
     private Logger logger = LoggerFactory.getLogger(CategoryService.class);
@@ -30,6 +32,6 @@ public class CategoryService {
     }
 
     private Category findCategory(Long id) {
-        return categoryRepository.findById(id).orElseThrow(() -> new DataNotFoundException("NO CATEGORY"));
+        return categoryRepository.findById(id).orElseThrow(() -> new DataNotFoundException(CATEGORY_NOT_FOUND));
     }
 }

@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import static dev.codesquad.java.sidedish11.common.CommonUtils.*;
 
 @Service
 public class ItemService {
@@ -42,15 +42,10 @@ public class ItemService {
     }
 
     private Item findItem(Long id, String hash) {
-        return itemRepository.findByIdAndHash(id, hash).orElseThrow(() -> new DataNotFoundException("NO DATA"));
+        return itemRepository.findByIdAndHash(id, hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
     }
 
     private Item findItem(String hash) {
-        return itemRepository.findByHash(hash).orElseThrow(() -> new DataNotFoundException("NO DATA"));
-    }
-
-    private List<Item> findAllItem(Long id) {
-
-        return null;
+        return itemRepository.findByHash(hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
     }
 }

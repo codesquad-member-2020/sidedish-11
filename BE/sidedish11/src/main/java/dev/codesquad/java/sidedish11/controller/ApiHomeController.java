@@ -1,9 +1,5 @@
 package dev.codesquad.java.sidedish11.controller;
 
-import dev.codesquad.java.sidedish11.dto.ItemDetail;
-import dev.codesquad.java.sidedish11.dto.ItemDetailResponse;
-import dev.codesquad.java.sidedish11.dto.ItemResponse;
-import dev.codesquad.java.sidedish11.entity.Item;
 import dev.codesquad.java.sidedish11.service.CategoryService;
 import dev.codesquad.java.sidedish11.service.ItemService;
 import org.slf4j.Logger;
