@@ -1,6 +1,7 @@
 const URL = {
     DEV: {
-        CATEGORY: 'http://3.34.55.104:8080/category',
+        CATEGORY: 'http://3.34.55.104/api/category',
+        DETAIL: 'http://3.34.55.104/api/detail/',
     }
 }
 
