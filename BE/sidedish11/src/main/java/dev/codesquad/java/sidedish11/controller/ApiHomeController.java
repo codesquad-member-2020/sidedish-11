@@ -1,7 +1,6 @@
 package dev.codesquad.java.sidedish11.controller;
 
 import dev.codesquad.java.sidedish11.service.CategoryService;
-import dev.codesquad.java.sidedish11.service.ItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,16 +16,8 @@ public class ApiHomeController {
     @Autowired
     private CategoryService categoryService;
 
-    @Autowired
-    private ItemService itemService;
-
     @GetMapping("/category")
     public ResponseEntity viewAllCategories() {
         return new ResponseEntity(categoryService.getAllCategories(), HttpStatus.OK);
-    }
-
-    @GetMapping("/item")
-    public ResponseEntity viewAllItems() {
-        return new ResponseEntity(itemService.viewAll(), HttpStatus.OK);
     }
 }

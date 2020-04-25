@@ -22,11 +22,6 @@ public class ItemService {
     private ItemRepository itemRepository;
 
     @Transactional
-    public Iterable<Item> viewAll() {
-        return itemRepository.findAll();
-    }
-
-    @Transactional
     public ItemResponse getItem(Long categoryId, String hash) {
         Item item = findItem(categoryId, hash);
         ItemResponse itemResponse = new ItemResponse(item);
