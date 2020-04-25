@@ -9,5 +9,5 @@ public class CommonUtils {
     public static final String HEADER_ACCEPT_VALUE = "application/json";
 
     //dto
-    public static final String LOCAL_HOST_URL = "http://localhost:8080/";
+    public static final String LOCAL_HOST_URL = "http://3.34.55.104:8080/";
 }
