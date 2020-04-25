@@ -2,8 +2,8 @@ import React from 'react'
 
 const Badge = ({ badgeData }) => {
     const badgeClassName = {
-        '론칭특가': 'launching',
-        '이벤트특가': 'eventSale',
+        '론칭특가': 'launching-sale',
+        '이벤트특가': 'event-sale',
     }
 
     let badges = null;
