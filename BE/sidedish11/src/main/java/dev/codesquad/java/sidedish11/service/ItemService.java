@@ -27,8 +27,8 @@ public class ItemService {
     }
 
     @Transactional
-    public ItemResponse getItem(Long id, String hash) {
-        Item item = findItem(id, hash);
+    public ItemResponse getItem(Long categoryId, String hash) {
+        Item item = findItem(categoryId, hash);
         ItemResponse itemResponse = new ItemResponse(item);
         return itemResponse;
     }
@@ -41,8 +41,8 @@ public class ItemService {
         return itemDetailResponse;
     }
 
-    private Item findItem(Long id, String hash) {
-        return itemRepository.findByIdAndHash(id, hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
+    private Item findItem(Long categoryId, String hash) {
+        return itemRepository.findByCategoryAndHash(categoryId, hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
     }
 
     private Item findItem(String hash) {

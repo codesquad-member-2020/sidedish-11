@@ -7,8 +7,8 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Optional;
 
 public interface ItemRepository extends CrudRepository<Item, Long> {
-    @Query("Select * from item where id = :id and hash = :hash")
-    Optional<Item> findByIdAndHash(Long id, String hash);
+    @Query("Select * from item where category = :categoryId and hash = :hash")
+    Optional<Item> findByCategoryAndHash(Long categoryId, String hash);
 
     @Query("Select * from item where hash = :hash")
     Optional<Item> findByHash(String hash);
