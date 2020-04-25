@@ -8,13 +8,13 @@ import org.springframework.data.annotation.Id;
 import java.util.Objects;
 
 @Getter @Setter
-public class Badge {
+public class Color {
     @Id
     @JsonIgnore
     private Long id;
     private String name;
 
-    public Badge(String name) {
+    public Color(String name) {
         this.name = name;
     }
 
@@ -26,8 +26,8 @@ public class Badge {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Badge badge = (Badge) o;
-        return name.equals(badge.name);
+        Color color = (Color) o;
+        return name.equals(color.name);
     }
 
     @Override

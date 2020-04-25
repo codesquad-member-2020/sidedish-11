@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Getter @Setter
 public class Item {
@@ -22,11 +19,13 @@ public class Item {
     private String point;
     private String deliveryInfo;
     private String deliveryFee;
+    private int stock;
 
     private Set<Badge> badges = new HashSet<>();
     private Set<DeliveryType> deliveryTypes = new HashSet<>();
     private List<ThumbImage> thumbImages = new ArrayList<>();
     private List<DetailSection> detailSections = new ArrayList<>();
+    private Set<Color> colors = new HashSet<>();
 
     public Item() {
     }
@@ -85,5 +84,38 @@ public class Item {
 
     public List<DetailSection> getDetailSections() {
         return detailSections;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public Set<Color> getColors() {
+        return colors;
+    }
+
+    public void decreaseStock() {
+        this.stock --;
+    }
+
+    public boolean isValidStock() {
+        if (stock > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public void addBadge(Badge badge) {
+        if (badges.contains(badge)) {
+            return;
+        }
+        badges.add(badge);
+    }
+
+    public void addColor(Color color) {
+        if (colors.contains(color)) {
+            return;
+        }
+        colors.add(color);
     }
 }

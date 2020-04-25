@@ -25,5 +25,6 @@
 
 ## Project References
 
-- [배포 업데이트 로그]
-- [API document]
+- [배포 업데이트 로그](https://github.com/codesquad-member-2020/sidedish-11/wiki/배포-업데이트)
+- [API document](https://documenter.getpostman.com/view/10828534/SzfAzSb1?version=latest)
+
