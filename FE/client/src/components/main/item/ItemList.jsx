@@ -7,6 +7,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
     itemList: {
         cursor: 'pointer',
+        border: '0',
+        outline: '0',
     },
     slider: {
         '& .slick-dots': {
