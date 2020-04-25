@@ -4,6 +4,7 @@ const Badge = ({ badgeData }) => {
     const badgeClassName = {
         '론칭특가': 'launching-sale',
         '이벤트특가': 'event-sale',
+        '품절': 'sold-out',
     }
 
     let badges = null;
