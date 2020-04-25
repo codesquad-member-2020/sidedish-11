@@ -4,9 +4,9 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
-    menuWrap: {
+    popupWrap: {
         position: 'relative',
-        '& .menuText': {
+        '& .popupText': {
             display: 'flex',
             alignItems: 'center',
             cursor: 'pointer',
@@ -29,8 +29,8 @@ function TopNavPopup({ title, contents }) {
     const handleMouseLeave = () => setOpen(false);
 
     return (
-        <div className={classes.menuWrap} onClick={handleClick} onMouseLeave={handleMouseLeave}>
-            <div className='menuText'>
+        <div className={classes.popupWrap} onClick={handleClick} onMouseLeave={handleMouseLeave}>
+            <div className='popupText'>
                 {title}<ArrowDropDownIcon className='arrowIcon' />
             </div>
             {isOpen && <TopNavPopupSubList contents={contents} />}

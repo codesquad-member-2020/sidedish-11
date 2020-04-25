@@ -1,7 +1,7 @@
 import React from 'react';
 import Menus from './Menus';
 import { makeStyles } from '@material-ui/core/styles';
-import { menuData } from '../../../mock/menuData';
+import { menuData } from '../../../data/menuData';
 
 const useStyles = makeStyles({
     menuNavWrap: {
@@ -12,7 +12,7 @@ const useStyles = makeStyles({
         fontSize: '15px',
     },
     menuNavInner: {
-        width: '65%',
+        width: '1080px',
         padding: '0',
         margin: '0 auto',
         display: 'flex',
