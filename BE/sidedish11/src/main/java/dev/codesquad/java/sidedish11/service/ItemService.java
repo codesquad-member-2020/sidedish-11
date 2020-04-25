@@ -1,12 +1,18 @@
 package dev.codesquad.java.sidedish11.service;
 
+import dev.codesquad.java.sidedish11.dto.ItemDetail;
+import dev.codesquad.java.sidedish11.dto.ItemDetailResponse;
+import dev.codesquad.java.sidedish11.dto.ItemResponse;
 import dev.codesquad.java.sidedish11.entity.Item;
+import dev.codesquad.java.sidedish11.exception.DataNotFoundException;
 import dev.codesquad.java.sidedish11.repository.ItemRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import static dev.codesquad.java.sidedish11.common.CommonUtils.*;
 
 @Service
 public class ItemService {
@@ -16,12 +22,25 @@ public class ItemService {
     private ItemRepository itemRepository;
 
     @Transactional
-    public Iterable<Item> viewAll() {
-        return itemRepository.findAll();
+    public ItemResponse getItem(Long categoryId, String hash) {
+        Item item = findItem(categoryId, hash);
+        ItemResponse itemResponse = new ItemResponse(item);
+        return itemResponse;
     }
 
     @Transactional
-    public Item view(Long id) {
-        return itemRepository.findById(id).orElseThrow(null);
+    public ItemDetailResponse getItemDetail(String hash) {
+        Item item = findItem(hash);
+        ItemDetail itemDetail = new ItemDetail(item);
+        ItemDetailResponse itemDetailResponse = new ItemDetailResponse(itemDetail);
+        return itemDetailResponse;
+    }
+
+    private Item findItem(Long categoryId, String hash) {
+        return itemRepository.findByCategoryAndHash(categoryId, hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
+    }
+
+    private Item findItem(String hash) {
+        return itemRepository.findByHash(hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
     }
 }

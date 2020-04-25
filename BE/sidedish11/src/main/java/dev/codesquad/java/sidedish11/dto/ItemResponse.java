@@ -1,5 +1,6 @@
 package dev.codesquad.java.sidedish11.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.codesquad.java.sidedish11.entity.Badge;
 import dev.codesquad.java.sidedish11.entity.DeliveryType;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @Getter
 public class ItemResponse {
+    @JsonIgnore
     private Long id;
     private String detail_hash;
     private String image;
