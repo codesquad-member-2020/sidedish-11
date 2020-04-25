@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toaster
 
 class SidedishTableViewDelegate: NSObject, UITableViewDelegate {
     
@@ -22,7 +23,21 @@ class SidedishTableViewDelegate: NSObject, UITableViewDelegate {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SidedishTableViewHeader.identifier) as! SidedishTableViewHeader
         header.section = section
         header.headerModel = headerModel
+        header.tag = section
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(sectionHeaderTapped))
+        tapRecognizer.delegate = self
+        tapRecognizer.numberOfTapsRequired = 1
+        tapRecognizer.numberOfTouchesRequired = 1
+        header.addGestureRecognizer(tapRecognizer)
         return header
     }
 }
-
+extension SidedishTableViewDelegate: UIGestureRecognizerDelegate{
+    @objc func sectionHeaderTapped(gestureRecognizer: UIGestureRecognizer) {
+        guard let section = gestureRecognizer.view?.tag else { return }
+        guard let menuCategory = self.headerModel[section]?.name else { return }
+        guard let menuCount = self.headerModel[section]?.items.count else { return }
+        let toast = Toast(text: "'\(menuCategory)'에 무려 \(menuCount)가지 메뉴가 준비되어 있어요😆🎉")
+        toast.show()
+    }
+}
