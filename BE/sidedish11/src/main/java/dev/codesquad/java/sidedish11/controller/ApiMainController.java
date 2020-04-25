@@ -1,5 +1,6 @@
 package dev.codesquad.java.sidedish11.controller;
 
+import dev.codesquad.java.sidedish11.dto.CategoryResponse;
 import dev.codesquad.java.sidedish11.entity.Category;
 import dev.codesquad.java.sidedish11.repository.ItemRepository;
 import dev.codesquad.java.sidedish11.service.CategoryService;
@@ -26,8 +27,8 @@ public class ApiMainController {
 
     @GetMapping("")
     public ResponseEntity view() {
-        Category category = categoryService.getCategory(1L);
-        return ResponseEntity.ok(category);
+        CategoryResponse categoryResponse = categoryService.getCategory(1L);
+        return ResponseEntity.ok(categoryResponse);
     }
 
     @GetMapping("/{hash}")

@@ -1,6 +1,7 @@
 package dev.codesquad.java.sidedish11.dto;
 
 import dev.codesquad.java.sidedish11.entity.Category;
+import dev.codesquad.java.sidedish11.entity.Item;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -16,12 +17,14 @@ public class CategoryResponse {
     private String url;
     private List<ItemResponse> items = new ArrayList<>();
 
-    public CategoryResponse(Category category, List<ItemResponse> items) {
+    public CategoryResponse(Category category) {
         this.id = category.getId();
         this.name = category.getName();
         this.description = category.getDescription();
         this.url = LOCAL_HOST_URL + category.getTitle();
-        this.items = items;
+        for (Item item  : category.getItems()) {
+            items.add(new ItemResponse(item));
+        }
     }
 
     @Override

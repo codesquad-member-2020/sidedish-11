@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class ItemService {
     private Logger logger = LoggerFactory.getLogger(ItemService.class);
@@ -45,5 +47,10 @@ public class ItemService {
 
     private Item findItem(String hash) {
         return itemRepository.findByHash(hash).orElseThrow(() -> new DataNotFoundException("NO DATA"));
+    }
+
+    private List<Item> findAllItem(Long id) {
+
+        return null;
     }
 }

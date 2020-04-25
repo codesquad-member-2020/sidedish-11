@@ -34,4 +34,8 @@ public class Category {
     public String getDescription() {
         return description;
     }
+
+    public Set<Item> getItems() {
+        return items;
+    }
 }
