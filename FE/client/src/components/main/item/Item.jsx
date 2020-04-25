@@ -13,8 +13,7 @@ const Item = ({ data }) => {
                 <img className='item-image' src={data.image} alt={data.alt}></img>
                 {isHover && <div className='hover-image'>
                     <div>
-                        <span>새벽배송</span>
-                        <span>전국택배</span>
+                        {data.delivery_type.map((type, idx) => <span key={idx}>{type}</span>)}
                     </div>
                 </div>}
             </div>
