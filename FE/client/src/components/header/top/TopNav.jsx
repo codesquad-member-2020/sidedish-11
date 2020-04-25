@@ -34,7 +34,8 @@ const useStyles = makeStyles({
                 paddingRight: '0',
             },
         },
-        '& .singleList': {
+        '& .singleList, .singleList *': {
+            color: '#5a5a5a',
             '&:hover': {
                 color: '#18C2BD',
             },
@@ -54,7 +55,7 @@ function TopNav() {
             <div className={classes.topNavInner}>
                 <TopNavPopup title={downloadApp.title} contents={downloadApp.contents} />
                 <ul className={classes.topNavList}>
-                    <li className='singleList'>로그인</li>
+                    <li className='singleList'><a href='https://github.com/login/oauth/authorize\?client_id=8d92d01b11ba14d3d18f\&scope=user%20public_repo'>로그인</a></li>
                     <li className='singleList'>회원가입</li>
                     <li>
                         <TopNavPopup title={myPage.title} contents={myPage.contents} />
