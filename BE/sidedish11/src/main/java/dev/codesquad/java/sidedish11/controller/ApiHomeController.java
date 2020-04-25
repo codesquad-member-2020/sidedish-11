@@ -21,8 +21,8 @@ public class ApiHomeController {
     private ItemService itemService;
 
     @GetMapping("/category")
-    public ResponseEntity viewAll() {
-        return new ResponseEntity(categoryService.viewAll(), HttpStatus.OK);
+    public ResponseEntity viewAllCategories() {
+        return new ResponseEntity(categoryService.getAllCategories(), HttpStatus.OK);
     }
 
     @GetMapping("/item")
