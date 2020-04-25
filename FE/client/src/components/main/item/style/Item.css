@@ -92,3 +92,30 @@
     background: transparent;
     color: #888;
 }
+
+.item-badge {
+    margin-top: 10px;
+}
+
+.badge {
+    display: inline-block;
+    zoom: 1;
+    min-width: 52px;
+    height: 11px;
+    margin: 0 3px 0 0;
+    padding: 5px 0 5px;
+    line-height: 11px;
+    text-align: center;
+    font-size: 11px;
+    color: #fff;
+}
+
+.launching {
+    background: #c6a8a5;
+    width: 62px;
+}
+
+.eventSale {
+    background: #b997cf;
+    width: 62px;
+}
