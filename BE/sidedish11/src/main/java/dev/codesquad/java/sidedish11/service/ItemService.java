@@ -3,6 +3,7 @@ package dev.codesquad.java.sidedish11.service;
 import dev.codesquad.java.sidedish11.dto.ItemDetail;
 import dev.codesquad.java.sidedish11.dto.ItemDetailResponse;
 import dev.codesquad.java.sidedish11.dto.ItemResponse;
+import dev.codesquad.java.sidedish11.dto.OrderResponse;
 import dev.codesquad.java.sidedish11.entity.Item;
 import dev.codesquad.java.sidedish11.exception.DataNotFoundException;
 import dev.codesquad.java.sidedish11.repository.ItemRepository;
@@ -37,14 +38,14 @@ public class ItemService {
     }
 
     @Transactional
-    public String createOrder(String hash) {
+    public OrderResponse createOrder(String hash) {
         Item item = findItem(hash);
         if (!item.isValidStock()) {
-            return "";
+            return new OrderResponse(OUT_OF_STOCK, OUT_OF_STOCK_MESSAGE);
         }
         item.decreaseStock();
         itemRepository.save(item);
-        return "";
+        return new OrderResponse(ON_STOCK, ON_STOCK_MESSAGE);
     }
 
     private Item findItem(Long categoryId, String hash) {
