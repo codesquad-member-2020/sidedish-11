@@ -20,6 +20,7 @@ public class ItemDetail {
     private String point;
     private String delivery_info;
     private String delivery_fee;
+    private int stock;
 
     @JsonProperty("thumb_images")
     private List<String> thumbImagesStrings = new ArrayList<>();
@@ -37,6 +38,7 @@ public class ItemDetail {
         this.point = item.getPoint();
         this.delivery_info = item.getDeliveryInfo();
         this.delivery_fee = item.getDeliveryFee();
+        this.stock = item.getStock();
 
         this.pricesStrings.add(item.getNormalPrice());
         this.pricesStrings.add(item.getSalePrice());

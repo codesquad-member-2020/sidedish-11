@@ -22,6 +22,7 @@ public class Item {
     private String point;
     private String deliveryInfo;
     private String deliveryFee;
+    private int stock;
 
     private Set<Badge> badges = new HashSet<>();
     private Set<DeliveryType> deliveryTypes = new HashSet<>();
@@ -85,5 +86,9 @@ public class Item {
 
     public List<DetailSection> getDetailSections() {
         return detailSections;
+    }
+
+    public int getStock() {
+        return stock;
     }
 }
