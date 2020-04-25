@@ -3,6 +3,7 @@ package dev.codesquad.java.sidedish11.dto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.codesquad.java.sidedish11.entity.Badge;
+import dev.codesquad.java.sidedish11.entity.Color;
 import dev.codesquad.java.sidedish11.entity.DeliveryType;
 import dev.codesquad.java.sidedish11.entity.Item;
 import lombok.Getter;
@@ -28,6 +29,9 @@ public class ItemResponse {
     @JsonProperty("delivery_type")
     private List<String> deliveryTypeStrings = new ArrayList<>();
 
+    @JsonProperty("color")
+    private List<String> colorStrings = new ArrayList<>();
+
     public ItemResponse(Item item) {
         this.id = item.getId();
         this.detail_hash = item.getHash();
@@ -43,6 +47,9 @@ public class ItemResponse {
         }
         for (DeliveryType deliveryType : item.getDeliveryTypes()) {
             deliveryTypeStrings.add(deliveryType.getName());
+        }
+        for (Color color : item.getColors()) {
+            colorStrings.add(color.getName());
         }
     }
 }

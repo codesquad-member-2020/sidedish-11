@@ -25,6 +25,7 @@ public class Item {
     private Set<DeliveryType> deliveryTypes = new HashSet<>();
     private List<ThumbImage> thumbImages = new ArrayList<>();
     private List<DetailSection> detailSections = new ArrayList<>();
+    private Set<Color> colors = new HashSet<>();
 
     public Item() {
     }
@@ -87,6 +88,10 @@ public class Item {
 
     public int getStock() {
         return stock;
+    }
+
+    public Set<Color> getColors() {
+        return colors;
     }
 
     public void decreaseStock() {
