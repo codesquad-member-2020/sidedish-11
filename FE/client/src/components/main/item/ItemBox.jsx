@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
             '&:hover': {
                 color: '#000',
                 border: '1px solid #b4b4b4',
-            }
+            },
         }
     },
     progress: {
@@ -58,7 +58,8 @@ const ItemBox = ({ itemBoxData }) => {
             <div className='title'>{title}</div>
             {itemList}
             <div className='more-item'>
-                {category} 전체보기 <KeyboardArrowRightIcon />
+                <span>{category} 전체보기</span>
+                <span><KeyboardArrowRightIcon /></span>
             </div>
         </div>
     )
