@@ -43,14 +43,14 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const ItemBox = ({ itemBoxData }) => {
+const ItemBox = ({ categoryData }) => {
     const classes = useStyles();
-    const [itemListData, setitemListData] = useState(null);
-    const { name, description, url } = itemBoxData;
-    const loading = useFetch(setitemListData, url);
+    const [itemsData, setItemsData] = useState(null);
+    const { name, description, url } = categoryData;
+    const loading = useFetch(setItemsData, url);
 
-    let itemList = <CircularProgress color="secondary" className={classes.progress} />
-    if (!loading) itemList = <ItemList itemListData={itemListData.items} />
+    let itemList = <CircularProgress color='secondary' className={classes.progress} />
+    if (!loading) itemList = <ItemList itemsData={itemsData.items} />
 
     return (
         <div className={classes.itemBox}>

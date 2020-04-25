@@ -1,3 +1,7 @@
+.item-wrap {
+    position: relative;
+}
+
 .image-wrap {
     position: relative;
 }
@@ -63,6 +67,23 @@
 }
 
 .s-price {
+    margin-right: 2px;
+    font-size: 26px;
+    color: #2ac1bc;
+    font-weight: bold;
+    vertical-align: middle;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.price-unit {
+    font-weight: 600;
+    font-size: 14px;
+    color: #2ac1bc;
+    padding-left: 2px;
+}
+
+.n-price {
     margin: 0;
     margin-left: 10px;
     padding: 0;
@@ -74,23 +95,6 @@
     vertical-align: baseline;
     background: transparent;
     color: #888;
-}
-
-.price-unit {
-    font-weight: 600;
-    font-size: 14px;
-    color: #2ac1bc;
-    padding-left: 2px;
-}
-
-.n-price {
-    margin-right: 2px;
-    font-size: 26px;
-    color: #2ac1bc;
-    font-weight: bold;
-    vertical-align: middle;
-    line-height: 1;
-    letter-spacing: -0.04em;
 }
 
 .item-badge {
@@ -112,10 +116,15 @@
 
 .launching-sale {
     background: #c6a8a5;
-    width: 62px;
+    width: 50px;
 }
 
 .event-sale {
     background: #b997cf;
     width: 62px;
+}
+
+.sold-out {
+    background: #838085;
+    width: 25px;
 }

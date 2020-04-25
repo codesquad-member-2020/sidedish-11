@@ -1,7 +1,7 @@
 .arrow {
     position: absolute;
     top: 50%;
-    transform: scale(5);
+    transform: scale(3.5);
     cursor: pointer;
 }
 
