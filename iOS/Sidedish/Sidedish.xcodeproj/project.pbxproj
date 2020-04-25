@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19C7FD98D8ECD07A606BC673 /* Pods_Sidedish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 818A59DDA1EC3860565DEDA7 /* Pods_Sidedish.framework */; };
-		49554D21FBA3C04F7AF28B23 /* Pods_SidedishTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF49656D8D0851B397F5833 /* Pods_SidedishTests.framework */; };
 		6A5190CB2452DAFE00728C15 /* SidedishTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5190CA2452DAFE00728C15 /* SidedishTableViewHeader.xib */; };
 		6A87AA37244F14C80064D29A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A87AA36244F14C80064D29A /* NetworkManager.swift */; };
 		6A87AA39244F1E820064D29A /* SidedishUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A87AA38244F1E820064D29A /* SidedishUseCase.swift */; };
@@ -26,6 +24,8 @@
 		6ABBEEBC244EDEFC0030A2A9 /* SideDishTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ABBEEBA244EDEFC0030A2A9 /* SideDishTableViewCell.xib */; };
 		6ABBEEBE244EFF080030A2A9 /* SidedishInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABBEEBD244EFF080030A2A9 /* SidedishInfo.swift */; };
 		6ABBEEC0244F00660030A2A9 /* SidedishDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABBEEBF244F00660030A2A9 /* SidedishDataSource.swift */; };
+		7551F4F5DA6BDB180F22F275 /* libPods-SidedishTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D193D4418B518E846DBD4F /* libPods-SidedishTests.a */; };
+		D8B831A9DB3803819CA2449A /* libPods-Sidedish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B98E341DACF9095AA132E196 /* libPods-Sidedish.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		0E7DB2080C8A5FCCCA353435 /* Pods-SidedishTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SidedishTests.debug.xcconfig"; path = "Target Support Files/Pods-SidedishTests/Pods-SidedishTests.debug.xcconfig"; sourceTree = "<group>"; };
+		14D193D4418B518E846DBD4F /* libPods-SidedishTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SidedishTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F40D5EA5D2086B44806BA5 /* Pods-Sidedish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sidedish.debug.xcconfig"; path = "Target Support Files/Pods-Sidedish/Pods-Sidedish.debug.xcconfig"; sourceTree = "<group>"; };
 		6A5190CA2452DAFE00728C15 /* SidedishTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SidedishTableViewHeader.xib; sourceTree = "<group>"; };
 		6A87AA36244F14C80064D29A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -62,10 +63,9 @@
 		6ABBEEBA244EDEFC0030A2A9 /* SideDishTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideDishTableViewCell.xib; sourceTree = "<group>"; };
 		6ABBEEBD244EFF080030A2A9 /* SidedishInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidedishInfo.swift; sourceTree = "<group>"; };
 		6ABBEEBF244F00660030A2A9 /* SidedishDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidedishDataSource.swift; sourceTree = "<group>"; };
-		818A59DDA1EC3860565DEDA7 /* Pods_Sidedish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sidedish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2548E2E43229380A3208802 /* Pods-SidedishTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SidedishTests.release.xcconfig"; path = "Target Support Files/Pods-SidedishTests/Pods-SidedishTests.release.xcconfig"; sourceTree = "<group>"; };
+		B98E341DACF9095AA132E196 /* libPods-Sidedish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sidedish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE2CC5FE433304B0860F822A /* Pods-Sidedish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sidedish.release.xcconfig"; path = "Target Support Files/Pods-Sidedish/Pods-Sidedish.release.xcconfig"; sourceTree = "<group>"; };
-		DDF49656D8D0851B397F5833 /* Pods_SidedishTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SidedishTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19C7FD98D8ECD07A606BC673 /* Pods_Sidedish.framework in Frameworks */,
+				D8B831A9DB3803819CA2449A /* libPods-Sidedish.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49554D21FBA3C04F7AF28B23 /* Pods_SidedishTests.framework in Frameworks */,
+				7551F4F5DA6BDB180F22F275 /* libPods-SidedishTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,8 +91,8 @@
 		1BCC2D5834A81D8AEC01C486 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				818A59DDA1EC3860565DEDA7 /* Pods_Sidedish.framework */,
-				DDF49656D8D0851B397F5833 /* Pods_SidedishTests.framework */,
+				B98E341DACF9095AA132E196 /* libPods-Sidedish.a */,
+				14D193D4418B518E846DBD4F /* libPods-SidedishTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -196,7 +196,6 @@
 				6ABBEE8D244D7FC20030A2A9 /* Sources */,
 				6ABBEE8E244D7FC20030A2A9 /* Frameworks */,
 				6ABBEE8F244D7FC20030A2A9 /* Resources */,
-				A1F711315ACC8CA185E81EC6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -329,23 +328,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A1F711315ACC8CA185E81EC6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sidedish/Pods-Sidedish-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sidedish/Pods-Sidedish-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sidedish/Pods-Sidedish-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
