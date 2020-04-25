@@ -39,6 +39,9 @@ public class ItemService {
     @Transactional
     public String createOrder(String hash) {
         Item item = findItem(hash);
+        if (!item.isValidStock()) {
+            return "";
+        }
         item.decreaseStock();
         itemRepository.save(item);
         return "";

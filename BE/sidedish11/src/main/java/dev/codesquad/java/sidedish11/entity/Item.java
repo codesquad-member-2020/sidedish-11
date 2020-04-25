@@ -95,4 +95,11 @@ public class Item {
     public void decreaseStock() {
         this.stock --;
     }
+
+    public boolean isValidStock() {
+        if (stock > 0) {
+            return true;
+        }
+        return false;
+    }
 }
