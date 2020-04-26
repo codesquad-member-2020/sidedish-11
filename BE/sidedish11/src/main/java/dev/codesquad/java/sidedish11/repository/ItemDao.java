@@ -34,8 +34,7 @@ public class ItemDao {
                 " WHERE item.id = ?";
 
         RowMapper<Item> itemMapper = (rs, rowNum) -> {
-            Item item = new Item();
-            item = getItem(item, rs, id);
+            Item item = getItem(rs, id);
             return item;
         };
 
@@ -55,9 +54,8 @@ public class ItemDao {
                 " WHERE item.category = ?";
 
         RowMapper<Item> itemMapper = (rs, rowNum) -> {
-            Item item = new Item();
             Long id = rs.getLong("id");
-            item = getItem(item, rs, id);
+            Item item = getItem(rs, id);
             return item;
         };
 
@@ -77,9 +75,8 @@ public class ItemDao {
                 " WHERE hash = ?";
 
         RowMapper<Item> itemMapper = (rs, rowNum) -> {
-            Item item = new Item();
             Long id = rs.getLong("id");
-            item = getItem(item, rs, id);
+            Item item = getItem(rs, id);
             return item;
         };
 
@@ -99,9 +96,8 @@ public class ItemDao {
                 " WHERE category = ? and hash = ?";
 
         RowMapper<Item> itemMapper = (rs, rowNum) -> {
-            Item item = new Item();
             Long id = rs.getLong("id");
-            item = getItem(item, rs, id);
+            Item item = getItem(rs, id);
             return item;
         };
 
@@ -113,7 +109,8 @@ public class ItemDao {
         }
     }
 
-    private Item getItem(Item item, ResultSet rs, Long id) throws SQLException {
+    private Item getItem(ResultSet rs, Long id) throws SQLException {
+        Item item = new Item();
         item.setId(rs.getLong("id"));
         item.setHash(rs.getString("hash"));
         item.setImage(rs.getString("image"));
