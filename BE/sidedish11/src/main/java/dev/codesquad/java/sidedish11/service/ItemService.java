@@ -60,7 +60,7 @@ public class ItemService {
     @Transactional
     public Item findItemDao(String hash) {
 //        return findItem(1L, hash);
-        return itemDao.findByHash(hash);
+        return itemDao.findByHash(hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
     }
 
     private Item findItem(Long categoryId, String hash) {

@@ -12,6 +12,7 @@ import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class ItemDao {
@@ -39,7 +40,7 @@ public class ItemDao {
         return jdbcTemplate.queryForObject(sql, new Object[] {id}, itemMapper);
     }
 
-    public Item findByHash(String hash) {
+    public Optional<Item> findByHash(String hash) {
         String sql = "SELECT item.id AS id, item.hash AS hash, item.title AS title, item.point AS point, item.image AS image," +
                 " item.stock AS stock, item.sale_price AS sale_price, item.delivery_fee AS delivery_fee, item.description AS description," +
                 " item.normal_price AS normal_price, item.delivery_info AS delivery_info" +
@@ -52,7 +53,7 @@ public class ItemDao {
             item = getItem(item, rs, id);
             return item;
         };
-        return jdbcTemplate.queryForObject(sql, new Object[] {hash}, itemMapper);
+        return Optional.ofNullable(jdbcTemplate.queryForObject(sql, new Object[] {hash}, itemMapper));
     }
 
     private Item getItem(Item item, ResultSet rs, Long id) throws SQLException {

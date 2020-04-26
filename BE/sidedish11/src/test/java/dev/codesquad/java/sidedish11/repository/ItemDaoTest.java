@@ -25,7 +25,7 @@ class ItemDaoTest {
 
     @Test
     void findByHash() {
-        Item item = itemDao.findByHash("HBDEF");
+        Item item = itemDao.findByHash("HBDEF").orElseThrow(null);
         assertNotNull(item);
         logger.debug(">>> findByHash : {}", item);
     }
