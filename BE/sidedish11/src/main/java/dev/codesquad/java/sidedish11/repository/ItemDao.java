@@ -47,6 +47,28 @@ public class ItemDao {
         }
     }
 
+    public Optional<List<Item>> findAllByCategoryId(Long categoryId) {
+        String sql = "SELECT item.id AS id, item.hash AS hash, item.title AS title, item.point AS point, item.image AS image," +
+                " item.stock AS stock, item.sale_price AS sale_price, item.delivery_fee AS delivery_fee, item.description AS description," +
+                " item.normal_price AS normal_price, item.delivery_info AS delivery_info" +
+                " FROM item" +
+                " WHERE item.category = ?";
+
+        RowMapper<Item> itemMapper = (rs, rowNum) -> {
+            Item item = new Item();
+            Long id = rs.getLong("id");
+            item = getItem(item, rs, id);
+            return item;
+        };
+
+        try {
+            return Optional.ofNullable(jdbcTemplate.query(sql, new Object[] {categoryId}, itemMapper));
+        } catch (DataAccessException e) {
+            logger.debug(">>> error : {}", e.getMessage());
+            return Optional.ofNullable(null);
+        }
+    }
+
     public Optional<Item> findByHash(String hash) {
         String sql = "SELECT item.id AS id, item.hash AS hash, item.title AS title, item.point AS point, item.image AS image," +
                 " item.stock AS stock, item.sale_price AS sale_price, item.delivery_fee AS delivery_fee, item.description AS description," +

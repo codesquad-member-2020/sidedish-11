@@ -1,6 +1,7 @@
 package dev.codesquad.java.sidedish11.controller;
 
 import dev.codesquad.java.sidedish11.entity.Category;
+import dev.codesquad.java.sidedish11.repository.ItemDao;
 import dev.codesquad.java.sidedish11.service.CategoryService;
 import dev.codesquad.java.sidedish11.service.ItemService;
 import org.slf4j.Logger;
@@ -19,6 +20,9 @@ public class ApiHomeController {
     @Autowired
     private CategoryService categoryService;
 
+    @Autowired
+    private ItemDao itemDao;
+
     @GetMapping("/category")
     public ResponseEntity viewAllCategories() {
         return new ResponseEntity(categoryService.getAllCategories(), HttpStatus.OK);
@@ -26,6 +30,7 @@ public class ApiHomeController {
 
     @GetMapping("{id}")
     public ResponseEntity test(@PathVariable Long id) {
+//        return ResponseEntity.ok(itemDao.findAllByCategoryId(id));
         return ResponseEntity.ok(categoryService.findCategoryTest(id));
     }
 }
