@@ -3,11 +3,13 @@ package dev.codesquad.java.sidedish11.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
 import java.util.Objects;
 
 @Getter @Setter
+@ToString
 public class Color {
     @Id
     @JsonIgnore
@@ -20,6 +22,10 @@ public class Color {
 
     public String getName() {
         return name;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override

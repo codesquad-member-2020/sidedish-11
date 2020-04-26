@@ -3,7 +3,7 @@ package dev.codesquad.java.sidedish11.service;
 import dev.codesquad.java.sidedish11.dto.CategoryResponse;
 import dev.codesquad.java.sidedish11.entity.Category;
 import dev.codesquad.java.sidedish11.exception.DataNotFoundException;
-import dev.codesquad.java.sidedish11.repository.CategoryRepository;
+import dev.codesquad.java.sidedish11.repository.CategoryDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ public class CategoryService {
     private Logger logger = LoggerFactory.getLogger(CategoryService.class);
 
     @Autowired
-    private CategoryRepository categoryRepository;
+    private CategoryDao categoryDao;
 
     @Transactional
     public CategoryResponse getCategory(Long id) {
@@ -40,10 +40,10 @@ public class CategoryService {
     }
 
     private Category findCategory(Long id) {
-        return categoryRepository.findById(id).orElseThrow(() -> new DataNotFoundException(CATEGORY_NOT_FOUND));
+        return categoryDao.findById(id).orElseThrow(() -> new DataNotFoundException(CATEGORY_NOT_FOUND));
     }
 
     private List<Category> findAllCategories() {
-        return categoryRepository.findAll();
+        return categoryDao.findAll().orElseThrow(() -> new DataNotFoundException(CATEGORY_NOT_FOUND));
     }
 }

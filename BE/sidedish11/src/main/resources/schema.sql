@@ -25,19 +25,22 @@ CREATE TABLE IF NOT EXISTS item (
     delivery_info varchar (128),
     delivery_fee varchar (128),
     stock int not null,
-    category int references category(id)
+    category int references category(id),
+    category_key int
 );
 
 CREATE TABLE IF NOT EXISTS badge (
     id int primary key auto_increment,
     name varchar (32) not null,
-    item int references item(id)
+    item int references item(id),
+    item_key int
 );
 
 CREATE TABLE IF NOT EXISTS delivery_type (
     id int primary key auto_increment,
     name varchar (32) not null,
-    item int references item(id)
+    item int references item(id),
+    item_key int
 );
 
 CREATE TABLE IF NOT EXISTS thumb_image (
@@ -57,5 +60,6 @@ CREATE TABLE IF NOT EXISTS detail_section (
 CREATE TABLE IF NOT EXISTS color (
     id int primary key auto_increment,
     name varchar (32) not null,
-    item int references item(id)
+    item int references item(id),
+    item_key int
 );

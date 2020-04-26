@@ -2,11 +2,13 @@ package dev.codesquad.java.sidedish11.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
 import java.util.*;
 
 @Getter @Setter
+@ToString
 public class Item {
     @Id
     private Long id;
@@ -21,11 +23,11 @@ public class Item {
     private String deliveryFee;
     private int stock;
 
-    private Set<Badge> badges = new HashSet<>();
-    private Set<DeliveryType> deliveryTypes = new HashSet<>();
+    private List<Badge> badges = new ArrayList<>();
+    private List<DeliveryType> deliveryTypes = new ArrayList<>();
     private List<ThumbImage> thumbImages = new ArrayList<>();
     private List<DetailSection> detailSections = new ArrayList<>();
-    private Set<Color> colors = new HashSet<>();
+    private List<Color> colors = new ArrayList<>();
 
     public Item() {
     }
@@ -70,11 +72,11 @@ public class Item {
         return deliveryFee;
     }
 
-    public Set<Badge> getBadges() {
+    public List<Badge> getBadges() {
         return badges;
     }
 
-    public Set<DeliveryType> getDeliveryTypes() {
+    public List<DeliveryType> getDeliveryTypes() {
         return deliveryTypes;
     }
 
@@ -90,8 +92,72 @@ public class Item {
         return stock;
     }
 
-    public Set<Color> getColors() {
+    public List<Color> getColors() {
         return colors;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setNormalPrice(Integer normalPrice) {
+        this.normalPrice = normalPrice;
+    }
+
+    public void setSalePrice(Integer salePrice) {
+        this.salePrice = salePrice;
+    }
+
+    public void setPoint(Integer point) {
+        this.point = point;
+    }
+
+    public void setDeliveryInfo(String deliveryInfo) {
+        this.deliveryInfo = deliveryInfo;
+    }
+
+    public void setDeliveryFee(String deliveryFee) {
+        this.deliveryFee = deliveryFee;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public void setBadges(List<Badge> badges) {
+        this.badges = badges;
+    }
+
+    public void setDeliveryTypes(List<DeliveryType> deliveryTypes) {
+        this.deliveryTypes = deliveryTypes;
+    }
+
+    public void setThumbImages(List<ThumbImage> thumbImages) {
+        this.thumbImages = thumbImages;
+    }
+
+    public void setDetailSections(List<DetailSection> detailSections) {
+        this.detailSections = detailSections;
+    }
+
+    public void setColors(List<Color> colors) {
+        this.colors = colors;
     }
 
     public void decreaseStock() {

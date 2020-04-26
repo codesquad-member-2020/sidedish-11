@@ -8,6 +8,7 @@ import dev.codesquad.java.sidedish11.entity.Badge;
 import dev.codesquad.java.sidedish11.entity.Color;
 import dev.codesquad.java.sidedish11.entity.Item;
 import dev.codesquad.java.sidedish11.exception.DataNotFoundException;
+import dev.codesquad.java.sidedish11.repository.ItemDao;
 import dev.codesquad.java.sidedish11.repository.ItemRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,9 @@ public class ItemService {
 
     @Autowired
     private ItemRepository itemRepository;
+
+    @Autowired
+    private ItemDao itemDao;
 
     @Transactional
     public ItemResponse getItem(Long categoryId, String hash) {
@@ -54,10 +58,10 @@ public class ItemService {
     }
 
     private Item findItem(Long categoryId, String hash) {
-        return itemRepository.findByCategoryAndHash(categoryId, hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
+        return itemDao.findByCategoryIdAndHash(categoryId, hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
     }
 
     private Item findItem(String hash) {
-        return itemRepository.findByHash(hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
+        return itemDao.findByHash(hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
     }
 }
