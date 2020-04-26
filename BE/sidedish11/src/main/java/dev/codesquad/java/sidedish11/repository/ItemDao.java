@@ -76,7 +76,13 @@ public class ItemDao {
             item = getItem(item, rs, id);
             return item;
         };
-        return Optional.ofNullable(jdbcTemplate.queryForObject(sql, new Object[] {categoryId, hash}, itemMapper));
+
+        try {
+            return Optional.ofNullable(jdbcTemplate.queryForObject(sql, new Object[] {categoryId, hash}, itemMapper));
+        } catch (DataAccessException e) {
+            logger.debug(">>> error : {}", e.getMessage());
+            return Optional.ofNullable(null);
+        }
     }
 
     private Item getItem(Item item, ResultSet rs, Long id) throws SQLException {
