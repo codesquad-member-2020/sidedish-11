@@ -3,6 +3,7 @@ package dev.codesquad.java.sidedish11.repository;
 import dev.codesquad.java.sidedish11.entity.Badge;
 import dev.codesquad.java.sidedish11.entity.DeliveryType;
 import dev.codesquad.java.sidedish11.entity.Item;
+import dev.codesquad.java.sidedish11.entity.ThumbImage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,7 @@ public class ItemDao {
             item.setStock(rs.getInt("stock"));
             item.setBadges(getBadges(id));
             item.setDeliveryTypes(getDeliveryType(id));
+            item.setThumbImages(getThumbImage(id));
             return item;
         };
         return jdbcTemplate.queryForObject(sql, new Object[] {id}, itemMapper);
@@ -74,5 +76,20 @@ public class ItemDao {
             return deliveryType;
         };
         return jdbcTemplate.query(sql, new Object[] {itemId}, deliveryTypeMapper);
+    }
+
+    private List<ThumbImage> getThumbImage(Long itemId) {
+        String sql = "SELECT thumb_image.id AS id, thumb_image.name AS name, thumb_image.item_key AS item_key" +
+                " FROM thumb_image" +
+                " WHERE thumb_image.item = ?" +
+                " ORDER BY item_key";
+
+        RowMapper<ThumbImage> thumbImageMapper = (rs, rowNum) -> {
+            ThumbImage thumbImage = new ThumbImage();
+            thumbImage.setId(rs.getLong("id"));
+            thumbImage.setName(rs.getString("name"));
+            return thumbImage;
+        };
+        return jdbcTemplate.query(sql, new Object[] {itemId}, thumbImageMapper);
     }
 }
