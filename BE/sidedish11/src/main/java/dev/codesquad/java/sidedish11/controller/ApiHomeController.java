@@ -26,8 +26,8 @@ public class ApiHomeController {
         return new ResponseEntity(categoryService.getAllCategories(), HttpStatus.OK);
     }
 
-    @GetMapping("{id}")
-    public ResponseEntity test(@PathVariable Long id) {
-        return ResponseEntity.ok(itemService.findItemDao(id));
+    @GetMapping("{hash}")
+    public ResponseEntity test(@PathVariable String hash) {
+        return ResponseEntity.ok(itemService.findItemDao(hash));
     }
 }

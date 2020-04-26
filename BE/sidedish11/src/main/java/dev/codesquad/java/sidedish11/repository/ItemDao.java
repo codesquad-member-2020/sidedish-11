@@ -9,6 +9,8 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 @Repository
@@ -31,25 +33,46 @@ public class ItemDao {
 
         RowMapper<Item> itemMapper = (rs, rowNum) -> {
             Item item = new Item();
-            item.setId(rs.getLong("id"));
-            item.setHash(rs.getString("hash"));
-            item.setImage(rs.getString("image"));
-            item.setTitle(rs.getString("title"));
-            item.setDescription(rs.getString("description"));
-            item.setNormalPrice(rs.getInt("normal_price"));
-            item.setSalePrice(rs.getInt("sale_price"));
-            item.setPoint(rs.getInt("point"));
-            item.setDeliveryInfo(rs.getString("delivery_info"));
-            item.setDeliveryFee(rs.getString("delivery_fee"));
-            item.setStock(rs.getInt("stock"));
-            item.setBadges(getBadges(id));
-            item.setDeliveryTypes(getDeliveryType(id));
-            item.setThumbImages(getThumbImage(id));
-            item.setDetailSections(getDetailSection(id));
-            item.setColors(getColor(id));
+            item = getItem(item, rs, id);
             return item;
         };
         return jdbcTemplate.queryForObject(sql, new Object[] {id}, itemMapper);
+    }
+
+    public Item findByHash(String hash) {
+        String sql = "SELECT item.id AS id, item.hash AS hash, item.title AS title, item.point AS point, item.image AS image," +
+                " item.stock AS stock, item.sale_price AS sale_price, item.delivery_fee AS delivery_fee, item.description AS description," +
+                " item.normal_price AS normal_price, item.delivery_info AS delivery_info" +
+                " FROM item" +
+                " WHERE hash = ?";
+
+        RowMapper<Item> itemMapper = (rs, rowNum) -> {
+            Item item = new Item();
+            Long id = rs.getLong("id");
+            item = getItem(item, rs, id);
+            return item;
+        };
+        return jdbcTemplate.queryForObject(sql, new Object[] {hash}, itemMapper);
+    }
+
+    private Item getItem(Item item, ResultSet rs, Long id) throws SQLException {
+        item.setId(rs.getLong("id"));
+        item.setHash(rs.getString("hash"));
+        item.setImage(rs.getString("image"));
+        item.setTitle(rs.getString("title"));
+        item.setDescription(rs.getString("description"));
+        item.setNormalPrice(rs.getInt("normal_price"));
+        item.setSalePrice(rs.getInt("sale_price"));
+        item.setPoint(rs.getInt("point"));
+        item.setDeliveryInfo(rs.getString("delivery_info"));
+        item.setDeliveryFee(rs.getString("delivery_fee"));
+        item.setStock(rs.getInt("stock"));
+        item.setBadges(getBadges(id));
+        item.setDeliveryTypes(getDeliveryType(id));
+        item.setThumbImages(getThumbImage(id));
+        item.setDetailSections(getDetailSection(id));
+        item.setColors(getColor(id));
+        return item;
     }
 
     private List<Badge> getBadges(Long itemId) {

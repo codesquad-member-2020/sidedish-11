@@ -58,9 +58,9 @@ public class ItemService {
     }
 
     @Transactional
-    public Item findItemDao(Long id) {
-//        return itemRepository.findById(id).orElseThrow(null);
-        return itemDao.findById(id);
+    public Item findItemDao(String hash) {
+//        return findItem(1L, hash);
+        return itemDao.findByHash(hash);
     }
 
     private Item findItem(Long categoryId, String hash) {
