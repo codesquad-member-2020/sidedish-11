@@ -118,4 +118,71 @@ public class Item {
         }
         colors.add(color);
     }
+
+    /////
+
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setNormalPrice(Integer normalPrice) {
+        this.normalPrice = normalPrice;
+    }
+
+    public void setSalePrice(Integer salePrice) {
+        this.salePrice = salePrice;
+    }
+
+    public void setPoint(Integer point) {
+        this.point = point;
+    }
+
+    public void setDeliveryInfo(String deliveryInfo) {
+        this.deliveryInfo = deliveryInfo;
+    }
+
+    public void setDeliveryFee(String deliveryFee) {
+        this.deliveryFee = deliveryFee;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public void setBadges(Set<Badge> badges) {
+        this.badges = badges;
+    }
+
+    public void setDeliveryTypes(Set<DeliveryType> deliveryTypes) {
+        this.deliveryTypes = deliveryTypes;
+    }
+
+    public void setThumbImages(List<ThumbImage> thumbImages) {
+        this.thumbImages = thumbImages;
+    }
+
+    public void setDetailSections(List<DetailSection> detailSections) {
+        this.detailSections = detailSections;
+    }
+
+    public void setColors(Set<Color> colors) {
+        this.colors = colors;
+    }
 }
