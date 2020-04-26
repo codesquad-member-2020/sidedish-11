@@ -1,6 +1,7 @@
 package dev.codesquad.java.sidedish11.repository;
 
 import dev.codesquad.java.sidedish11.entity.Badge;
+import dev.codesquad.java.sidedish11.entity.DeliveryType;
 import dev.codesquad.java.sidedish11.entity.Item;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,13 +41,17 @@ public class ItemDao {
             item.setDeliveryFee(rs.getString("delivery_fee"));
             item.setStock(rs.getInt("stock"));
             item.setBadges(getBadges(id));
+            item.setDeliveryTypes(getDeliveryType(id));
             return item;
         };
         return jdbcTemplate.queryForObject(sql, new Object[] {id}, itemMapper);
     }
 
     private List<Badge> getBadges(Long itemId) {
-        String sql = "SELECT badge.id AS id, badge.name AS name, badge.item_key AS item_key FROM badge WHERE badge.item = ? ORDER BY item_key";
+        String sql = "SELECT badge.id AS id, badge.name AS name, badge.item_key AS item_key" +
+                " FROM badge" +
+                " WHERE badge.item = ?" +
+                " ORDER BY item_key";
 
         RowMapper<Badge> badgeMapper = (rs, rowNum) -> {
             Badge badge = new Badge(rs.getString("name"));
@@ -54,5 +59,20 @@ public class ItemDao {
             return badge;
         };
         return jdbcTemplate.query(sql, new Object[] {itemId}, badgeMapper);
+    }
+
+    private List<DeliveryType> getDeliveryType(Long itemId) {
+        String sql = "SELECT delivery_type.id AS id, delivery_type.name AS name, delivery_type.item_key AS item_key" +
+                " FROM delivery_type" +
+                " WHERE delivery_type.item = ?" +
+                " ORDER BY item_key";
+
+        RowMapper<DeliveryType> deliveryTypeMapper = (rs, rowNum) -> {
+            DeliveryType deliveryType = new DeliveryType();
+            deliveryType.setId(rs.getLong("id"));
+            deliveryType.setName(rs.getString("name"));
+            return deliveryType;
+        };
+        return jdbcTemplate.query(sql, new Object[] {itemId}, deliveryTypeMapper);
     }
 }
