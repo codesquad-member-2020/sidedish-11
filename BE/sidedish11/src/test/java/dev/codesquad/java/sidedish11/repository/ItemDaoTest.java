@@ -22,4 +22,11 @@ class ItemDaoTest {
         assertNotNull(item);
         logger.debug(">>> findById : {}", item);
     }
+
+    @Test
+    void findByHash() {
+        Item item = itemDao.findByHash("HBDEF");
+        assertNotNull(item);
+        logger.debug(">>> findByHash : {}", item);
+    }
 }

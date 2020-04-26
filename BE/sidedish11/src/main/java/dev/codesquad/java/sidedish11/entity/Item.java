@@ -96,34 +96,6 @@ public class Item {
         return colors;
     }
 
-    public void decreaseStock() {
-        this.stock --;
-    }
-
-    public boolean isValidStock() {
-        if (stock > 0) {
-            return true;
-        }
-        return false;
-    }
-
-    public void addBadge(Badge badge) {
-        if (badges.contains(badge)) {
-            return;
-        }
-        badges.add(badge);
-    }
-
-    public void addColor(Color color) {
-        if (colors.contains(color)) {
-            return;
-        }
-        colors.add(color);
-    }
-
-    /////
-
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -186,5 +158,30 @@ public class Item {
 
     public void setColors(List<Color> colors) {
         this.colors = colors;
+    }
+
+    public void decreaseStock() {
+        this.stock --;
+    }
+
+    public boolean isValidStock() {
+        if (stock > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public void addBadge(Badge badge) {
+        if (badges.contains(badge)) {
+            return;
+        }
+        badges.add(badge);
+    }
+
+    public void addColor(Color color) {
+        if (colors.contains(color)) {
+            return;
+        }
+        colors.add(color);
     }
 }
