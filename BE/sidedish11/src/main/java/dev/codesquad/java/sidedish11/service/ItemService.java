@@ -57,19 +57,11 @@ public class ItemService {
         return new OrderResponse(ON_STOCK, ON_STOCK_MESSAGE);
     }
 
-    @Transactional
-    public Item findItemDao(String hash) {
-        return itemDao.findById(99L).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
-//        return findItem(1L, hash);
-//        return itemDao.findByHash(hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
-//        return itemDao.findByCategoryIdAndHash(1L, hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
-    }
-
     private Item findItem(Long categoryId, String hash) {
-        return itemRepository.findByCategoryAndHash(categoryId, hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
+        return itemDao.findByCategoryIdAndHash(categoryId, hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
     }
 
     private Item findItem(String hash) {
-        return itemRepository.findByHash(hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
+        return itemDao.findByHash(hash).orElseThrow(() -> new DataNotFoundException(ITEM_NOT_FOUND));
     }
 }

@@ -28,6 +28,6 @@ public class ApiHomeController {
 
     @GetMapping("{hash}")
     public ResponseEntity test(@PathVariable String hash) {
-        return ResponseEntity.ok(itemService.findItemDao(hash));
+        return ResponseEntity.ok(null);
     }
 }
