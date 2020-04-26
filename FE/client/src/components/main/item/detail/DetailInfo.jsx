@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     }
 });
 
-const DetailInfo = ({ title, product_description, delivery_fee, delivery_info, point, prices, stock, numberComma }) => {
+const DetailInfo = ({ title, product_description, delivery_fee, delivery_info, point, prices, stock, numberComma, setDetailOpen }) => {
     const classes = useStyles();
     const [count, setCount] = useState(1);
     const price = prices.reduce((acc, curr) => {
@@ -44,6 +44,10 @@ const DetailInfo = ({ title, product_description, delivery_fee, delivery_info, p
         if (typeof newCount !== 'number' || newCount === NaN || newCount < 0) return;
         if (!target.value) newCount = 0;
         setCount(newCount);
+    }
+    const handleClick = () => {
+        alert(`${title}을 ${count}개 담았습니다!`);
+        setDetailOpen(false);
     }
 
     return (
@@ -85,7 +89,7 @@ const DetailInfo = ({ title, product_description, delivery_fee, delivery_info, p
                 {numberComma(price * count)}
                 <span className='amount-price-unit'>원</span>
             </div>
-            <Button className={classes.test} variant='contained' color='primary' children='담기' />
+            <Button onClick={handleClick} className={classes.test} variant='contained' color='primary' children='담기' />
         </div>
     )
 }

@@ -70,7 +70,7 @@ const ItemDetail = ({ itemKey, isDetailOpen, setDetailOpen, numberComma }) => {
                         </div> :
                         <div className='detail-data-wrap'>
                             <DetailImage {...{ top_image, thumb_images, product_description }} />
-                            <DetailInfo {...{ title, product_description, delivery_fee, delivery_info, point, prices, stock, numberComma }} />
+                            <DetailInfo {...{ title, product_description, delivery_fee, delivery_info, point, prices, stock, numberComma, setDetailOpen }} />
                         </div>
                 }
             </DialogContent>
