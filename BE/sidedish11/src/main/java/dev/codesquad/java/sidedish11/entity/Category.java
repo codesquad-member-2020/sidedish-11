@@ -40,4 +40,24 @@ public class Category {
     public Set<Item> getItems() {
         return items;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setItems(Set<Item> items) {
+        this.items = items;
+    }
 }
