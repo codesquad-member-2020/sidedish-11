@@ -2,7 +2,6 @@ package dev.codesquad.java.sidedish11.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import dev.codesquad.java.sidedish11.entity.Badge;
 import dev.codesquad.java.sidedish11.entity.DetailSection;
 import dev.codesquad.java.sidedish11.entity.Item;
 import dev.codesquad.java.sidedish11.entity.ThumbImage;
@@ -17,7 +16,7 @@ public class ItemDetail {
     private String hash;
     private String top_image;
     private String product_description;
-    private String point;
+    private Integer point;
     private String delivery_info;
     private String delivery_fee;
     private int stock;
@@ -26,7 +25,7 @@ public class ItemDetail {
     private List<String> thumbImagesStrings = new ArrayList<>();
 
     @JsonProperty("prices")
-    private List<String> pricesStrings = new ArrayList<>();
+    private List<Integer> pricesStrings = new ArrayList<>();
 
     @JsonProperty("detail_section")
     private List<String> detailSectionStrings = new ArrayList<>();

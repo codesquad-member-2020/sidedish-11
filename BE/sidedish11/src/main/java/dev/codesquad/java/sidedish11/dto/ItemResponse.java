@@ -20,8 +20,8 @@ public class ItemResponse {
     private String alt;
     private String title;
     private String description;
-    private String n_price;
-    private String s_price;
+    private Integer n_price;
+    private Integer s_price;
 
     @JsonProperty("badge")
     private List<String> badgeStrings = new ArrayList<>();

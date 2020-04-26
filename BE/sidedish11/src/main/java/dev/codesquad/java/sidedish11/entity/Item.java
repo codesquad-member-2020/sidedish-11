@@ -14,9 +14,9 @@ public class Item {
     private String image;
     private String title;
     private String description;
-    private String normalPrice;
-    private String salePrice;
-    private String point;
+    private Integer normalPrice;
+    private Integer salePrice;
+    private Integer point;
     private String deliveryInfo;
     private String deliveryFee;
     private int stock;
@@ -50,15 +50,15 @@ public class Item {
         return description;
     }
 
-    public String getNormalPrice() {
+    public Integer getNormalPrice() {
         return normalPrice;
     }
 
-    public String getSalePrice() {
+    public Integer getSalePrice() {
         return salePrice;
     }
 
-    public String getPoint() {
+    public Integer getPoint() {
         return point;
     }
 
