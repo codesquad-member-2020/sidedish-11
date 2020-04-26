@@ -15,6 +15,7 @@ public class ItemDetail {
     @JsonIgnore
     private String hash;
     private String top_image;
+    private String title;
     private String product_description;
     private Integer point;
     private String delivery_info;
@@ -33,6 +34,7 @@ public class ItemDetail {
     public ItemDetail(Item item) {
         this.hash = item.getHash();
         this.top_image = item.getImage();
+        this.title = item.getTitle();
         this.product_description = item.getDescription();
         this.point = item.getPoint();
         this.delivery_info = item.getDeliveryInfo();
