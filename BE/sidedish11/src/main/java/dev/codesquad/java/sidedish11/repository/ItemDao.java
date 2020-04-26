@@ -1,6 +1,5 @@
 package dev.codesquad.java.sidedish11.repository;
 
-import dev.codesquad.java.sidedish11.dto.ItemResponse;
 import dev.codesquad.java.sidedish11.entity.Badge;
 import dev.codesquad.java.sidedish11.entity.Item;
 import org.slf4j.Logger;
@@ -11,10 +10,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.Set;
 
 @Repository
 public class ItemDao {
@@ -43,24 +39,20 @@ public class ItemDao {
             item.setDeliveryInfo(rs.getString("delivery_info"));
             item.setDeliveryFee(rs.getString("delivery_fee"));
             item.setStock(rs.getInt("stock"));
-            item.setBadges(badges(id));
+            item.setBadges(getBadges(id));
             return item;
         };
         return jdbcTemplate.queryForObject(sql, new Object[] {id}, itemMapper);
     }
 
-    private List<Badge> badges(Long itemId) {
-        String sql = "SELECT * FROM badge WHERE badge.item = ?";
+    private List<Badge> getBadges(Long itemId) {
+        String sql = "SELECT badge.id AS id, badge.name AS name, badge.item_key AS item_key FROM badge WHERE badge.item = ? ORDER BY item_key";
 
         RowMapper<Badge> badgeMapper = (rs, rowNum) -> {
             Badge badge = new Badge(rs.getString("name"));
             badge.setId(rs.getLong("id"));
-            logger.debug(">>> here1 : {}", badge);
             return badge;
         };
-        List<Badge> badges = null;
-        logger.debug(">>> here2 : {}", jdbcTemplate.query(sql, new Object[] {itemId}, badgeMapper));
-        logger.debug(">>> here3 : {}", badges);
-        return badges;
+        return jdbcTemplate.query(sql, new Object[] {itemId}, badgeMapper);
     }
 }
