@@ -25,7 +25,8 @@ CREATE TABLE IF NOT EXISTS item (
     delivery_info varchar (128),
     delivery_fee varchar (128),
     stock int not null,
-    category int references category(id)
+    category int references category(id),
+    category_key int
 );
 
 CREATE TABLE IF NOT EXISTS badge (
