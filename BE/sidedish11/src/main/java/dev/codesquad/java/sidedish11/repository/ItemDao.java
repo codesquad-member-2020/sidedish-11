@@ -1,9 +1,6 @@
 package dev.codesquad.java.sidedish11.repository;
 
-import dev.codesquad.java.sidedish11.entity.Badge;
-import dev.codesquad.java.sidedish11.entity.DeliveryType;
-import dev.codesquad.java.sidedish11.entity.Item;
-import dev.codesquad.java.sidedish11.entity.ThumbImage;
+import dev.codesquad.java.sidedish11.entity.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +41,7 @@ public class ItemDao {
             item.setBadges(getBadges(id));
             item.setDeliveryTypes(getDeliveryType(id));
             item.setThumbImages(getThumbImage(id));
+            item.setDetailSections(getDetailSection(id));
             return item;
         };
         return jdbcTemplate.queryForObject(sql, new Object[] {id}, itemMapper);
@@ -91,5 +89,20 @@ public class ItemDao {
             return thumbImage;
         };
         return jdbcTemplate.query(sql, new Object[] {itemId}, thumbImageMapper);
+    }
+
+    private List<DetailSection> getDetailSection(Long itemId) {
+        String sql = "SELECT detail_section.id AS id, detail_section.name AS name, detail_section.item_key AS item_key" +
+                " FROM detail_section" +
+                " WHERE detail_section.item = ?" +
+                " ORDER BY item_key";
+
+        RowMapper<DetailSection> detailSectionMapper = (rs, rowNum) -> {
+            DetailSection detailSection = new DetailSection();
+            detailSection.setId(rs.getLong("id"));
+            detailSection.setName(rs.getString("name"));
+            return detailSection;
+        };
+        return jdbcTemplate.query(sql, new Object[] {itemId}, detailSectionMapper);
     }
 }
