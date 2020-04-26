@@ -33,6 +33,9 @@ const useStyles = makeStyles({
             left: '50%',
             transform: 'translate(-50%, -50%)',
         },
+        '& .detail-data-wrap': {
+            display: 'flex',
+        },
     },
     progress: {
         width: '100px',
@@ -45,7 +48,17 @@ const ItemDetail = ({ itemKey, isDetailOpen, setDetailOpen, numberComma }) => {
     const [detailData, setDetailData] = useState(null);
     const handleClose = () => setDetailOpen(false);
     const loading = useFetch(setDetailData, URL.DEV.DETAIL + itemKey);
-    const { top_image, thumb_images, title, product_description } = detailData ? detailData.data : '';
+    const {
+        top_image,
+        thumb_images,
+        title,
+        product_description,
+        delivery_fee,
+        delivery_info,
+        point,
+        prices,
+        stock,
+        detail_section } = detailData ? detailData.data : {};
 
     return (
         <Dialog maxWidth='none' className={classes.dialogWrap} open={isDetailOpen} onClose={handleClose}>
@@ -55,9 +68,9 @@ const ItemDetail = ({ itemKey, isDetailOpen, setDetailOpen, numberComma }) => {
                         <div className='detail-progress-wrap'>
                             <CircularProgress size='none' color='secondary' className={classes.progress} />
                         </div> :
-                        <div>
+                        <div className='detail-data-wrap'>
                             <DetailImage {...{ top_image, thumb_images, product_description }} />
-                            <DetailInfo {...{ title, product_description, numberComma }} />
+                            <DetailInfo {...{ title, product_description, delivery_fee, delivery_info, point, prices, stock, numberComma }} />
                         </div>
                 }
             </DialogContent>
