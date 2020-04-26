@@ -59,6 +59,7 @@ public class ItemService {
 
     @Transactional
     public Item findItemDao(Long id) {
+        //return itemRepository.findById(id).orElseThrow(null);
         return itemDao.findById(id);
     }
 

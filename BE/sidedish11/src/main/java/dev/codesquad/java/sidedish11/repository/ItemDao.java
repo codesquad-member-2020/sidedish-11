@@ -32,7 +32,8 @@ public class ItemDao {
             item.setId(rs.getLong("id"));
             item.setHash(rs.getString("hash"));
             item.setImage(rs.getString("image"));
-            item.setTitle(rs.getString("description"));
+            item.setTitle(rs.getString("title"));
+            item.setDescription(rs.getString("description"));
             item.setNormalPrice(rs.getInt("normal_price"));
             item.setSalePrice(rs.getInt("sale_price"));
             item.setPoint(rs.getInt("point"));
