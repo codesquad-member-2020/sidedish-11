@@ -42,6 +42,7 @@ public class ItemDao {
             item.setDeliveryTypes(getDeliveryType(id));
             item.setThumbImages(getThumbImage(id));
             item.setDetailSections(getDetailSection(id));
+            item.setColors(getColor(id));
             return item;
         };
         return jdbcTemplate.queryForObject(sql, new Object[] {id}, itemMapper);
@@ -104,5 +105,19 @@ public class ItemDao {
             return detailSection;
         };
         return jdbcTemplate.query(sql, new Object[] {itemId}, detailSectionMapper);
+    }
+
+    private List<Color> getColor(Long itemId) {
+        String sql = "SELECT color.id AS id, color.name AS name, color.item_key AS item_key" +
+                " FROM color" +
+                " WHERE color.item = ?" +
+                " ORDER BY item_key";
+
+        RowMapper<Color> colorMapper = (rs, rowNum) -> {
+            Color color = new Color(rs.getString("name"));
+            color.setId(rs.getLong("id"));
+            return color;
+        };
+        return jdbcTemplate.query(sql, new Object[] {itemId}, colorMapper);
     }
 }
