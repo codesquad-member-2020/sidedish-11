@@ -2,11 +2,13 @@ package dev.codesquad.java.sidedish11.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
 import java.util.*;
 
 @Getter @Setter
+@ToString
 public class Item {
     @Id
     private Long id;
