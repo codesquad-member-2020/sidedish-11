@@ -11,6 +11,8 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,12 +36,7 @@ public class CategoryDao {
                 " WHERE category.id = ?";
 
         RowMapper<Category> categoryMapper = (rs, rowNum) -> {
-            Category category = new Category();
-            category.setId(rs.getLong("id"));
-            category.setTitle(rs.getString("title"));
-            category.setName(rs.getString("name"));
-            category.setDescription(rs.getString("description"));
-            category.setItems(getItems(rs.getLong("id")));
+            Category category = getCategory(rs);
             return category;
         };
 
@@ -49,6 +46,33 @@ public class CategoryDao {
             logger.debug(">>> error : {}", e.getMessage());
             return Optional.ofNullable(null);
         }
+    }
+
+    public Optional<List<Category>> findAll() {
+        String sql = "SELECT category.id AS id, category.name AS name, category.title AS title, category.description AS description" +
+                " FROM category";
+
+        RowMapper<Category> categoryMapper = (rs, rowNum) -> {
+            Category category = getCategory(rs);
+            return category;
+        };
+
+        try {
+            return Optional.ofNullable(jdbcTemplate.query(sql, categoryMapper));
+        } catch (DataAccessException e) {
+            logger.debug(">>> error : {}", e.getMessage());
+            return Optional.ofNullable(null);
+        }
+    }
+
+    private Category getCategory(ResultSet rs) throws SQLException {
+        Category category = new Category();
+        category.setId(rs.getLong("id"));
+        category.setTitle(rs.getString("title"));
+        category.setName(rs.getString("name"));
+        category.setDescription(rs.getString("description"));
+        category.setItems(getItems(rs.getLong("id")));
+        return category;
     }
 
     private List<Item> getItems(Long categoryId) {
