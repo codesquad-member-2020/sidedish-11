@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -24,10 +25,12 @@ public class CategoryDao {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
+    @Autowired
+    private ItemDao itemDao;
+
     public Optional<Category> findById(Long id) {
         String sql = "SELECT category.id AS id, category.name AS name, category.title AS title, category.description AS description" +
                 " FROM category" +
-                "LEFT OUTER JOIN item ON category.id = item.category" +
                 " WHERE category.id = ?";
 
         RowMapper<Category> categoryMapper = (rs, rowNum) -> {
@@ -36,7 +39,7 @@ public class CategoryDao {
             category.setTitle(rs.getString("title"));
             category.setName(rs.getString("name"));
             category.setDescription(rs.getString("description"));
-
+            category.setItems(getItems(rs.getLong("id")));
             return category;
         };
 
@@ -48,7 +51,7 @@ public class CategoryDao {
         }
     }
 
-//        @Query("Select * from category left outer join card on category.id = card.category" +
-//            " where card.deleted = false and category.id = :id")
-//    Optional<List<Card>> findByIdDeletedFalse(Long id);
+    private List<Item> getItems(Long categoryId) {
+        return itemDao.findAllByCategoryId(categoryId).orElse(null);
+    }
 }

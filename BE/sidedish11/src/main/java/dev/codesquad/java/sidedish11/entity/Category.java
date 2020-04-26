@@ -5,8 +5,8 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter @Setter
 @ToString
@@ -16,7 +16,7 @@ public class Category {
     private String title;
     private String name;
     private String description;
-    private Set<Item> items = new HashSet<>();
+    private List<Item> items = new ArrayList<>();
 
     public Category() {
     }
@@ -37,7 +37,7 @@ public class Category {
         return description;
     }
 
-    public Set<Item> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
@@ -57,7 +57,7 @@ public class Category {
         this.description = description;
     }
 
-    public void setItems(Set<Item> items) {
+    public void setItems(List<Item> items) {
         this.items = items;
     }
 }
