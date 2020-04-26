@@ -49,7 +49,7 @@ public class ItemDao {
         return jdbcTemplate.queryForObject(sql, new Object[] {id}, itemMapper);
     }
 
-    private Set<Badge> badges(Long itemId) {
+    private List<Badge> badges(Long itemId) {
         String sql = "SELECT * FROM badge WHERE badge.item = ?";
 
         RowMapper<Badge> badgeMapper = (rs, rowNum) -> {
@@ -58,7 +58,7 @@ public class ItemDao {
             logger.debug(">>> here1 : {}", badge);
             return badge;
         };
-        Set<Badge> badges = null;
+        List<Badge> badges = null;
         logger.debug(">>> here2 : {}", jdbcTemplate.query(sql, new Object[] {itemId}, badgeMapper));
         logger.debug(">>> here3 : {}", badges);
         return badges;

@@ -31,13 +31,15 @@ CREATE TABLE IF NOT EXISTS item (
 CREATE TABLE IF NOT EXISTS badge (
     id int primary key auto_increment,
     name varchar (32) not null,
-    item int references item(id)
+    item int references item(id),
+    item_key int
 );
 
 CREATE TABLE IF NOT EXISTS delivery_type (
     id int primary key auto_increment,
     name varchar (32) not null,
-    item int references item(id)
+    item int references item(id),
+    item_key int
 );
 
 CREATE TABLE IF NOT EXISTS thumb_image (
@@ -57,5 +59,6 @@ CREATE TABLE IF NOT EXISTS detail_section (
 CREATE TABLE IF NOT EXISTS color (
     id int primary key auto_increment,
     name varchar (32) not null,
-    item int references item(id)
+    item int references item(id),
+    item_key int
 );

@@ -23,11 +23,11 @@ public class Item {
     private String deliveryFee;
     private int stock;
 
-    private Set<Badge> badges = new HashSet<>();
-    private Set<DeliveryType> deliveryTypes = new HashSet<>();
+    private List<Badge> badges = new ArrayList<>();
+    private List<DeliveryType> deliveryTypes = new ArrayList<>();
     private List<ThumbImage> thumbImages = new ArrayList<>();
     private List<DetailSection> detailSections = new ArrayList<>();
-    private Set<Color> colors = new HashSet<>();
+    private List<Color> colors = new ArrayList<>();
 
     public Item() {
     }
@@ -72,11 +72,11 @@ public class Item {
         return deliveryFee;
     }
 
-    public Set<Badge> getBadges() {
+    public List<Badge> getBadges() {
         return badges;
     }
 
-    public Set<DeliveryType> getDeliveryTypes() {
+    public List<DeliveryType> getDeliveryTypes() {
         return deliveryTypes;
     }
 
@@ -92,7 +92,7 @@ public class Item {
         return stock;
     }
 
-    public Set<Color> getColors() {
+    public List<Color> getColors() {
         return colors;
     }
 
@@ -168,11 +168,11 @@ public class Item {
         this.stock = stock;
     }
 
-    public void setBadges(Set<Badge> badges) {
+    public void setBadges(List<Badge> badges) {
         this.badges = badges;
     }
 
-    public void setDeliveryTypes(Set<DeliveryType> deliveryTypes) {
+    public void setDeliveryTypes(List<DeliveryType> deliveryTypes) {
         this.deliveryTypes = deliveryTypes;
     }
 
@@ -184,7 +184,7 @@ public class Item {
         this.detailSections = detailSections;
     }
 
-    public void setColors(Set<Color> colors) {
+    public void setColors(List<Color> colors) {
         this.colors = colors;
     }
 }
