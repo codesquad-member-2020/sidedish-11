@@ -56,6 +56,22 @@ public class ItemDao {
         return Optional.ofNullable(jdbcTemplate.queryForObject(sql, new Object[] {hash}, itemMapper));
     }
 
+    public Optional<Item> findByCategoryIdAndHash(Long categoryId, String hash) {
+        String sql = "SELECT item.id AS id, item.hash AS hash, item.title AS title, item.point AS point, item.image AS image," +
+                " item.stock AS stock, item.sale_price AS sale_price, item.delivery_fee AS delivery_fee, item.description AS description," +
+                " item.normal_price AS normal_price, item.delivery_info AS delivery_info, item.category AS category" +
+                " FROM item" +
+                " WHERE category = ? and hash = ?";
+
+        RowMapper<Item> itemMapper = (rs, rowNum) -> {
+            Item item = new Item();
+            Long id = rs.getLong("id");
+            item = getItem(item, rs, id);
+            return item;
+        };
+        return Optional.ofNullable(jdbcTemplate.queryForObject(sql, new Object[] {categoryId, hash}, itemMapper));
+    }
+
     private Item getItem(Item item, ResultSet rs, Long id) throws SQLException {
         item.setId(rs.getLong("id"));
         item.setHash(rs.getString("hash"));
