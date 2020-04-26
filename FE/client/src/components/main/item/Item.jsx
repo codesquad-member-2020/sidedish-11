@@ -18,7 +18,7 @@ const Item = ({ data, itemKey }) => {
             <div className='image-wrap' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <img className='item-image' src={image} alt={alt}></img>
                 {isHover && <div className='hover-image'>
-                    <div>
+                    <div className='item-delivery-type'>
                         {delivery_type.map((type, idx) => <span key={idx}>{type}</span>)}
                     </div>
                 </div>}

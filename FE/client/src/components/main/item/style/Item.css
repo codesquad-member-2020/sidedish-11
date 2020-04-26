@@ -30,7 +30,7 @@
     align-items: center;
 }
 
-.hover-image>div {
+.hover-image>.item-delivery-type {
     height: 80px;
     display: flex;
     flex-direction: column;
