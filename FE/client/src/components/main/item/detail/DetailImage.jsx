@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ThumbImages from './ThumbImages';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -14,20 +15,22 @@ const useStyles = makeStyles({
         },
         '& .thumb-images': {
             display: 'flex',
+            justifyContent: 'space-between',
             '& img': {
                 width: 'calc(20% - 10px)',
                 height: 'auto',
-                marginRight: '10px',
                 cursor: 'pointer',
             },
-            '& :last-child': {
-                marginRight: '0',
+            '& .blank-thumb': {
+                width: 'calc(20% - 10px)',
+                height: 'auto',
+                backgroundColor: '#e2e2e2',
             },
         },
     },
 });
 
-const DetailImage = ({ topImage, thumbImages, description }) => {
+const DetailImage = ({ top_image, thumb_images, product_description }) => {
     const classes = useStyles();
     const [currImage, setCurrImage] = useState(null);
     const handleMouseEnter = ({ target }) => setCurrImage(<img src={target.src} alt={target.alt}></img>);
@@ -35,11 +38,11 @@ const DetailImage = ({ topImage, thumbImages, description }) => {
     return (
         <div className={classes.detailImageWrap}>
             <div className='default-image'>
-                {currImage ? currImage : <img src={topImage} alt={description}></img>}
+                {currImage ? currImage : <img src={top_image} alt={product_description}></img>}
             </div>
             <div className='thumb-images'>
-                <img src={topImage} onMouseEnter={handleMouseEnter} alt={description}></img>
-                {thumbImages.map((imageURL, idx) => <img onMouseEnter={handleMouseEnter} key={idx} src={imageURL} alt={description}></img>)}
+                <img src={top_image} onMouseEnter={handleMouseEnter} alt={product_description}></img>
+                <ThumbImages {...{ thumb_images, product_description, handleMouseEnter }} />
             </div>
         </div>
     )
