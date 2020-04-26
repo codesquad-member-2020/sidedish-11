@@ -23,7 +23,11 @@ public class ItemDao {
     }
 
     public Item findById(Long id) {
-        String sql = "SELECT * FROM item WHERE id = ?";
+        String sql = "SELECT item.id AS id, item.hash AS hash, item.title AS title, item.point AS point, item.image AS image," +
+                " item.stock AS stock, item.sale_price AS sale_price, item.delivery_fee AS delivery_fee, item.description AS description," +
+                " item.normal_price AS normal_price, item.delivery_info AS delivery_info" +
+                " FROM item" +
+                " WHERE item.id = ?";
 
         RowMapper<Item> itemMapper = (rs, rowNum) -> {
             Item item = new Item();
