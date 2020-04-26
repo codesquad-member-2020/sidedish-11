@@ -17,13 +17,6 @@ class SideDishTableViewCell: UITableViewCell {
     @IBOutlet weak var priceStackView: UIStackView!
     private let useCase = SidedishUseCase()
     private let networkManager = NetworkManager()
-    var sidedishImage: UIImage! {
-        didSet {
-            DispatchQueue.main.async {
-                self.sidedishImageView.image = self.sidedishImage
-            }
-        }
-    }
     var viewModel: Sidedish? {
         didSet {
             setupView()
@@ -62,7 +55,9 @@ class SideDishTableViewCell: UITableViewCell {
         self.sidedishImageView.layer.cornerRadius = self.sidedishImageView.frame.size.width / 2
         guard let imageURL = self.viewModel?.image else {return }
         useCase.bringsidedishImage(with: networkManager, imageURL: imageURL ){ imageData in
-            self.sidedishImage = UIImage(data: imageData )
+            DispatchQueue.main.async {
+                self.sidedishImageView.image = UIImage(data: imageData )
+            }
         }
     }
     
