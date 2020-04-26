@@ -17,16 +17,30 @@ class ItemDaoTest {
     private ItemDao itemDao;
 
     @Test
-    void findById() {
-        Item item = itemDao.findById(1L);
+    void findById_성공() {
+        Item item = itemDao.findById(1L).orElse(null);
         assertNotNull(item);
         logger.debug(">>> findById : {}", item);
     }
 
     @Test
-    void findByHash() {
-        Item item = itemDao.findByHash("HBDEF").orElseThrow(null);
+    void findById_실패() {
+        Item item = itemDao.findById(999L).orElse(null);
+        assertNull(null);
+        logger.debug(">>> findById : {}", item);
+    }
+
+    @Test
+    void findByHash_성공() {
+        Item item = itemDao.findByHash("HBDEF").orElse(null);
         assertNotNull(item);
+        logger.debug(">>> findByHash : {}", item);
+    }
+
+    @Test
+    void findByHash_실패() {
+        Item item = itemDao.findByHash("AAAAA").orElse(null);
+        assertNull(item);
         logger.debug(">>> findByHash : {}", item);
     }
 }

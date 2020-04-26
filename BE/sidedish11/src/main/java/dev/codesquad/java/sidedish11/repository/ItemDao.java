@@ -26,7 +26,7 @@ public class ItemDao {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-    public Item findById(Long id) {
+    public Optional<Item> findById(Long id) {
         String sql = "SELECT item.id AS id, item.hash AS hash, item.title AS title, item.point AS point, item.image AS image," +
                 " item.stock AS stock, item.sale_price AS sale_price, item.delivery_fee AS delivery_fee, item.description AS description," +
                 " item.normal_price AS normal_price, item.delivery_info AS delivery_info" +
@@ -38,7 +38,13 @@ public class ItemDao {
             item = getItem(item, rs, id);
             return item;
         };
-        return jdbcTemplate.queryForObject(sql, new Object[] {id}, itemMapper);
+
+        try {
+            return Optional.ofNullable(jdbcTemplate.queryForObject(sql, new Object[] {id}, itemMapper));
+        } catch (DataAccessException e) {
+            logger.debug(">>> error : {}", e.getMessage());
+            return Optional.ofNullable(null);
+        }
     }
 
     public Optional<Item> findByHash(String hash) {
