@@ -4,6 +4,7 @@ import dev.codesquad.java.sidedish11.entity.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -53,7 +54,13 @@ public class ItemDao {
             item = getItem(item, rs, id);
             return item;
         };
-        return Optional.ofNullable(jdbcTemplate.queryForObject(sql, new Object[] {hash}, itemMapper));
+
+        try {
+            return Optional.ofNullable(jdbcTemplate.queryForObject(sql, new Object[]{hash}, itemMapper));
+        } catch (DataAccessException e) {
+            logger.debug(">>> error : {}", e.getMessage());
+            return Optional.ofNullable(null);
+        }
     }
 
     public Optional<Item> findByCategoryIdAndHash(Long categoryId, String hash) {
