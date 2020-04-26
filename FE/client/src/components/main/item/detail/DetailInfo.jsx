@@ -3,6 +3,11 @@ import './style/DetailInfo.css';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import DialogContent from '@material-ui/core/DialogContent';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -11,7 +16,7 @@ const useStyles = makeStyles({
         height: 'auto',
         marginLeft: '30px',
     },
-    test: {
+    putBtn: {
         color: '#fff',
         boxShadow: 'none',
         marginTop: '20px',
@@ -28,6 +33,7 @@ const useStyles = makeStyles({
 const DetailInfo = ({ title, product_description, delivery_fee, delivery_info, point, prices, stock, numberComma, setDetailOpen }) => {
     const classes = useStyles();
     const [count, setCount] = useState(1);
+    const [isOpen, setOpen] = useState(false);
     const price = prices.reduce((acc, curr) => {
         if (acc === 0) acc = curr;
         else acc = curr && curr < acc ? curr : acc;
@@ -45,10 +51,16 @@ const DetailInfo = ({ title, product_description, delivery_fee, delivery_info, p
         if (!target.value) newCount = 0;
         setCount(newCount);
     }
-    const handleClick = () => {
-        alert(`${title}을 ${count}개 담았습니다!`);
+    const handleConfirm = () => {
         setDetailOpen(false);
     }
+    const handleOpen = () => {
+        setOpen(true);
+    }
+    const handleClose = () => {
+        setOpen(false);
+    }
+
 
     return (
         <div className={classes.detailInfoWrap}>
@@ -89,7 +101,18 @@ const DetailInfo = ({ title, product_description, delivery_fee, delivery_info, p
                 {numberComma(price * count)}
                 <span className='amount-price-unit'>원</span>
             </div>
-            <Button onClick={handleClick} className={classes.test} variant='contained' color='primary' children='담기' />
+            <Button onClick={handleOpen} className={classes.putBtn} variant='contained' color='primary' children='담기' />
+            <Dialog open={isOpen}>
+                <DialogContent>
+                    <Typography gutterBottom>
+                        <span className='confirm-text'>{title}</span> · <span className='confirm-text'>{count}</span>개를 장바구니에 담겠습니까?
+                    </Typography>
+                </DialogContent>
+                <DialogActions>
+                    <Button variant="outlined" color="primary" onClick={handleConfirm}>확인</Button>
+                    <Button variant="outlined" color="primary" onClick={handleClose}>취소</Button>
+                </DialogActions>
+            </Dialog>
         </div>
     )
 }
