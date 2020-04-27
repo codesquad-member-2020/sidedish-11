@@ -6,10 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 
 @RestController
 @RequestMapping("/order")
@@ -25,4 +24,10 @@ public class ApiOrderController {
         return ResponseEntity.ok(orderResponse);
     }
 
+    @PutMapping("/{hash}")
+    public ResponseEntity order2(@PathVariable String hash, @RequestBody HashMap<String, Integer> orderNumber) {
+        logger.debug(">>> orderNumber : {}", orderNumber.get("orderNumber"));
+        OrderResponse orderResponse = itemService.createOrder(hash);
+        return ResponseEntity.ok(orderResponse);
+    }
 }
