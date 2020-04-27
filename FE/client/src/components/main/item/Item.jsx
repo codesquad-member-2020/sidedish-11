@@ -10,7 +10,7 @@ const Item = ({ data, itemKey }) => {
     const handleMouseEnter = () => setHover(true);
     const handleMouseLeave = () => setHover(false);
     const handleClick = () => { if (!isDetailOpen) setDetailOpen(true) };
-    const numberComma = (number) => number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    const numberComma = (number) => number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
     return (
         <div className='item-wrap' onClick={handleClick}>

@@ -47,8 +47,8 @@ const DetailInfo = ({ detailData, setDetailOpen, numberComma }) => {
     };
     const handleChange = ({ target }) => {
         let newCount = parseInt(target.value);
-        if (typeof newCount !== 'number' || newCount === NaN || newCount < 0) return;
-        if (!target.value) newCount = 0;
+        if (!target.value) setCount(0);
+        if (typeof newCount !== 'number' || !newCount || newCount < 0) return;
         setCount(newCount);
     }
     const handleConfirm = () => {

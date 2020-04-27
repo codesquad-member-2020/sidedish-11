@@ -26,7 +26,6 @@ const useStyles = makeStyles({
     },
     contentWrap: {
         width: '800px',
-        height: '600px',
         '& .detail-progress-wrap': {
             position: 'absolute',
             top: '50%',
