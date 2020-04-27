@@ -25,7 +25,7 @@ public class LoginController {
 
     @GetMapping("/login")
     public ResponseEntity login(HttpServletResponse response) {
-        response.setHeader("Location", LOGIN_REQUEST_URL);
+        response.setHeader(HEADER_LOCATION, LOGIN_REQUEST_URL);
         return new ResponseEntity(HttpStatus.MOVED_PERMANENTLY);
     }
 
@@ -33,12 +33,7 @@ public class LoginController {
     public ResponseEntity oauth(@PathParam("code") String code, HttpServletResponse response) {
         Github github = loginService.requestAccessToken(code);
         GithubUser githubUser = loginService.requestUserId(github.getAuthorization());
-        response.setHeader("Location", SERVER_URL);
+        response.setHeader(HEADER_LOCATION, SERVER_URL);
         return new ResponseEntity(githubUser, HttpStatus.FOUND);
-    }
-
-    @GetMapping("/")
-    public String home() {
-        return "good";
     }
 }

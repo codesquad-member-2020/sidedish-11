@@ -7,9 +7,10 @@ public class CommonUtils {
     public static final String AUTHORIZATION = "Authorization";
     public static final String HEADER_ACCEPT = "Accept";
     public static final String HEADER_ACCEPT_VALUE = "application/json";
+    public static final String HEADER_LOCATION = "Location";
 
-//    public static final String LOGIN_REQUEST_URL = https://github.com/login/oauth/authorize?client_id=8d92d01b11ba14d3d18f&scope=user%20public_repo;
-    public static final String LOGIN_REQUEST_URL = "https://github.com/login/oauth/authorize?client_id=dc2d0592b76e9fb16677&scope=user%20public_repo";
+    public static final String LOGIN_REQUEST_URL = "https://github.com/login/oauth/authorize?client_id=8d92d01b11ba14d3d18f&scope=user%20public_repo";
+//    public static final String LOGIN_REQUEST_URL = "https://github.com/login/oauth/authorize?client_id=dc2d0592b76e9fb16677&scope=user%20public_repo";
 
     // dto
     public static final String LOCAL_HOST_URL = "http://3.34.55.104:8080/";
@@ -29,6 +30,6 @@ public class CommonUtils {
     public static final String ORANGE_YELLOW = "#FFCB05";
 
     // server
-//    public static final String SERVER_URL = "http://3.34.55.104";
-    public static final String SERVER_URL = "http://localhost:8080";
+    public static final String SERVER_URL = "http://3.34.55.104";
+//    public static final String SERVER_URL = "http://localhost:8080";
 }
