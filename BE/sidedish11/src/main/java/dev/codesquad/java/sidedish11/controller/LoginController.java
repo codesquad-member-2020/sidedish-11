@@ -24,12 +24,17 @@ public class LoginController {
     private LoginService loginService;
 
     @GetMapping("/login")
+    public ResponseEntity login(HttpServletResponse response) {
+        response.setHeader("Location", LOGIN_REQUEST_URL);
+        return new ResponseEntity(HttpStatus.MOVED_PERMANENTLY);
+    }
+
+    @GetMapping("/callback")
     public ResponseEntity oauth(@PathParam("code") String code, HttpServletResponse response) {
         Github github = loginService.requestAccessToken(code);
         GithubUser githubUser = loginService.requestUserId(github.getAuthorization());
         response.setHeader("Location", SERVER_URL);
         return new ResponseEntity(githubUser, HttpStatus.FOUND);
-        //return ResponseEntity.ok(githubUser);
     }
 
     @GetMapping("/")
