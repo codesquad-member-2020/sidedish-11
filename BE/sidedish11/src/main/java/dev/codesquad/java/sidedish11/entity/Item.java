@@ -160,15 +160,15 @@ public class Item {
         this.colors = colors;
     }
 
-    public void decreaseStock() {
-        this.stock --;
+    public void decreaseStock(int orderNumber) {
+        this.stock -= orderNumber;
     }
 
-    public boolean isValidStock() {
-        if (stock > 0) {
-            return true;
+    public boolean isValidStock(int orderNumber) {
+        if (stock < orderNumber) {
+            return false;
         }
-        return false;
+        return true;
     }
 
     public void addBadge(Badge badge) {

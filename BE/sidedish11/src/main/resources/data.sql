@@ -153,18 +153,18 @@ INSERT INTO badge(name, item, item_key) VALUES ('이벤트특가', 22, 0);
 ---------------------------------
 ------------ COLOR --------------
 
-INSERT INTO color(name, item, item_key) VALUES ('PointMint', 1, 0);
-INSERT INTO color(name, item, item_key) VALUES ('PointMint', 3, 0);
-INSERT INTO color(name, item, item_key) VALUES ('RedOrange', 5, 0);
-INSERT INTO color(name, item, item_key) VALUES ('RedOrange', 7, 0);
-INSERT INTO color(name, item, item_key) VALUES ('PointMint', 9, 0);
-INSERT INTO color(name, item, item_key) VALUES ('PointMint', 12, 0);
-INSERT INTO color(name, item, item_key) VALUES ('PointMint', 13, 0);
-INSERT INTO color(name, item, item_key) VALUES ('PointMint', 14, 0);
-INSERT INTO color(name, item, item_key) VALUES ('RedOrange', 14, 1);
-INSERT INTO color(name, item, item_key) VALUES ('RedOrange', 15, 0);
-INSERT INTO color(name, item, item_key) VALUES ('RedOrange', 16, 0);
-INSERT INTO color(name, item, item_key) VALUES ('PointMint', 22, 0);
+INSERT INTO color(name, item, item_key) VALUES ('#2AC1BC', 1, 0);
+INSERT INTO color(name, item, item_key) VALUES ('#2AC1BC', 3, 0);
+INSERT INTO color(name, item, item_key) VALUES ('#F34223', 5, 0);
+INSERT INTO color(name, item, item_key) VALUES ('#F34223', 7, 0);
+INSERT INTO color(name, item, item_key) VALUES ('#2AC1BC', 9, 0);
+INSERT INTO color(name, item, item_key) VALUES ('#2AC1BC', 12, 0);
+INSERT INTO color(name, item, item_key) VALUES ('#2AC1BC', 13, 0);
+INSERT INTO color(name, item, item_key) VALUES ('#2AC1BC', 14, 0);
+INSERT INTO color(name, item, item_key) VALUES ('#F34223', 14, 1);
+INSERT INTO color(name, item, item_key) VALUES ('#F34223', 15, 0);
+INSERT INTO color(name, item, item_key) VALUES ('#F34223', 16, 0);
+INSERT INTO color(name, item, item_key) VALUES ('#2AC1BC', 22, 0);
 
 ---------------------------------
 -------- DELIVERY TYPE ----------

@@ -6,11 +6,15 @@ import dev.codesquad.java.sidedish11.service.LoginService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.websocket.server.PathParam;
+
+import static dev.codesquad.java.sidedish11.common.CommonUtils.*;
 
 @RestController
 public class LoginController {
@@ -20,9 +24,20 @@ public class LoginController {
     private LoginService loginService;
 
     @GetMapping("/login")
-    public ResponseEntity oauth(@PathParam("code") String code) {
+    public ResponseEntity login(HttpServletResponse response) {
+        response.setHeader(HEADER_LOCATION, LOGIN_REQUEST_URL);
+        return new ResponseEntity(HttpStatus.MOVED_PERMANENTLY);
+    }
+
+    @GetMapping("/callback")
+    public ResponseEntity oauth(@PathParam("code") String code, HttpServletResponse response) {
         Github github = loginService.requestAccessToken(code);
         GithubUser githubUser = loginService.requestUserId(github.getAuthorization());
-        return ResponseEntity.ok(githubUser);
+        String jwt = loginService.buildToken(githubUser);
+
+        response.setHeader(HEADER_LOCATION, SERVER_URL);
+        response.setHeader(AUTHORIZATION, jwt);
+        response.setHeader(GITHUB_USER_ID, githubUser.getUserId());
+        return new ResponseEntity(githubUser, HttpStatus.FOUND);
     }
 }
