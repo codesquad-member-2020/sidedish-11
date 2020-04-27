@@ -44,9 +44,4 @@ public class LoginController {
         response.setHeader(GITHUB_USER_ID, githubUser.getUserId());
         return new ResponseEntity(githubUser, HttpStatus.FOUND);
     }
-
-    @GetMapping("/")
-    public String home() {
-        return "good";
-    }
 }
