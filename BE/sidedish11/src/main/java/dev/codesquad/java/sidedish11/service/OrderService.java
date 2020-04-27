@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
+
 import static dev.codesquad.java.sidedish11.common.CommonUtils.*;
 import static dev.codesquad.java.sidedish11.common.CommonUtils.ON_STOCK_MESSAGE;
 
@@ -24,15 +26,17 @@ public class OrderService {
     private ItemDao itemDao;
 
     @Transactional
-    public OrderResponse createOrder(String hash) {
+    public OrderResponse createOrder(String hash, HashMap<String, Integer> order) {
         Item item = findItem(hash);
-        if (!item.isValidStock()) {
+        int orderNumber = order.get("orderNumber");
+
+        if (!item.isValidStock(orderNumber)) {
             item.addBadge(new Badge(SOLD_OUT));
             item.addColor(new Color(ORANGE_YELLOW));
             itemRepository.save(item);
             return new OrderResponse(OUT_OF_STOCK, OUT_OF_STOCK_MESSAGE);
         }
-        item.decreaseStock();
+        item.decreaseStock(orderNumber);
         itemRepository.save(item);
         return new OrderResponse(ON_STOCK, ON_STOCK_MESSAGE);
     }

@@ -18,16 +18,9 @@ public class ApiOrderController {
     @Autowired
     private OrderService orderService;
 
-    @GetMapping("/{hash}")
-    public ResponseEntity order(@PathVariable String hash) {
-        OrderResponse orderResponse = orderService.createOrder(hash);
-        return ResponseEntity.ok(orderResponse);
-    }
-
     @PutMapping("/{hash}")
-    public ResponseEntity order2(@PathVariable String hash, @RequestBody HashMap<String, Integer> orderNumber) {
-        logger.debug(">>> orderNumber : {}", orderNumber.get("orderNumber"));
-        OrderResponse orderResponse = orderService.createOrder(hash);
+    public ResponseEntity order2(@PathVariable String hash, @RequestBody HashMap<String, Integer> order) {
+        OrderResponse orderResponse = orderService.createOrder(hash, order);
         return ResponseEntity.ok(orderResponse);
     }
 }
