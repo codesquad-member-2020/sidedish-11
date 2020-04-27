@@ -12,7 +12,7 @@ struct SidedishInfo: Codable {
     let id: Int
     let name: String
     let description: String
-    let url: String?
+    let url: String
     let items: [Sidedish]
 }
 
@@ -20,10 +20,11 @@ struct Sidedish: Codable {
     let detail_hash: String
     let image: String
     let alt: String
-    let delivery_type: [String]
     let title: String
     let description: String?
-    let n_price: String?
-    let s_price: String
+    let n_price: Int
+    let s_price: Int?
     let badge: [String]?
+    let delivery_type: [String]
+    let color: [String]?
 }
