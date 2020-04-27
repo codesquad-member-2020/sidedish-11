@@ -44,9 +44,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ItemBox = ({ categoryData }) => {
+    const { name, description, url } = categoryData;
     const classes = useStyles();
     const [itemsData, setItemsData] = useState(null);
-    const { name, description, url } = categoryData;
     const loading = useFetch(setItemsData, url);
 
     let itemList = <CircularProgress color='secondary' className={classes.progress} />

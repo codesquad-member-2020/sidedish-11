@@ -4,13 +4,13 @@ import ItemDetail from './detail/ItemDetail';
 import './style/Item.css';
 
 const Item = ({ data, itemKey }) => {
+    const { title, description, s_price, n_price, delivery_type, image, alt, badge, color } = data
     const [isHover, setHover] = useState(false);
     const [isDetailOpen, setDetailOpen] = useState(false);
     const handleMouseEnter = () => setHover(true);
     const handleMouseLeave = () => setHover(false);
     const handleClick = () => { if (!isDetailOpen) setDetailOpen(true) };
     const numberComma = (number) => number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    const { title, description, s_price, n_price, delivery_type, image, alt, badge, color } = data
 
     return (
         <div className='item-wrap' onClick={handleClick}>

@@ -29,7 +29,8 @@ const useStyles = makeStyles({
     }
 });
 
-const DetailInfo = ({ title, product_description, delivery_fee, delivery_info, point, prices, stock, numberComma, setDetailOpen }) => {
+const DetailInfo = ({ detailData, setDetailOpen, numberComma }) => {
+    const { title, product_description, delivery_fee, delivery_info, point, prices, stock, } = detailData.data;
     const classes = useStyles();
     const [count, setCount] = useState(1);
     const [isOpen, setOpen] = useState(false);

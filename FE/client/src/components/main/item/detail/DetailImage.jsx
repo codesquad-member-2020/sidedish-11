@@ -30,7 +30,8 @@ const useStyles = makeStyles({
     },
 });
 
-const DetailImage = ({ top_image, thumb_images, product_description }) => {
+const DetailImage = ({ detailData }) => {
+    const { top_image, thumb_images, product_description } = detailData.data;
     const classes = useStyles();
     const [currImage, setCurrImage] = useState(null);
     const handleMouseEnter = ({ target }) => setCurrImage(<img src={target.src} alt={target.alt}></img>);

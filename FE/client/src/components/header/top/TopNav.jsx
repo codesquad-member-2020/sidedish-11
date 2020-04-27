@@ -47,8 +47,8 @@ const useStyles = makeStyles({
 });
 
 function TopNav() {
-    const classes = useStyles();
     const { downloadApp, myPage, customerCenter } = topNavData;
+    const classes = useStyles();
 
     return (
         <div className={classes.topNavWrap}>
