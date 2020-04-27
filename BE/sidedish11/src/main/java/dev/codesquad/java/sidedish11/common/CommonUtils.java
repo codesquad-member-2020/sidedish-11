@@ -24,4 +24,7 @@ public class CommonUtils {
 
     // color
     public static final String ORANGE_YELLOW = "#FFCB05";
+
+    // server
+    public static final String SERVER_URL = "http://3.34.55.104";
 }

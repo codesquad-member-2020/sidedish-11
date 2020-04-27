@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletResponse;
 import javax.websocket.server.PathParam;
 
+import static dev.codesquad.java.sidedish11.common.CommonUtils.*;
+
 @RestController
 public class LoginController {
     private Logger logger = LoggerFactory.getLogger(LoginController.class);
@@ -21,22 +23,12 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    GithubUser githubUser;
-
     @GetMapping("/login")
     public ResponseEntity oauth(@PathParam("code") String code, HttpServletResponse response) {
         Github github = loginService.requestAccessToken(code);
         GithubUser githubUser = loginService.requestUserId(github.getAuthorization());
-
-        String url = "/";
-        response.setHeader("Location", url);
-        this.githubUser = githubUser;
+        response.setHeader("Location", SERVER_URL);
         return new ResponseEntity(githubUser, HttpStatus.FOUND);
         //return ResponseEntity.ok(githubUser);
-    }
-
-    @GetMapping("/")
-    public ResponseEntity home() {
-        return new ResponseEntity(githubUser, HttpStatus.OK);
     }
 }
