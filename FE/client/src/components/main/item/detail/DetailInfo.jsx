@@ -5,7 +5,6 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -105,7 +104,8 @@ const DetailInfo = ({ title, product_description, delivery_fee, delivery_info, p
             <Dialog open={isOpen}>
                 <DialogContent>
                     <Typography gutterBottom>
-                        <span className='confirm-text'>{title}</span> · <span className='confirm-text'>{count}</span>개를 장바구니에 담겠습니까?
+                        <span className='confirm-text'>{title}</span> · <span className='confirm-text'>{count}</span>개
+                        <div>장바구니에 담겠습니까?</div>
                     </Typography>
                 </DialogContent>
                 <DialogActions>

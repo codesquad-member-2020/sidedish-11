@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import useFetch from '../../../util/useFetch';
+import useFetch from '../../../../util/useFetch';
 import URL from '../../../../constants/url';
 import DetailImage from './DetailImage';
 import DetailInfo from './DetailInfo';

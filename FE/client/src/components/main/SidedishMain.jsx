@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ItemBox from './item/ItemBox';
-import useFetch from '../util/useFetch';
+import useFetch from '../../util/useFetch';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import URL from '../../constants/url';
 import { makeStyles } from '@material-ui/core/styles';
