@@ -32,4 +32,10 @@ public class CommonUtils {
     // server
 //    public static final String SERVER_URL = "http://3.34.55.104";
     public static final String SERVER_URL = "http://localhost:8080";
+
+    // token
+    public static final int EXPIRATION_TIME = 1000 * 60 * 60 * 10;
+    public static final String TOKEN_IDENTIFIER_NAME = "group";
+    public static final String TOKEN_IDENTIFIER_VALUE = "codesquad-sidedish11";
+    public static final String NULL_TOKEN_USER = "visitor";
 }
