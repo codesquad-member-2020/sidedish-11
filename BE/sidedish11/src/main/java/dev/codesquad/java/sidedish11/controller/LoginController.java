@@ -31,4 +31,9 @@ public class LoginController {
         return new ResponseEntity(githubUser, HttpStatus.FOUND);
         //return ResponseEntity.ok(githubUser);
     }
+
+    @GetMapping("/")
+    public String home() {
+        return "good";
+    }
 }
