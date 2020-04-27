@@ -23,5 +23,5 @@ public class CommonUtils {
     public static final String SOLD_OUT = "품절";
 
     // color
-    public static final String ORANGE_YELLOW = "OrangeYellow";
+    public static final String ORANGE_YELLOW = "#FFCB05";
 }
