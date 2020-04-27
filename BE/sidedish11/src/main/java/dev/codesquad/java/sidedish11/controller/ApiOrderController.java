@@ -1,7 +1,7 @@
 package dev.codesquad.java.sidedish11.controller;
 
 import dev.codesquad.java.sidedish11.dto.OrderResponse;
-import dev.codesquad.java.sidedish11.service.ItemService;
+import dev.codesquad.java.sidedish11.service.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,18 +16,18 @@ public class ApiOrderController {
     private Logger logger = LoggerFactory.getLogger(ApiOrderController.class);
 
     @Autowired
-    private ItemService itemService;
+    private OrderService orderService;
 
     @GetMapping("/{hash}")
     public ResponseEntity order(@PathVariable String hash) {
-        OrderResponse orderResponse = itemService.createOrder(hash);
+        OrderResponse orderResponse = orderService.createOrder(hash);
         return ResponseEntity.ok(orderResponse);
     }
 
     @PutMapping("/{hash}")
     public ResponseEntity order2(@PathVariable String hash, @RequestBody HashMap<String, Integer> orderNumber) {
         logger.debug(">>> orderNumber : {}", orderNumber.get("orderNumber"));
-        OrderResponse orderResponse = itemService.createOrder(hash);
+        OrderResponse orderResponse = orderService.createOrder(hash);
         return ResponseEntity.ok(orderResponse);
     }
 }
