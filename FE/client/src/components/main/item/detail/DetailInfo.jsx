@@ -7,6 +7,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import Typography from '@material-ui/core/Typography';
+import DetailInfoStatic from './DetailInfoStatic';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -64,26 +65,10 @@ const DetailInfo = ({ detailData, setDetailOpen, numberComma }) => {
 
     return (
         <div className={classes.detailInfoWrap}>
-            <h3 className='detail-title'>{title}</h3>
-            <p className='detail-description'>{product_description}</p>
-            <div className='detail-box'>
-                <div className='detail-label'>적립금</div>
-                <div className='detail-text'>{point}원</div>
-            </div>
-            <div className='detail-box'>
-                <div className='detail-label'>배송정보</div>
-                <div className='detail-text'>{delivery_info}</div>
-            </div>
-            <div className='detail-box'>
-                <div className='detail-label'>배송비</div>
-                <div className='detail-text'>{delivery_fee}</div>
-            </div>
-            <div className='detail-price'>
-                {numberComma(price)}
-                <span className='detail-price-unit'>원</span>
-            </div>
-            <div className='select-number'>
-                <div className='select-number-text'>수량</div>
+            <DetailInfoStatic {...{ title, product_description, point, delivery_info, delivery_fee, price, numberComma }} />
+
+            <div className='select-count'>
+                <div className='select-count-text'>수량</div>
                 <div className='select-input-wrap'>
                     <input onChange={handleChange} className='select-input' type='text' maxLength='4' value={count}></input>
                     <div className='select-input-btn-wrap'>
