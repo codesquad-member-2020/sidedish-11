@@ -31,7 +31,6 @@ public class OrderService {
         int orderNumber = order.get("orderNumber");
 
         if (!item.isValidStock(orderNumber)) {
-            addBadgeAndColor(item);
             return new OrderResponse(OUT_OF_STOCK, OUT_OF_STOCK_MESSAGE);
         }
         if (item.isLastOrder(orderNumber)) {
