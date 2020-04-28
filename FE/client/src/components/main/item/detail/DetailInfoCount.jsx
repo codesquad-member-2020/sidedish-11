@@ -29,7 +29,7 @@ const DetailInfoCount = ({ title, price, stock }) => {
                     <span className='select-count-stock'>( 재고수량 : {stock === 0 ? '품절' : stock} )</span>
                 </div>
                 <div className='select-input-wrap'>
-                    <input onChange={handleChange} className='select-input' type='text' maxLength='4' value={count}></input>
+                    <input onChange={handleChange} className='select-input' type='text' maxLength='3' value={count}></input>
                     <div className='select-input-btn-wrap'>
                         <button onClick={() => { handleCount(true) }} className='select-input-up'>
                             <ArrowDropUpIcon />
