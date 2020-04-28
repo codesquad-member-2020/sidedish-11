@@ -4,7 +4,7 @@ import ItemDetail from './detail/ItemDetail';
 import './style/Item.css';
 
 const Item = ({ data, itemKey }) => {
-    const { title, description, s_price, n_price, delivery_type, image, alt, badge, color } = data
+    const { title, description, s_price, n_price, delivery_type, image, alt, badge } = data
     const [isHover, setHover] = useState(false);
     const [isDetailOpen, setDetailOpen] = useState(false);
     const handleMouseEnter = () => setHover(true);
@@ -31,7 +31,7 @@ const Item = ({ data, itemKey }) => {
                 <span className='n-price'>{s_price ? numberComma(n_price) : ''}</span>
             </div>
             <div className='item-badge'>
-                <Badge badgeData={badge} badgeColor={color} />
+                <Badge badgeData={badge} />
             </div>
         </div>
     )

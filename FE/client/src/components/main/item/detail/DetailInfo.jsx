@@ -13,7 +13,7 @@ const useStyles = makeStyles({
 });
 
 const DetailInfo = ({ detailData, setDetailOpen, numberComma }) => {
-    const { title, product_description, delivery_fee, delivery_info, point, prices } = detailData.data;
+    const { title, product_description, delivery_fee, delivery_info, point, prices, stock } = detailData.data;
     const classes = useStyles();
 
     const price = prices.reduce((acc, curr) => {
@@ -25,7 +25,7 @@ const DetailInfo = ({ detailData, setDetailOpen, numberComma }) => {
     return (
         <div className={classes.detailInfoWrap}>
             <DetailInfoStatic {...{ title, product_description, point, delivery_info, delivery_fee, price, numberComma }} />
-            <DetailInfoCount {...{ title, price, setDetailOpen, numberComma }} />
+            <DetailInfoCount {...{ title, price, stock, setDetailOpen, numberComma }} />
         </div>
     )
 }

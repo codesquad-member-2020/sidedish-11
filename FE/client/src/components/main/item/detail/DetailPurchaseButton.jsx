@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
-    putBtn: {
+    purchaseBtn: {
         color: '#fff',
         boxShadow: 'none',
         marginTop: '20px',
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     },
 });
 
-const DetailPutButton = ({ title, count, setDetailOpen }) => {
+const DetailPurchaseButton = ({ title, count, setDetailOpen }) => {
     const classes = useStyles();
     const [isOpen, setOpen] = useState(false);
 
@@ -31,12 +31,12 @@ const DetailPutButton = ({ title, count, setDetailOpen }) => {
 
     return (
         <>
-            <Button onClick={handleOpen} className={classes.putBtn} variant='contained' color='primary' children='담기' />
+            <Button disabled={count <= 0 ? true : false} onClick={handleOpen} className={classes.purchaseBtn} variant='contained' color='primary' children='구매' />
             <Dialog open={isOpen}>
                 <DialogContent>
                     <Typography gutterBottom>
                         <span className='confirm-text'>{title}</span> · <span className='confirm-text'>{count}</span>개
-                        <div>장바구니에 담겠습니까?</div>
+                        <div>구매하시겠습니까?</div>
                     </Typography>
                 </DialogContent>
                 <DialogActions>
@@ -48,4 +48,4 @@ const DetailPutButton = ({ title, count, setDetailOpen }) => {
     )
 }
 
-export default DetailPutButton
+export default DetailPurchaseButton

@@ -67,6 +67,11 @@
     font-size: 15px;
 }
 
+.select-count-stock {
+    margin-left: 5px;
+    font-size: 11px;
+}
+
 .select-input-wrap {
     position: relative;
     width: 70px;
