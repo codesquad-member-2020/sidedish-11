@@ -13,6 +13,7 @@ const Login = () => {
     const logout = () => {
         deleteCookie(cookieKey);
         setUserData(null);
+        window.location.reload();
     }
 
     return (
