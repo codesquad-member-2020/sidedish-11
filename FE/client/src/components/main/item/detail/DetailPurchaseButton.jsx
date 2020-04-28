@@ -41,7 +41,7 @@ const DetailPurchaseButton = ({ title, count }) => {
             })
         });
         const data = await res.json();
-        console.log(data);
+        alert(data.message);
         setDetailOpen(false);
     }
 
