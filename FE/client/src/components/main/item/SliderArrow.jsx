@@ -1,12 +1,12 @@
 import React from 'react'
 import './style/SliderArrow.css';
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
+import ArrowForwardIosRoundedIcon from '@material-ui/icons/ArrowForwardIosRounded';
 
 export function NextArrow({ onClick }) {
     return (
         <div className='arrow nextArrow' {...{ onClick }}>
-            <NavigateNextIcon color='secondary' />
+            <ArrowForwardIosRoundedIcon color='secondary' />
         </div>
     );
 }
@@ -14,7 +14,7 @@ export function NextArrow({ onClick }) {
 export function PrevArrow({ onClick }) {
     return (
         <div className='arrow prevArrow' {...{ onClick }}>
-            <NavigateBeforeIcon color='secondary' />
+            <ArrowBackIosRoundedIcon color='secondary' />
         </div>
     );
 }

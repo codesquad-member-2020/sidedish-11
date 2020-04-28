@@ -7,6 +7,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
     itemList: {
         cursor: 'pointer',
+        border: '0',
+        outline: '0',
     },
     slider: {
         '& .slick-dots': {
@@ -15,15 +17,8 @@ const useStyles = makeStyles({
     }
 });
 
-const ItemList = ({ itemListData }) => {
+const ItemList = ({ itemsData }) => {
     const classes = useStyles();
-    const itemList = itemListData.map(data => {
-        return (
-            <div key={data.detail_hash} className={classes.itemList}>
-                <Item data={data} />
-            </div>
-        )
-    })
 
     const settings = {
         dots: true,
@@ -35,6 +30,14 @@ const ItemList = ({ itemListData }) => {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
     };
+
+    const itemList = itemsData.map(data => {
+        return (
+            <div key={data.detail_hash} className={classes.itemList}>
+                <Item data={data} itemKey={data.detail_hash} />
+            </div>
+        )
+    })
 
     return (
         <Slider className={classes.slider} {...settings}>

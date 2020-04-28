@@ -1,3 +1,7 @@
+.item-wrap {
+    position: relative;
+}
+
 .image-wrap {
     position: relative;
 }
@@ -26,7 +30,7 @@
     align-items: center;
 }
 
-.hover-image>div {
+.hover-image>.item-delivery-type {
     height: 80px;
     display: flex;
     flex-direction: column;
@@ -100,7 +104,7 @@
 .badge {
     display: inline-block;
     zoom: 1;
-    min-width: 52px;
+    width: 50px;
     height: 11px;
     margin: 0 3px 0 0;
     padding: 5px 0 5px;
@@ -108,14 +112,20 @@
     text-align: center;
     font-size: 11px;
     color: #fff;
+    background: #8ea1d3;
 }
 
 .launching-sale {
     background: #c6a8a5;
-    width: 62px;
+    width: 50px;
 }
 
 .event-sale {
     background: #b997cf;
     width: 62px;
+}
+
+.sold-out {
+    background: #838085;
+    width: 28px;
 }
