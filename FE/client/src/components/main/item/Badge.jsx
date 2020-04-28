@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ItemContext } from './Item';
 
-const Badge = ({ badgeData }) => {
+const Badge = () => {
+    const { badge: badgeData } = useContext(ItemContext);
     const badgeClassName = {
         '론칭특가': 'launching-sale',
         '이벤트특가': 'event-sale',

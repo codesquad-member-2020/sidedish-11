@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { ItemContext } from '../Item';
+import URL from '../../../../constants/url';
 
 const useStyles = makeStyles({
     purchaseBtn: {
@@ -21,13 +23,27 @@ const useStyles = makeStyles({
     },
 });
 
-const DetailPurchaseButton = ({ title, count, setDetailOpen }) => {
+const DetailPurchaseButton = ({ title, count }) => {
+    const { itemKey, setDetailOpen } = useContext(ItemContext);
     const classes = useStyles();
     const [isOpen, setOpen] = useState(false);
 
-    const handleConfirm = () => setDetailOpen(false);
+    const handleConfirm = () => fetchCount();
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    const fetchCount = async () => {
+        const res = await fetch(URL.DEV.ORDER + itemKey, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                orderNumber: count
+            })
+        });
+        const data = await res.json();
+        console.log(data);
+        setDetailOpen(false);
+    }
 
     return (
         <>

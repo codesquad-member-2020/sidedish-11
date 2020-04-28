@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ItemContext } from '../Item';
 
-const DetailInfoStatic = ({ title, product_description, point, delivery_info, delivery_fee, price, numberComma }) => {
+const DetailInfoStatic = ({ title, product_description, point, delivery_info, delivery_fee, price }) => {
+    const { numberComma } = useContext(ItemContext);
+
     return (
         <>
             <h3 className='detail-title'>{title}</h3>

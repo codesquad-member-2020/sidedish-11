@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './style/DetailInfo.css';
 import DetailInfoStatic from './DetailInfoStatic';
 import DetailInfoCount from './DetailInfoCount';
@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     },
 });
 
-const DetailInfo = ({ detailData, setDetailOpen, numberComma }) => {
+const DetailInfo = ({ detailData }) => {
     const { title, product_description, delivery_fee, delivery_info, point, prices, stock } = detailData.data;
     const classes = useStyles();
 
@@ -24,8 +24,8 @@ const DetailInfo = ({ detailData, setDetailOpen, numberComma }) => {
 
     return (
         <div className={classes.detailInfoWrap}>
-            <DetailInfoStatic {...{ title, product_description, point, delivery_info, delivery_fee, price, numberComma }} />
-            <DetailInfoCount {...{ title, price, stock, setDetailOpen, numberComma }} />
+            <DetailInfoStatic {...{ title, product_description, point, delivery_info, delivery_fee, price }} />
+            <DetailInfoCount {...{ title, price, stock }} />
         </div>
     )
 }

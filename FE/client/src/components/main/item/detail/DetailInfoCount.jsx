@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import DetailPurchaseButton from './DetailPurchaseButton';
+import { ItemContext } from '../Item';
 
-const DetailInfoCount = ({ title, price, stock, setDetailOpen, numberComma }) => {
-    const [count, setCount] = useState(1);
+const DetailInfoCount = ({ title, price, stock }) => {
+    const { numberComma } = useContext(ItemContext);
+    const [count, setCount] = useState(stock === 0 ? 0 : 1);
 
     const handleCount = (isCountUp) => {
         let newCount = isCountUp ? count + 1 : count - 1;
@@ -18,8 +20,6 @@ const DetailInfoCount = ({ title, price, stock, setDetailOpen, numberComma }) =>
         if (typeof newCount !== 'number' || !newCount || newCount < 0 || newCount > stock) return;
         setCount(newCount);
     }
-
-    if (stock === 0) setCount(0);
 
     return (
         <>
@@ -45,7 +45,7 @@ const DetailInfoCount = ({ title, price, stock, setDetailOpen, numberComma }) =>
                 {numberComma(price * count)}
                 <span className='amount-price-unit'>원</span>
             </div>
-            <DetailPurchaseButton {...{ title, count, setDetailOpen }} />
+            <DetailPurchaseButton {...{ title, count }} />
         </>
     )
 }

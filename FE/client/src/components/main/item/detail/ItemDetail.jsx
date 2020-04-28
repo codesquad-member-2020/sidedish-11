@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import useFetch from '../../../../util/useFetch';
 import URL from '../../../../constants/url';
 import DetailImage from './DetailImage';
@@ -9,6 +9,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
+import { ItemContext } from '../Item';
 
 const useStyles = makeStyles({
     dialogWrap: {
@@ -43,7 +44,8 @@ const useStyles = makeStyles({
     },
 });
 
-const ItemDetail = ({ itemKey, isDetailOpen, setDetailOpen, numberComma }) => {
+const ItemDetail = () => {
+    const { itemKey, isDetailOpen, setDetailOpen } = useContext(ItemContext);
     const classes = useStyles();
     const [detailData, setDetailData] = useState(null);
     const handleClose = () => setDetailOpen(false);
@@ -59,7 +61,7 @@ const ItemDetail = ({ itemKey, isDetailOpen, setDetailOpen, numberComma }) => {
                         </div> :
                         <div className='detail-data-wrap'>
                             <DetailImage {...{ detailData }} />
-                            <DetailInfo {...{ detailData, setDetailOpen, numberComma }} />
+                            <DetailInfo {...{ detailData }} />
                         </div>
                 }
             </DialogContent>
