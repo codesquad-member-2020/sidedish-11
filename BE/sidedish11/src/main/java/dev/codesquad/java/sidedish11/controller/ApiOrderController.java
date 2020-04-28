@@ -19,7 +19,7 @@ public class ApiOrderController {
     private OrderService orderService;
 
     @PutMapping("/{hash}")
-    public ResponseEntity order2(@PathVariable String hash, @RequestBody HashMap<String, Integer> order) {
+    public ResponseEntity order(@PathVariable String hash, @RequestBody HashMap<String, Integer> order) {
         OrderResponse orderResponse = orderService.createOrder(hash, order);
         return ResponseEntity.ok(orderResponse);
     }

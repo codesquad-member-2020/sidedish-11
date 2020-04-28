@@ -26,6 +26,8 @@ public class CommonUtils {
     public static final String ON_STOCK = "OK";
     public static final String ON_STOCK_MESSAGE = "정상 주문 됐어요.";
     public static final String SOLD_OUT = "품절";
+    public static final String LAST_ONE = "LAST ONE";
+    public static final String LAST_ONE_MESSAGE = "축하합니다. 주문헌 상품이 마지막 상품이네요.";
 
     // color
     public static final String ORANGE_YELLOW = "#FFCB05";

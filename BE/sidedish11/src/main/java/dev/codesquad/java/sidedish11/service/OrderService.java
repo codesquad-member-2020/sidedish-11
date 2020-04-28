@@ -36,6 +36,13 @@ public class OrderService {
             itemRepository.save(item);
             return new OrderResponse(OUT_OF_STOCK, OUT_OF_STOCK_MESSAGE);
         }
+        if (item.isEqualStock(orderNumber)) {
+            item.addBadge(new Badge(SOLD_OUT));
+            item.addColor(new Color(ORANGE_YELLOW));
+            item.decreaseStock(orderNumber);
+            itemRepository.save(item);
+            return new OrderResponse(LAST_ONE, LAST_ONE_MESSAGE);
+        }
         item.decreaseStock(orderNumber);
         itemRepository.save(item);
         return new OrderResponse(ON_STOCK, ON_STOCK_MESSAGE);
