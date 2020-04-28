@@ -27,12 +27,12 @@ public class LoginController {
     @GetMapping("/login")
     public ResponseEntity login(HttpServletResponse response) {
         response.setHeader(HEADER_LOCATION, LOGIN_REQUEST_URL);
-        return new ResponseEntity(HttpStatus.MOVED_PERMANENTLY);
+        return new ResponseEntity(HttpStatus.FOUND);
     }
 
     @GetMapping("/logout")
     public ResponseEntity logout(HttpServletResponse response) {
-        Cookie cookie = new Cookie("userId", null);
+        Cookie cookie = new Cookie(GITHUB_USER_ID, null);
         cookie.setMaxAge(0);
         response.addCookie(cookie);
         return new ResponseEntity(HttpStatus.OK);
@@ -51,10 +51,5 @@ public class LoginController {
         cookie.setMaxAge(EXPIRATION_TIME);
         response.addCookie(cookie);
         return new ResponseEntity(githubUser, HttpStatus.FOUND);
-    }
-
-    @GetMapping("/")
-    public String t() {
-        return "";
     }
 }
