@@ -10,8 +10,8 @@ public class CommonUtils {
     public static final String HEADER_LOCATION = "Location";
     public static final String GITHUB_USER_ID = "userId";
 
-    public static final String LOGIN_REQUEST_URL = "https://github.com/login/oauth/authorize?client_id=8d92d01b11ba14d3d18f&scope=user%20public_repo";
-//    public static final String LOGIN_REQUEST_URL = "https://github.com/login/oauth/authorize?client_id=dc2d0592b76e9fb16677&scope=user%20public_repo";
+//    public static final String LOGIN_REQUEST_URL = "https://github.com/login/oauth/authorize?client_id=8d92d01b11ba14d3d18f&scope=user%20public_repo";
+    public static final String LOGIN_REQUEST_URL = "https://github.com/login/oauth/authorize?client_id=dc2d0592b76e9fb16677&scope=user%20public_repo";
 
     // dto
     public static final String LOCAL_HOST_URL = "http://3.34.55.104:8080/";
@@ -26,6 +26,8 @@ public class CommonUtils {
     public static final String ON_STOCK = "OK";
     public static final String ON_STOCK_MESSAGE = "정상 주문 됐어요.";
     public static final String SOLD_OUT = "품절";
+    public static final String LAST_ONE = "LAST ONE";
+    public static final String LAST_ONE_MESSAGE = "축하합니다. 주문헌 상품이 마지막 상품이네요.";
 
     // color
     public static final String ORANGE_YELLOW = "#FFCB05";
@@ -38,5 +40,4 @@ public class CommonUtils {
     public static final int EXPIRATION_TIME = 1000 * 60 * 60 * 10;
     public static final String TOKEN_IDENTIFIER_NAME = "group";
     public static final String TOKEN_IDENTIFIER_VALUE = "codesquad-sidedish11";
-    public static final String NULL_TOKEN_USER = "visitor";
 }

@@ -164,6 +164,13 @@ public class Item {
         this.stock -= orderNumber;
     }
 
+    public boolean isLastOrder(int orderNumber) {
+        if (stock != orderNumber) {
+            return false;
+        }
+        return true;
+    }
+
     public boolean isValidStock(int orderNumber) {
         if (stock < orderNumber) {
             return false;

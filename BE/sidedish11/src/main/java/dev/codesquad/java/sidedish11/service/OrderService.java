@@ -31,14 +31,23 @@ public class OrderService {
         int orderNumber = order.get("orderNumber");
 
         if (!item.isValidStock(orderNumber)) {
-            item.addBadge(new Badge(SOLD_OUT));
-            item.addColor(new Color(ORANGE_YELLOW));
-            itemRepository.save(item);
+            addBadgeAndColor(item);
             return new OrderResponse(OUT_OF_STOCK, OUT_OF_STOCK_MESSAGE);
+        }
+        if (item.isLastOrder(orderNumber)) {
+            item.decreaseStock(orderNumber);
+            addBadgeAndColor(item);
+            return new OrderResponse(LAST_ONE, LAST_ONE_MESSAGE);
         }
         item.decreaseStock(orderNumber);
         itemRepository.save(item);
         return new OrderResponse(ON_STOCK, ON_STOCK_MESSAGE);
+    }
+
+    private void addBadgeAndColor(Item item) {
+        item.addBadge(new Badge(SOLD_OUT));
+        item.addColor(new Color(ORANGE_YELLOW));
+        itemRepository.save(item);
     }
 
     private Item findItem(String hash) {
