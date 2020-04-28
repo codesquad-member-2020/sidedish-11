@@ -24,12 +24,6 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @GetMapping("/login")
-    public ResponseEntity login(HttpServletResponse response) {
-        response.setHeader(HEADER_LOCATION, LOGIN_REQUEST_URL);
-        return new ResponseEntity(HttpStatus.FOUND);
-    }
-
     @GetMapping("/logout")
     public ResponseEntity logout(HttpServletResponse response) {
         Cookie cookie = new Cookie(GITHUB_USER_ID, null);
