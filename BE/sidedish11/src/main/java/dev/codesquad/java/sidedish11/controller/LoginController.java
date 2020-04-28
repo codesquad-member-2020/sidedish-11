@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.websocket.server.PathParam;
 
@@ -29,6 +30,14 @@ public class LoginController {
         return new ResponseEntity(HttpStatus.MOVED_PERMANENTLY);
     }
 
+    @GetMapping("/logout")
+    public ResponseEntity logout(HttpServletResponse response) {
+        Cookie cookie = new Cookie("userId", null);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
     @GetMapping("/callback")
     public ResponseEntity oauth(@PathParam("code") String code, HttpServletResponse response) {
         Github github = loginService.requestAccessToken(code);
@@ -37,7 +46,15 @@ public class LoginController {
 
         response.setHeader(HEADER_LOCATION, SERVER_URL);
         response.setHeader(AUTHORIZATION, jwt);
-        response.setHeader(GITHUB_USER_ID, githubUser.getUserId());
+
+        Cookie cookie = new Cookie(GITHUB_USER_ID, githubUser.getUserId());
+        cookie.setMaxAge(EXPIRATION_TIME);
+        response.addCookie(cookie);
         return new ResponseEntity(githubUser, HttpStatus.FOUND);
+    }
+
+    @GetMapping("/")
+    public String t() {
+        return "";
     }
 }

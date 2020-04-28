@@ -33,8 +33,8 @@ public class CommonUtils {
     public static final String ORANGE_YELLOW = "#FFCB05";
 
     // server
-    public static final String SERVER_URL = "http://3.34.55.104";
-//    public static final String SERVER_URL = "http://localhost:8080";
+//    public static final String SERVER_URL = "http://3.34.55.104";
+    public static final String SERVER_URL = "http://localhost:8080";
 
     // token
     public static final int EXPIRATION_TIME = 1000 * 60 * 60 * 10;
