@@ -219,15 +219,135 @@ INSERT INTO delivery_type(name, item, item_key) VALUES ('새벽배송', 24, 0);
 INSERT INTO delivery_type(name, item, item_key) VALUES ('전국택배', 24, 1);
 
 ---------------------------------
---------- THUMB IMAGE & DETAIL SECTION-----------
+---- THUMB IMAGE : MAIN ---------
 
 INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/4cce011a4a352c22cd399a60271b4921.jpg', 1, 0);
 INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/6ef14155afc5b47e8c9efd762f7a6096.jpg', 1, 1);
 INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/8744504ff3bc315f901dca1f26fe63a1.jpg', 1, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/e30bd6de9340fc05db3cd1d1329b2c56.jpg', 1, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/0221110ead70dfd455e40703bbdd6252.jpg', 1, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/2d408898494ac950d7d2cfd6c36d59c2.jpg', 1, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/62c8bb77facfc9c3be81f9bf45b27f2a.jpg', 1, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/f6d73afc0ebc1efa71eaea32e9d846f2.jpg', 1, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/0f95f44ea8e2e7930321def493753a48.jpg', 1, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/2d408898494ac950d7d2cfd6c36d59c2.jpg', 1, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/62c8bb77facfc9c3be81f9bf45b27f2a.jpg', 1, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/f6d73afc0ebc1efa71eaea32e9d846f2.jpg', 1, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/385f4106ac26f6e4fe7c640714f405a5.jpg', 1, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/2d408898494ac950d7d2cfd6c36d59c2.jpg', 1, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/62c8bb77facfc9c3be81f9bf45b27f2a.jpg', 1, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/f6d73afc0ebc1efa71eaea32e9d846f2.jpg', 1, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/b6beada6b89af950289003d929936d9c.jpg', 1, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/2d408898494ac950d7d2cfd6c36d59c2.jpg', 1, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/62c8bb77facfc9c3be81f9bf45b27f2a.jpg', 1, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/f6d73afc0ebc1efa71eaea32e9d846f2.jpg', 1, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/2455226945d52f5aefd51f35d663bb16.jpg', 1, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/2d408898494ac950d7d2cfd6c36d59c2.jpg', 1, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/62c8bb77facfc9c3be81f9bf45b27f2a.jpg', 1, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/f6d73afc0ebc1efa71eaea32e9d846f2.jpg', 1, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/2455226945d52f5aefd51f35d663bb16.jpg', 1, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/2d408898494ac950d7d2cfd6c36d59c2.jpg', 1, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/62c8bb77facfc9c3be81f9bf45b27f2a.jpg', 1, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/f6d73afc0ebc1efa71eaea32e9d846f2.jpg', 1, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/cad8eee316cf7151e07638aa57b32a9d.jpg', 1, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/2d408898494ac950d7d2cfd6c36d59c2.jpg', 1, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/62c8bb77facfc9c3be81f9bf45b27f2a.jpg', 1, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HDF73/f6d73afc0ebc1efa71eaea32e9d846f2.jpg', 1, 3);
+
+---------------------------------
+---- THUMB IMAGE : SOUP ---------
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HAA47/4e96f386d5a5c4459bc0ac6ffd0c1fce.jpg', 2, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HAA47/00327d0df92e29bad02e7387349bed53.jpg', 2, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HAA47/781fea32c56eb102429902a2f62cbaf3.jpg', 2, 2);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/c069bc32cb37727c59e1f0c2839311a0.jpg', 2, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H602F/edc6bae2e2663f05b4e8eb5a2b95d68f.jpg', 2, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H602F/c935f5913dc66b11ebceeef85485c438.jpg', 2, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H602F/7c1e24867611394f04b37d05593e21ba.jpg', 2, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/d1fccf125f0a78113d0e06cb888f2e74.jpg', 2, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H0FC6/92f556b605c4a84813070d7214c4f336.jpg', 2, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H0FC6/538b8ab021c7814aa4af860d94f81287.jpg', 2, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H0FC6/adaef08ab0680b087096afa0f0070fad.jpg', 2, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HAA47/4e96f386d5a5c4459bc0ac6ffd0c1fce.jpg', 2, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HAA47/00327d0df92e29bad02e7387349bed53.jpg', 2, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HAA47/781fea32c56eb102429902a2f62cbaf3.jpg', 2, 2);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HAA47/4e96f386d5a5c4459bc0ac6ffd0c1fce.jpg', 2, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HAA47/00327d0df92e29bad02e7387349bed53.jpg', 2, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HAA47/781fea32c56eb102429902a2f62cbaf3.jpg', 2, 2);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/2ad963a9f63d371826748c852a0025c3.jpg', 2, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/f945d8ac1dccc3f931bcaf35de5de582.jpg', 2, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/bacb0b8186371bfafbd92dbeec718e13.jpg', 2, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/b96b02e9a956c6d5ad1e10eb14ba81e0.jpg', 2, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HAA47/4e96f386d5a5c4459bc0ac6ffd0c1fce.jpg', 2, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HAA47/00327d0df92e29bad02e7387349bed53.jpg', 2, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HAA47/781fea32c56eb102429902a2f62cbaf3.jpg', 2, 2);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/2ad963a9f63d371826748c852a0025c3.jpg', 2, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/f945d8ac1dccc3f931bcaf35de5de582.jpg', 2, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/bacb0b8186371bfafbd92dbeec718e13.jpg', 2, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/b96b02e9a956c6d5ad1e10eb14ba81e0.jpg', 2, 3);
+
+---------------------------------
+---- THUMB IMAGE : SIDE ---------
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/2ad963a9f63d371826748c852a0025c3.jpg', 3, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/f945d8ac1dccc3f931bcaf35de5de582.jpg', 3, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/bacb0b8186371bfafbd92dbeec718e13.jpg', 3, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/b96b02e9a956c6d5ad1e10eb14ba81e0.jpg', 3, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H0FC6/43c38eeffa556554c9b06301eb3e85b2.jpg', 3, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H0FC6/92f556b605c4a84813070d7214c4f336.jpg', 3, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H0FC6/538b8ab021c7814aa4af860d94f81287.jpg', 3, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H0FC6/adaef08ab0680b087096afa0f0070fad.jpg', 3, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H0FC6/43c38eeffa556554c9b06301eb3e85b2.jpg', 3, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H0FC6/92f556b605c4a84813070d7214c4f336.jpg', 3, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H0FC6/538b8ab021c7814aa4af860d94f81287.jpg', 3, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H0FC6/adaef08ab0680b087096afa0f0070fad.jpg', 3, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/e5646e5fc09a01a9243979b229e0572b.jpg', 3, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/f945d8ac1dccc3f931bcaf35de5de582.jpg', 3, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/bacb0b8186371bfafbd92dbeec718e13.jpg', 3, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H26C7/b96b02e9a956c6d5ad1e10eb14ba81e0.jpg', 3, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H602F/c8c8045696b4692107ef28c8b445ca42.jpg', 3, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H602F/edc6bae2e2663f05b4e8eb5a2b95d68f.jpg', 3, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H602F/c935f5913dc66b11ebceeef85485c438.jpg', 3, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H602F/7c1e24867611394f04b37d05593e21ba.jpg', 3, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/d0b5d2be962947d9534e2140d1b34b2d.jpg', 3, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H602F/edc6bae2e2663f05b4e8eb5a2b95d68f.jpg', 3, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H602F/c935f5913dc66b11ebceeef85485c438.jpg', 3, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H602F/7c1e24867611394f04b37d05593e21ba.jpg', 3, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/757878b14ee5a8d5af905c154fc38f01.jpg', 3, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H0FC6/92f556b605c4a84813070d7214c4f336.jpg', 3, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H0FC6/538b8ab021c7814aa4af860d94f81287.jpg', 3, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H0FC6/adaef08ab0680b087096afa0f0070fad.jpg', 3, 3);
+
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/4cfd1954861ebd18b5b53e558a8e902e.jpg', 3, 0);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H602F/edc6bae2e2663f05b4e8eb5a2b95d68f.jpg', 3, 1);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H602F/c935f5913dc66b11ebceeef85485c438.jpg', 3, 2);
+INSERT INTO thumb_image(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/H602F/7c1e24867611394f04b37d05593e21ba.jpg', 3, 3);
+
+---------------------------------
+--------- DETAIL SECTION --------
 
 INSERT INTO detail_section(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/9c2c53b40a11b79c90549a058c2da4b7.jpg', 1, 0);
 INSERT INTO detail_section(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/70b0c77d3ef5cdd6269588685bbefe43.jpg', 1, 1);
 INSERT INTO detail_section(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/72f1049b047f65f42a267d5bbd1e6204.jpg', 1, 2);
 INSERT INTO detail_section(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/768afd17faa8bf3461b8160ba0aa26bf.jpg', 1, 3);
 INSERT INTO detail_section(name, item, item_key) VALUES ('http://public.codesquad.kr/jk/storeapp/data/detail/HBDEF/95816f09d3294641f2e0feacaa739991.jpg', 1, 4);
-
