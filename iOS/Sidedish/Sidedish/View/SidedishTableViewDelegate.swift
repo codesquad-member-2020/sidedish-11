@@ -11,6 +11,7 @@ import Toaster
 
 class SidedishTableViewDelegate: NSObject, UITableViewDelegate {
     
+    static let CellSelectedNotification = Notification.Name(rawValue: "CellSelectedNotification")
     private let height = CGFloat(70)
     var headerModel = [Int: SidedishInfo]()
     
@@ -31,6 +32,15 @@ class SidedishTableViewDelegate: NSObject, UITableViewDelegate {
         header.addGestureRecognizer(tapRecognizer)
         return header
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        sendNotification(indexPath: indexPath)
+        
+    }
+    
+    func sendNotification(indexPath: IndexPath) {
+        NotificationCenter.default.post(name: SidedishTableViewDelegate.CellSelectedNotification, object: nil, userInfo: ["indexPath":indexPath])
+    }
+    
 }
 extension SidedishTableViewDelegate: UIGestureRecognizerDelegate{
     @objc func sectionHeaderTapped(gestureRecognizer: UIGestureRecognizer) {
