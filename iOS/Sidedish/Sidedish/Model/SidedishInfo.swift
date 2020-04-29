@@ -28,3 +28,21 @@ struct Sidedish: Codable {
     let delivery_type: [String]
     let color: [String]?
 }
+
+struct DishDetailInfo: Codable{
+    let hash: String
+    let data: DishDetail
+}
+
+struct DishDetail: Codable {
+    let top_image : String
+    let title : String
+    let product_description : String
+    let point: Int
+    let delivery_info: String
+    let delivery_fee: String
+    let stock: Int
+    let thumb_images: [String]
+    let prices: [Int]
+    let detail_section: [String]
+}
