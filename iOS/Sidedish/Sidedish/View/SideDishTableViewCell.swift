@@ -15,8 +15,6 @@ class SideDishTableViewCell: UITableViewCell {
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var eventLabelStackView: UIStackView!
     @IBOutlet weak var priceStackView: UIStackView!
-    private let useCase = SidedishUseCase()
-    private let networkManager = NetworkManager()
     var viewModel: Sidedish? {
         didSet {
             setupView()
@@ -53,57 +51,88 @@ class SideDishTableViewCell: UITableViewCell {
     
     private func setupImageView(){
         self.sidedishImageView.layer.cornerRadius = self.sidedishImageView.frame.size.width / 2
-        guard let imageURL = self.viewModel?.image else {return }
-        useCase.bringsidedishImage(with: networkManager, imageURL: imageURL ){ imageData in
-            DispatchQueue.main.async {
-                self.sidedishImageView.image = UIImage(data: imageData )
-            }
-        }
     }
     
     private func setupPrice(){
         // 정상가
-        if viewModel?.n_price != nil {
+        var higherPrice = 0
+        var salesPrice = 0
+        guard let n_price = viewModel?.n_price else {return}
+        guard let s_price = viewModel?.s_price else { return }
+        if s_price != 0 { // 더 싼 가격이 있을 경우
+            higherPrice = n_price
+            salesPrice = s_price
             let originalPriceLabel = UILabel()
             let attributeString =  NSMutableAttributedString(string: "My Text")
             attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle,
                                          value: NSUnderlineStyle.single.rawValue,
                                          range: NSMakeRange(0, attributeString.length))
             originalPriceLabel.attributedText = attributeString
-            originalPriceLabel.text = viewModel?.n_price
+            originalPriceLabel.text = "\(higherPrice)"
             originalPriceLabel.textColor = .systemGray
             self.priceStackView.addArrangedSubview(originalPriceLabel)
+            
+        } else {
+            salesPrice = n_price
         }
         // 판매가
         let salesPriceLabel = UILabel()
         salesPriceLabel.textColor = UIColor(named: CustomColor.PointMint)
         salesPriceLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
-        salesPriceLabel.text = viewModel?.s_price // 원
+        salesPriceLabel.text = "\(salesPrice) 원" // 원
         self.priceStackView.addArrangedSubview(salesPriceLabel)
     }
     
     private func setupEventBedge() {
-        if let events = viewModel?.badge {
-            for event in events{
+        guard let eventBedgeName = viewModel?.badge else {return}
+        guard let bedgeColor = viewModel?.color else { return }
+        guard let bedgeInfo = self.storeBedgeInfo(events: eventBedgeName, colors: bedgeColor) else {return}
+            for event in bedgeInfo {
                 let label = UILabel()
-                label.text = " \(event) "
-                let bedgeColor = self.decideBedgeColor(event: event)
-                label.backgroundColor = UIColor(named: bedgeColor)
+                label.text = " \(event.key) "
+                label.backgroundColor = UIColor(hex: event.value )
                 label.textColor = .white
                 label.font = label.font.withSize(13)
                 self.eventLabelStackView.addArrangedSubview(label)
             }
-        }
     }
-    
-    private func decideBedgeColor(event: String) -> String {
-        switch event {
-        case EventCase.SpecialPrice.description : return CustomColor.LightPurple
-        case EventCase.FreeGift.description : return CustomColor.OrangeYellow
-        case EventCase.LaunchingPrice.description : return CustomColor.RedOrange
-        case EventCase.SoldOut.description : return CustomColor.Black
-        default:
-            return ""
+    private func storeBedgeInfo(events: [String]?, colors: [String]?) -> [String:String]?
+    {
+        var eventBedges = [String: String]()
+        guard let events = events else { return nil}
+        if events.count > 0 {
+            for index in 0 ... events.count - 1{
+                let event = events[index]
+                eventBedges[event] = colors?[index]
+            }
         }
+        return eventBedges
+    }
+}
+
+extension UIColor {
+    public convenience init?(hex: String) {
+        let r, g, b, a: CGFloat
+
+        if hex.hasPrefix("#") {
+            let start = hex.index(hex.startIndex, offsetBy: 1)
+            let hexColor = String(hex[start...])
+
+            if hexColor.count == 8 {
+                let scanner = Scanner(string: hexColor)
+                var hexNumber: UInt64 = 0
+
+                if scanner.scanHexInt64(&hexNumber) {
+                    r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
+                    g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
+                    b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
+                    a = CGFloat(hexNumber & 0x000000ff) / 255
+
+                    self.init(red: r, green: g, blue: b, alpha: a)
+                    return
+                }
+            }
+        }
+        return nil
     }
 }
