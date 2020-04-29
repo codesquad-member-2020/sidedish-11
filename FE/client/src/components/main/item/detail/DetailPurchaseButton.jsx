@@ -41,8 +41,8 @@ const DetailPurchaseButton = ({ title, count, stock }) => {
             })
         });
         const data = await res.json();
-        if (count === stock) setBadgeData([...badgeData, '품절']);
-        alert(data.message);
+        if (count === stock && data.code !== 'OUT OF STOCK') setBadgeData([...badgeData, '품절']);
+        alert(`server say : ${data.message}`);
         setDetailOpen(false);
     };
 
