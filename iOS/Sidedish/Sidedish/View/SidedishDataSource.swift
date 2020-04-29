@@ -10,7 +10,6 @@ import UIKit
 
 class SidedishDataSource: NSObject, UITableViewDataSource {
     
-    private var dataDelegate: SendDataDelegate?
     var allSidedishes = [Int: [Sidedish]]()
     let imageManager = ImageManager()
     let useCase = SidedishUseCase()
@@ -24,17 +23,7 @@ class SidedishDataSource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: SideDishTableViewCell.identifier, for: indexPath) as! SideDishTableViewCell
         cell.viewModel = allSidedishes[indexPath.section]?[indexPath.row]
         if let imageString = cell.viewModel?.image {
-            
-            // Not Using Caching
-            /*
-            useCase.getImage(with: NetworkManager(), imageURL: imageString){ imageData in
-                guard let imageData = imageData else {return}
-                let image = UIImage(data: imageData)
-                DispatchQueue.main.async {
-                    cell.sidedishImageView?.image = image
-                }
-            }*/
-            
+                        
             // Using Caching
             // Search Image
             var foundImage: UIImage?
