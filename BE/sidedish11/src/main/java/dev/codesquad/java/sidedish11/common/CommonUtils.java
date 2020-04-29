@@ -19,7 +19,7 @@ public class CommonUtils {
 
     // order
     public static final String OUT_OF_STOCK = "OUT OF STOCK";
-    public static final String OUT_OF_STOCK_MESSAGE = "아쉽지만 재고가 없네요.";
+    public static final String OUT_OF_STOCK_MESSAGE = "시도는 좋았지만 아쉽게도 재고가 없어요 이 녀석아.";
     public static final String ON_STOCK = "OK";
     public static final String ON_STOCK_MESSAGE = "정상 주문 됐어요.";
     public static final String SOLD_OUT = "품절";
@@ -32,9 +32,6 @@ public class CommonUtils {
     // server
     public static final String SERVER_URL = "http://3.34.55.104";
 //    public static final String SERVER_URL = "http://localhost:8080";
-
-//    public static final String SERVER_LOGIN_REQUEST_URL = "https://github.com/login/oauth/authorize?client_id=dc2d0592b76e9fb16677&scope=user%20public_repo";
-//    public static final String LOCAL_LOGIN_REQUEST_URL = "https://github.com/login/oauth/authorize?client_id=8d92d01b11ba14d3d18f&scope=user%20public_repo";
 
     // token
     public static final int EXPIRATION_TIME = 1000 * 60 * 60 * 10;
