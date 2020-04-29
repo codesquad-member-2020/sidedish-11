@@ -29,7 +29,7 @@ enum EndPoints {
     static let main = "\(EndPoints.url)/main"
     static let side = "\(EndPoints.url)/side"
     static let soup = "\(EndPoints.url)/soup"
-    static let detail = "\(EndPoints.url)/detail"
+    static let detail = "\(EndPoints.url)/detail/"
     static let login = "https://github.com/login/oauth/authorize?client_id=8d92d01b11ba14d3d18f&scope=user%20public_repo"
 }
 
