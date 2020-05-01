@@ -1,6 +1,0 @@
-framework module Pods_SidedishTests {
-  umbrella header "Pods-SidedishTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
