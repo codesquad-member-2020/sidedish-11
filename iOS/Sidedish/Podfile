@@ -3,15 +3,14 @@ platform :ios, '13.0'
 
 target 'Sidedish' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+  # use_frameworks!
+  use_modular_headers!
     pod 'Alamofire', '~> 5.1'
-    pod 'Toaster'
-
-  # Pods for Sidedish
+    # pod 'Toaster'
+    pod 'Toaster', :git => 'https://github.com/devxoul/Toaster.git', :branch => 'master'
 
   target 'SidedishTests' do
     inherit! :search_paths
-    # Pods for testing
   end
 
 end

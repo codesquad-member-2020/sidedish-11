@@ -25,12 +25,12 @@ enum EventCase: String, CustomStringConvertible {
 }
 
 enum EndPoints {
-    static let main = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan/main"
-    static let side = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan/side"
-    static let soup = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan/soup"
-    static let detail = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan/detail/"
-    static let placeholder = "https://byline.network/wp-content/uploads/2018/11/%EB%B0%B0%EB%AF%BC%EC%B0%AC-%EB%A1%9C%EA%B3%A0.jpg"
-    static let sideMockupURL = "http://www.mocky.io/v2/5ea24ec9310000d18f1ef037"
+    static let url = "http://3.34.55.104:8080"
+    static let main = "\(EndPoints.url)/main"
+    static let side = "\(EndPoints.url)/side"
+    static let soup = "\(EndPoints.url)/soup"
+    static let detail = "\(EndPoints.url)/detail/"
+    static let login = "https://github.com/login/oauth/authorize?client_id=8d92d01b11ba14d3d18f&scope=user%20public_repo"
 }
 
 enum Category {

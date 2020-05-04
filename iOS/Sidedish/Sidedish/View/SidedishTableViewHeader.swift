@@ -26,7 +26,6 @@ class SidedishTableViewHeader: UITableViewHeaderFooterView {
     }
     
     private func setupView(){
-        
         self.backgroundView?.backgroundColor = .white
         smallCategoryButton.setTitle(headerModel?[section]? .name, for: .normal )
         smallCategoryButton.layer.cornerRadius = 0.2

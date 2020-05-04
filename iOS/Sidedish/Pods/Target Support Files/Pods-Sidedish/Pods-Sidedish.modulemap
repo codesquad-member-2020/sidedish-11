@@ -1,4 +1,4 @@
-framework module Pods_Sidedish {
+module Pods_Sidedish {
   umbrella header "Pods-Sidedish-umbrella.h"
 
   export *
