@@ -17,7 +17,8 @@ const DetailInfoCount = ({ title, price, stock }) => {
     const handleChange = ({ target }) => {
         let newCount = parseInt(target.value);
         if (!target.value) setCount(0);
-        if (typeof newCount !== 'number' || !newCount || newCount < 0 || newCount > stock) return;
+        if (typeof newCount !== 'number' || !newCount || newCount < 0) return;
+        if (newCount > stock) newCount = stock;
         setCount(newCount);
     }
 
@@ -45,7 +46,7 @@ const DetailInfoCount = ({ title, price, stock }) => {
                 {numberComma(price * count)}
                 <span className='amount-price-unit'>원</span>
             </div>
-            <DetailPurchaseButton {...{ title, count }} />
+            <DetailPurchaseButton {...{ title, count, stock }} />
         </>
     )
 }

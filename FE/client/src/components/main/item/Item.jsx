@@ -8,6 +8,7 @@ export const ItemContext = React.createContext();
 const Item = ({ data, itemKey }) => {
     const { title, description, s_price, n_price, delivery_type, image, alt, badge } = data
 
+    const [badgeData, setBadgeData] = useState(badge);
     const [isHover, setHover] = useState(false);
     const [isDetailOpen, setDetailOpen] = useState(false);
 
@@ -18,7 +19,7 @@ const Item = ({ data, itemKey }) => {
     const numberComma = (number) => number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
     return (
-        <ItemContext.Provider value={{ itemKey, isDetailOpen, setDetailOpen, numberComma, badge }}>
+        <ItemContext.Provider value={{ itemKey, isDetailOpen, setDetailOpen, numberComma, badgeData, setBadgeData }}>
             <div className='item-wrap' onClick={handleClick}>
                 {isDetailOpen && <ItemDetail />}
                 <div className='image-wrap' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>

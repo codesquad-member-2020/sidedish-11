@@ -23,8 +23,8 @@ const useStyles = makeStyles({
     },
 });
 
-const DetailPurchaseButton = ({ title, count }) => {
-    const { itemKey, setDetailOpen } = useContext(ItemContext);
+const DetailPurchaseButton = ({ title, count, stock }) => {
+    const { itemKey, setDetailOpen, badgeData, setBadgeData } = useContext(ItemContext);
     const classes = useStyles();
     const [isOpen, setOpen] = useState(false);
 
@@ -41,9 +41,10 @@ const DetailPurchaseButton = ({ title, count }) => {
             })
         });
         const data = await res.json();
-        alert(data.message);
+        if (count === stock && data.code !== 'OUT OF STOCK') setBadgeData([...badgeData, '품절']);
+        alert(`server say : ${data.message}`);
         setDetailOpen(false);
-    }
+    };
 
     return (
         <>
